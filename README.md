@@ -12,6 +12,99 @@ This project is fully standalone and can be used for FSAE simulation, driver tra
 
 ---
 
+## 📁 Project Structure (Stage 2)
+
+```
+fsae-telemetry-physics/
+│
+├── README.md
+├── requirements.txt
+│
+├── data/
+│   ├── realtime.json
+│   ├── logs/
+│   └── tracks/
+│       ├── default_track.csv
+│       ├── track_map.png
+│       └── track_metadata.json
+│
+├── configs/
+│   ├── simulation.yaml            # timestep, duration, randomness
+│   ├── sensors.yaml               # noise, dropout, frequency
+│   ├── car_simple.yaml            # Option A physics parameters
+│   ├── car_intermediate.yaml      # Option B parameters
+│   └── car_advanced.yaml          # Option C full dynamics
+│
+├── simulator/
+│   ├── run_simulator.py           # selects physics engine A/B/C
+│   ├── driver_profiles.py         # throttle/brake/steer functions
+│   ├── track_loader.py            # loads CSV or synthetic tracks
+│   │
+│   ├── physics/
+│   │   ├── core/                  # shared mathematical functions
+│   │   │   ├── units.py
+│   │   │   └── integrators.py     # RK4, Euler integrators (for upgrades)
+│   │   │
+│   │   ├── simple/                # Option A simplified physics
+│   │   │   ├── vehicle_model.py
+│   │   │   ├── dynamics.py
+│   │   │   ├── thermal.py
+│   │   │   └── steering_yaw.py
+│   │   │
+│   │   ├── intermediate/          # Option B more detailed
+│   │   │   ├── vehicle_model.py
+│   │   │   ├── dynamics_longitudinal.py
+│   │   │   ├── dynamics_lateral.py
+│   │   │   ├── thermal_full.py
+│   │   │   └── aero_map.py
+│   │   │
+│   │   └── advanced/              # Option C racing simulator style
+│   │       ├── vehicle_model.py
+│   │       ├── pacejka_tire.py
+│   │       ├── combined_slip.py
+│   │       ├── suspension_model.py
+│   │       ├── powertrain_model.py
+│   │       └── cooling_aero_model.py
+│   │
+│   └── new_sensors/
+│       ├── imu_sensor.py
+│       ├── wheel_speed_sensor.py
+│       ├── brake_pressure_sensor.py
+│       ├── coolant_temp_sensor.py
+│       ├── motor_temp_sensor.py
+│       └── noise_models.py
+│
+├── streamlit_app/
+│   ├── app.py
+│   ├── pages/
+│   │   ├── 1_Realtime_Telemetry.py
+│   │   ├── 2_Data_Visualization.py
+│   │   ├── 3_Lap_Overview.py
+│   │   ├── 4_Track_Map.py
+│   │   └── 5_Session_Comparison.py
+│   └── components/
+│       ├── matplotlib_utils.py
+│       ├── summary_cards.py
+│       └── telemetry_plots.py
+│
+├── analysis/
+│   ├── notebooks/
+│   │   ├── physics_model_validation.ipynb
+│   │   ├── sensor_noise_analysis.ipynb
+│   │   └── track_simulation_demo.ipynb
+│   └── scripts/
+│       ├── export_to_csv.py
+│       └── session_cleaner.py
+│
+└── utils/
+    ├── json_writer.py
+    ├── logger.py
+    ├── config_loader.py
+    ├── lap_timer.py
+    └── math_utils.py
+
+```
+
 ## 📁 Project Structure
 
 ```

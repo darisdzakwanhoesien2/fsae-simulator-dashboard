@@ -1,0 +1,13 @@
+wheel_speed:
+  std: 0.5
+  dropout_prob: 0.0005
+brake_pressure:
+  std: 1.0
+  dropout_prob: 0.0
+coolant_temp:
+  std: 0.2
+  dropout_prob: 0.0
+imu:
+  accel_std: 0.05
+  yaw_std: 0.01
+  dropout_prob: 0.0005
