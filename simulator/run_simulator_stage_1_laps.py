@@ -1,8 +1,10 @@
-# simulator/run_simulator.py
-# Add project root to Python path
+# simulator/run_simulator_stage_1.py
+
+# --- FIX IMPORT PATHS ---
 import sys, os
 ROOT = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(ROOT)
+# ------------------------
 
 import time
 import datetime
@@ -28,7 +30,13 @@ from simulator.new_sensors.brake_pressure_sensor import BrakePressureSensor
 from simulator.new_sensors.coolant_temp_sensor import CoolantTempSensor
 from simulator.new_sensors.imu_sensor import IMUSensor
 
-ROOT = os.path.dirname(os.path.dirname(__file__))
+# --------------------------------------------------------------------
+# CONFIGURATION
+# --------------------------------------------------------------------
+TARGET_LAPS = 10  # 🔥 change to any number (10 laps recommended)
+LAP_TIME_ESTIMATE = 25  # seconds per lap (just for progress estimate)
+# --------------------------------------------------------------------
+
 DATA_DIR = os.path.join(ROOT, "data")
 LOG_DIR = os.path.join(DATA_DIR, "logs")
 os.makedirs(LOG_DIR, exist_ok=True)
@@ -39,7 +47,6 @@ car_cfg = load_yaml(os.path.join(ROOT, "configs", "car_simple.yaml"))
 sensors_cfg = load_yaml(os.path.join(ROOT, "configs", "sensors.yaml"))
 
 dt = sim_cfg.get("dt", 0.1)
-duration = sim_cfg.get("duration", 0)
 
 # sensors creation
 wheel_sensor = WheelSpeedSensor(std=sensors_cfg["wheel_speed"]["std"],
@@ -58,7 +65,6 @@ coolant_temp = car_cfg.get("initial_coolant_temp", 60.0)
 yaw_deg = 0.0
 
 # track & gps
-# track & gps
 from simulator.track_loader import generate_custom_track
 
 track = generate_custom_track(
@@ -66,21 +72,31 @@ track = generate_custom_track(
     n_right=6
 )
 
-#track = generate_oval_track(n_points=400, a=120.0, b=60.0)gps = GPSMock(track)
+#track = generate_oval_track(n_points=400, a=120.0, b=60.0)
+gps = GPSMock(track)
 
+# log
 session = []
-session_name = f"session_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+session_name = f"race_session_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
 session_path = os.path.join(LOG_DIR, session_name)
 
-print("Starting Option A (Simplified Physics) simulator. Ctrl+C to stop.")
+# --------------------------------------------------------------------
+# Progress Bar (laps)
+# --------------------------------------------------------------------
+print(f"🏁 Starting Stage-1 Physics Simulation for {TARGET_LAPS} laps…")
+pbar = tqdm(total=TARGET_LAPS, unit="lap", dynamic_ncols=True)
+
+# --------------------------------------------------------------------
+# MAIN LOOP
+# --------------------------------------------------------------------
+t = 0.0
+last_finished_lap = 0
+
 try:
-    steps = int(duration / dt) if duration > 0 else None
-    pbar = tqdm(total=steps if steps else 0, unit="steps", dynamic_ncols=True)
-    t = 0.0
-    step = 0
     while True:
         throttle, brake_cmd, steering = simple_lap_profile(t=t, lap_time=25.0)
-        # update speed (m/s)
+
+        # update longitudinal dynamics
         v_ms = update_speed(v_ms, throttle, brake_cmd, dt=dt)
         true_speed_kmh = v_ms * 3.6
 
@@ -90,54 +106,60 @@ try:
         # yaw
         yaw_deg = compute_yaw_rate(steering, true_speed_kmh)
 
-        # gps
+        # gps advancement
         distance_m = v_ms * dt
-        (gps_x, gps_y), gps_index, laps = gps.advance(distance_m)
+        (gps_x, gps_y), gps_idx, laps = gps.advance(distance_m)
+
+        # update tqdm when a new lap is completed
+        if laps > last_finished_lap:
+            pbar.update(1)
+            last_finished_lap = laps
+
+        # Stop when TARGET_LAPS reached
+        if laps >= TARGET_LAPS:
+            break
 
         # sensors
         ws = wheel_sensor.read(true_speed_kmh)
-        bp = brake_sensor.read(brake_cmd * 100.0)  # scale brake command to a pressure-like number
+        bp = brake_sensor.read(brake_cmd * 100)
         ct = coolant_sensor.read(coolant_temp)
         imu = imu_sensor.read(true_ax=0.0, true_ay=0.0, true_yaw=yaw_deg)
 
+        # packet
         packet = {
             "timestamp": time.time(),
             "t": round(t, 3),
             "lap": laps,
-            "track_index": gps_index,
+            "track_index": gps_idx,
             "gps": {"x": round(gps_x, 3), "y": round(gps_y, 3)},
             "true": {
                 "speed_kmh": round(true_speed_kmh, 2),
                 "coolant_temp": round(coolant_temp, 2),
                 "brake_cmd": round(brake_cmd, 2),
                 "throttle": round(throttle, 2),
-                "yaw_deg": round(yaw_deg, 3)
+                "yaw_deg": round(yaw_deg, 3),
             },
             "sensors": {
                 "wheel_speed": ws,
                 "brake_pressure": bp,
                 "coolant_temp": ct,
-                "imu": imu
-            }
+                "imu": imu,
+            },
         }
 
-        # persist
+        # write realtime + append log
         write_realtime_json(os.path.join(DATA_DIR, "realtime.json"), packet)
         session.append(packet)
         write_session_log(session_path, session)
 
-        # progress
-        step += 1
+        # time stepping
         t += dt
-        if steps:
-            pbar.update(1)
-            if step >= steps:
-                break
-        else:
-            pbar.update(1)
-
         time.sleep(dt)
+
 except KeyboardInterrupt:
-    print("\nSimulator stopped by user.")
+    print("\n🛑 Simulation manually stopped by user.")
+
 finally:
-    print(f"Session saved: {session_path}")
+    pbar.close()
+    print(f"💾 Session saved to {session_path}")
+    print("🏁 Simulation finished.")

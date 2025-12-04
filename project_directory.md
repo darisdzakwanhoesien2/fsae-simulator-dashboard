@@ -11,11 +11,17 @@
 </details>
 <details><summary>📁 data/</summary>
     📄 .DS_Store<br>
+    📄 driver_sim.json<br>
   <details><summary>📁 logs/</summary>
       📄 race_session_20251202_093416.json<br>
+      📄 race_session_20251202_102949.json<br>
+      📄 race_session_20251202_155136.json<br>
       📄 session_20251202_081531.json<br>
       📄 session_20251202_081639.json<br>
       📄 session_20251202_092654.json<br>
+      📄 session_20251202_101905.json<br>
+      📄 session_20251202_155149.json<br>
+      📄 session_20251202_155204.json<br>
   </details>
     📄 realtime.json<br>
   <details><summary>📁 tracks/</summary>
@@ -53,6 +59,7 @@
     📄 run_race_simulator.py<br>
     📄 run_simulator.py<br>
     📄 run_simulator_stage_1.py<br>
+    📄 run_simulator_stage_1_laps.py<br>
   <details><summary>📁 sensors/</summary>
       📄 brake_pressure.py<br>
       📄 coolant_temp.py<br>
@@ -66,6 +73,9 @@
   <details><summary>📁 pages/</summary>
       📄 2_Data_Visualization.py<br>
       📄 3_Lap_Visualization.py<br>
+      📄 4_Data_Visualization_Physics_1.py<br>
+      📄 5_Lap_Visualization_Physics_1.py<br>
+      📄 6_Fundamentals.py<br>
   </details>
 </details>
   📄 structure_code.py<br>

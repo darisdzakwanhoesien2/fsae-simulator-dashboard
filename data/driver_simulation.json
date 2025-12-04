@@ -1,0 +1,25 @@
+{
+  "drivers": [
+    {
+      "driver_id": "driver_fast",
+      "name": "Fast Driver",
+      "throttle_bias": 1.05,
+      "aggressiveness": 0.05,
+      "steering_noise": 0.01
+    },
+    {
+      "driver_id": "driver_smooth",
+      "name": "Smooth Driver",
+      "throttle_bias": 0.9,
+      "aggressiveness": 0.1,
+      "steering_noise": 0.02
+    },
+    {
+      "driver_id": "driver_aggressive",
+      "name": "Aggressive Driver",
+      "throttle_bias": 1.1,
+      "aggressiveness": 0.25,
+      "steering_noise": 0.03
+    }
+  ]
+}

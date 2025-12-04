@@ -1,0 +1,143 @@
+{
+  "1_fundamentals_of_the_idea": {
+    "summary": "Develop a high-fidelity driver-in-the-loop simulation system to train FSAE drivers, reduce cone penalties, and improve dynamic event performance.",
+    "core_principles": [
+      "FSAE dynamic events penalize cone hits with +20 seconds each, making precision more important than pure speed.",
+      "Real car testing is limited by cost, safety, logistics, and track availability.",
+      "A realistic simulator allows unlimited safe practice and predictive feedback.",
+      "Telemetry-driven models ensure the simulator reflects actual NUS vehicle behavior."
+    ],
+    "goal": "Create a simulation ecosystem where drivers improve steering precision, braking consistency, and racing line discipline through structured, measurable training."
+  },
+
+  "2_detailed_concept": {
+    "system_components": {
+      "vehicle_physics_model": {
+        "description": "A validated digital twin using real telemetry (mass distribution, suspension geometry, tire curves, braking deceleration).",
+        "features": [
+          "Slip-angle tire model",
+          "Steering ratio real-world match",
+          "Brake-pressure vs deceleration mapping",
+          "Weight transfer + suspension dynamics"
+        ]
+      },
+      "driver_training_simulator": {
+        "hardware": [
+          "FFB steering wheel",
+          "Load-cell pedal set",
+          "Screen/VR",
+          "PC running the simulation"
+        ],
+        "software": [
+          "Autocross and endurance-style track generator",
+          "Cone-avoidance logic with real FSAE penalties",
+          "Ideal line + braking point visualization",
+          "Replay and heatmap analytics"
+        ]
+      },
+      "analytics_and_feedback": {
+        "real_time": [
+          "Speed delta vs ideal",
+          "Throttle/brake smoothness",
+          "Steering aggression score"
+        ],
+        "post_run": [
+          "Cone hit map",
+          "Corner entry speed comparison",
+          "Brake/steering heatmaps",
+          "Automated improvement suggestions"
+        ]
+      }
+    },
+    "training_method": {
+      "steps": [
+        "Drivers perform simulated laps.",
+        "System collects driving data (steering, braking, line).",
+        "Analytics compare driver performance with optimal metrics.",
+        "Simulator provides targeted corrections (e.g., brake earlier by 3m).",
+        "Driver repeats until consistency improves."
+      ]
+    }
+  },
+
+  "3_impact_of_implementing_the_idea": {
+    "competitive_benefits": [
+      "Significantly reduces cone penalties (+20s each), the most common cause of lost points in dynamic events.",
+      "Improves driver consistency, enabling faster and safer real-world performance.",
+      "Allows training for complex autocross maneuvers that cannot always be done in real life."
+    ],
+    "team_improvements": [
+      "Creates a structured, data-driven driver development program.",
+      "Reduces car wear and testing costs by shifting early training to simulation.",
+      "Gives new team members a way to contribute via software, simulation, and analytics."
+    ],
+    "long_term_value": [
+      "Establishes NUS Racing as a data- and simulation-driven team.",
+      "Supports future autonomous/DV research through validated vehicle models.",
+      "Provides valuable skills in control systems, simulation, and driver modeling."
+    ]
+  },
+
+  "4_manufacturing_methods_and_considerations": {
+    "physical_components": [
+      "Steering wheel mount or cockpit replica (simple welded steel frame or aluminum extrusion).",
+      "Pedal assembly platform (CNC-cut plywood or aluminum base).",
+      "Monitor stand or VR setup mount."
+    ],
+    "software_development": [
+      "Python or C++ for physics modeling.",
+      "Unity/Unreal for visuals (optional).",
+      "CSV/Ts telemetry import pipeline for model calibration."
+    ],
+    "considerations": [
+      "Ergonomic driver seating position matching the real car.",
+      "Durability of wheelbase and pedal hardware under high load.",
+      "Electrical safety for powered components."
+    ]
+  },
+
+  "5_mounting_and_implementation_on_car": {
+    "note": "The simulator is external and does not mount on the car, but must be calibrated using car data.",
+    "implementation_links": [
+      "Suspension geometry → steering rack ratio in simulator.",
+      "Tire model → real telemetry (lateral accel, slip).",
+      "Brake system → deceleration vs brake pressure mapping.",
+      "Powertrain model → torque map matching real vehicle behavior."
+    ],
+    "sync_requirements": [
+      "Use CAN data to match steering angle, wheel speeds, IMU behavior.",
+      "Validate simulation behavior with real skidpad and slalom tests."
+    ]
+  },
+
+  "6_future_real_life_testing_methods": {
+    "validation_process": [
+      "Compare simulated lap times with real lap times for the same driver.",
+      "Record braking distance in both sim and real car, adjust model accordingly.",
+      "Measure steering corrections per second (CPS) in real vs sim runs.",
+      "Test drivers on slalom sections: aim for reduction in cone hits over time.",
+      "Evaluate consistency: variance in lap times before vs after simulator usage."
+    ],
+    "extension": [
+      "Introduce data-driven coaching (ML anomaly detection).",
+      "Develop RL-based torque/braking map that can be tested in real-world cones tests.",
+      "Integrate telemetry live-stream from real car into simulator for real-time replay mode."
+    ]
+  },
+
+  "7_additional_considerations": {
+    "risks": [
+      "Simulator must be accurate; low realism could mis-train drivers.",
+      "Avoid overreliance on sim without validating with real track testing."
+    ],
+    "opportunities": [
+      "Can be used for team recruitment events to attract new drivers.",
+      "Can be extended into an autonomous-driving research platform.",
+      "Possibility of sponsor branding and demo during events."
+    ],
+    "maintenance": [
+      "Regular recalibration with fresh telemetry each season.",
+      "Review driver analytics monthly to update training schedules."
+    ]
+  }
+}
