@@ -1,6 +1,4 @@
-# -------------------------------------------------------------
-# run_simulator_with_recommender.py  (FINAL VERSION)
-# -------------------------------------------------------------
+# simulator/run_simulator_with_recommender.py
 
 import sys, os, time, json, argparse, datetime
 from tqdm import tqdm
@@ -16,15 +14,16 @@ from utils.config_loader import load_yaml
 from simulator.driver_profiles import simple_lap_profile
 from simulator.recommender import (
     load_driver_policy,
+    load_all_sessions,
     build_segment_database,
-    train_models,
-    choose_action_from_policy
+    train_models,              # wrapper in recommender.py
+    choose_action_from_policy  # wrapper in recommender.py
 )
 
 # Track
 from simulator.track_loader import (
     load_track_csv,
-    generate_oval_track  # fallback
+    generate_oval_track,
 )
 
 # Sensors
@@ -51,26 +50,47 @@ parser.add_argument("--use-policy", action="store_true")
 parser.add_argument("--train-models", action="store_true")
 parser.add_argument("--limit-sessions", type=int, default=None)
 
-# ⭐ NEW ARGUMENTS ADDED
 parser.add_argument("--track", type=str, default=None,
-                    help="Track file inside data/tracks/. Example: track_20251205_111545.csv")
+                    help="Track CSV filename inside data/tracks (e.g., track_20251205_111545.csv)")
 
 parser.add_argument("--progress-file", type=str, default="data/sim_progress.json",
-                    help="File for progress updates so Streamlit can read it")
+                    help="Path to progress JSON (absolute or relative)")
+
+parser.add_argument("--data-dir", type=str, default=None)
+parser.add_argument("--track-dir", type=str, default=None)
+parser.add_argument("--log-dir", type=str, default=None)
 
 args = parser.parse_args()
 
 
 # -------------------------------------------------------------
-# Paths
+# PATH RESOLVERS
 # -------------------------------------------------------------
-DATA_DIR = os.path.join(ROOT, "data")
-TRACK_DIR = os.path.join(DATA_DIR, "tracks")
-LOG_DIR = os.path.join(DATA_DIR, "logs")
-STOP_FILE = os.path.join(DATA_DIR, "stop_signal.txt")
+def resolve_path(arg_path, default):
+    if arg_path is None:
+        return default
+    if os.path.isabs(arg_path):
+        return arg_path
+    return os.path.join(ROOT, arg_path)
+
+
+# Base dirs
+DATA_DIR = resolve_path(args.data_dir, os.path.join(ROOT, "data"))
+TRACK_DIR = resolve_path(args.track_dir, os.path.join(DATA_DIR, "tracks"))
+LOG_DIR = resolve_path(args.log_dir, os.path.join(DATA_DIR, "logs"))
+
+os.makedirs(DATA_DIR, exist_ok=True)
+os.makedirs(TRACK_DIR, exist_ok=True)
 os.makedirs(LOG_DIR, exist_ok=True)
 
-PROGRESS_FILE = os.path.join(ROOT, args.progress_file)
+# Stop & progress files
+STOP_FILE = os.path.join(DATA_DIR, "stop_signal.txt")
+
+# Progress file
+if os.path.isabs(args.progress_file):
+    PROGRESS_FILE = args.progress_file
+else:
+    PROGRESS_FILE = os.path.join(ROOT, args.progress_file)
 
 
 # -------------------------------------------------------------
@@ -92,7 +112,7 @@ if args.track:
         print(f"📌 Loading track: {track_path}")
         track = load_track_csv(track_path)
     else:
-        print(f"⚠ Track not found: {track_path}, using oval")
+        print(f"⚠ Track not found: {track_path}, falling back to oval")
         track = generate_oval_track()
 else:
     print("📌 No custom track selected — using oval track")
@@ -116,7 +136,7 @@ coolant_sensor = CoolantTempSensor(sensor_cfg["coolant_temp"]["std"],
 imu_sensor = IMUSensor(
     accel_std=sensor_cfg["imu"]["accel_std"],
     yaw_std=sensor_cfg["imu"]["yaw_std"],
-    dropout_prob=sensor_cfg["imu"]["dropout_prob"]
+    dropout_prob=sensor_cfg["imu"]["dropout_prob"],
 )
 
 
@@ -124,7 +144,7 @@ imu_sensor = IMUSensor(
 # State initialization
 # -------------------------------------------------------------
 v_ms = 0.0
-coolant = car_cfg["initial_coolant_temp"]
+coolant = car_cfg.get("initial_coolant_temp", 60.0)
 yaw_deg = 0.0
 
 
@@ -141,6 +161,12 @@ session_path = os.path.join(LOG_DIR, session_name)
 # -------------------------------------------------------------
 def write_progress(lap, target):
     data = {"lap": lap, "target": target}
+    try:
+        from utils.json_writer import _ensure_dir
+        _ensure_dir(PROGRESS_FILE)
+    except Exception:
+        os.makedirs(os.path.dirname(PROGRESS_FILE), exist_ok=True)
+
     with open(PROGRESS_FILE, "w") as f:
         json.dump(data, f)
 
@@ -148,11 +174,13 @@ def write_progress(lap, target):
 # -------------------------------------------------------------
 # TRAIN MODELS (optional)
 # -------------------------------------------------------------
+models = None
 if args.train_models:
-    print("📘 Building session database…")
-    db = build_segment_database(limit=args.limit_sessions)
-    print(f"📘 Training models using {len(db)} samples…")
-    train_models(db)
+    print("📘 Loading sessions for training…")
+    sessions = load_all_sessions(limit=args.limit_sessions)
+    db = build_segment_database(sessions)
+    print("📘 Training models…")
+    models = train_models(db)
 
 
 # -------------------------------------------------------------
@@ -161,7 +189,7 @@ if args.train_models:
 policy = None
 if args.use_policy:
     policy = load_driver_policy(args.driver_id)
-    print(f"🤖 Using learned driver policy: {args.driver_id}")
+    print(f"🤖 Using learned / heuristic driver policy: {args.driver_id}")
 
 
 # -------------------------------------------------------------
@@ -175,7 +203,6 @@ last_lap = 0
 
 try:
     while True:
-
         # STOP SIGNAL SUPPORT
         if os.path.exists(STOP_FILE):
             print("🛑 Stop signal detected — exiting simulation.")
@@ -184,10 +211,17 @@ try:
         # -----------------------------
         #  Driver control logic
         # -----------------------------
-        if policy:
-            throttle, brake_cmd, steering = choose_action_from_policy(policy)
+        if policy is not None:
+            # Our choose_action_from_policy in recommender.py
+            throttle, brake_cmd, steering = choose_action_from_policy(
+                policy=policy,
+                segment_idx=None,        # could pass gps index here later
+                state_vector=None,
+                models=models,
+            )
         else:
-            throttle, brake_cmd, steering = simple_lap_profile(t)
+            # fallback: simple temporal profile
+            throttle, brake_cmd, steering = simple_lap_profile(t=t, lap_time=25.0)
 
         # -----------------------------
         #  Physics
@@ -217,22 +251,22 @@ try:
         # Sensors
         # -----------------------------
         ws = wheel_sensor.read(speed_kmh)
-        bp = brake_sensor.read(brake_cmd * 100)
+        bp = brake_sensor.read(brake_cmd * 100.0)
         ct = coolant_sensor.read(coolant)
         imu = imu_sensor.read(true_ax=0.0, true_ay=0.0, true_yaw=yaw_deg)
 
         packet = {
             "timestamp": time.time(),
-            "t": t,
+            "t": round(t, 3),
             "lap": laps,
             "track_index": idx,
-            "gps": {"x": x, "y": y},
+            "gps": {"x": round(x, 3), "y": round(y, 3)},
             "true": {
-                "speed_kmh": speed_kmh,
-                "coolant_temp": coolant,
-                "brake_cmd": brake_cmd,
-                "throttle": throttle,
-                "yaw_deg": yaw_deg,
+                "speed_kmh": round(speed_kmh, 2),
+                "coolant_temp": round(coolant, 2),
+                "brake_cmd": round(brake_cmd, 3),
+                "throttle": round(throttle, 3),
+                "yaw_deg": round(yaw_deg, 3),
             },
             "sensors": {
                 "wheel_speed": ws,
@@ -242,6 +276,7 @@ try:
             },
         }
 
+        # Realtime + log
         write_realtime_json(os.path.join(DATA_DIR, "realtime.json"), packet)
         session.append(packet)
         write_session_log(session_path, session)
@@ -256,6 +291,266 @@ except KeyboardInterrupt:
 finally:
     pbar.close()
     print(f"💾 Session saved to {session_path}")
+
+
+# # -------------------------------------------------------------
+# # run_simulator_with_recommender.py  (FINAL VERSION)
+# # -------------------------------------------------------------
+
+# import sys, os, time, json, argparse, datetime
+# from tqdm import tqdm
+
+# ROOT = os.path.dirname(os.path.dirname(__file__))
+# sys.path.append(ROOT)
+
+# # Utils
+# from utils.json_writer import write_session_log, write_realtime_json
+# from utils.config_loader import load_yaml
+
+# # Driver + Recommender
+# from simulator.driver_profiles import simple_lap_profile
+# from simulator.recommender import (
+#     load_driver_policy,
+#     build_segment_database,
+#     train_models,
+#     choose_action_from_policy
+# )
+
+# # Track
+# from simulator.track_loader import (
+#     load_track_csv,
+#     generate_oval_track  # fallback
+# )
+
+# # Sensors
+# from simulator.new_sensors.wheel_speed_sensor import WheelSpeedSensor
+# from simulator.new_sensors.brake_pressure_sensor import BrakePressureSensor
+# from simulator.new_sensors.coolant_temp_sensor import CoolantTempSensor
+# from simulator.new_sensors.imu_sensor import IMUSensor
+
+# # Physics
+# from simulator.physics.simple.dynamics import update_speed
+# from simulator.physics.simple.thermal import update_coolant_temp
+# from simulator.physics.simple.steering_yaw import compute_yaw_rate
+# from simulator.physics.simple.gps_simulator import GPSMock
+
+
+# # -------------------------------------------------------------
+# # CLI ARGUMENTS
+# # -------------------------------------------------------------
+# parser = argparse.ArgumentParser()
+
+# parser.add_argument("--driver-id", type=str, default="driver_normal")
+# parser.add_argument("--target-laps", type=int, default=5)
+# parser.add_argument("--use-policy", action="store_true")
+# parser.add_argument("--train-models", action="store_true")
+# parser.add_argument("--limit-sessions", type=int, default=None)
+
+# # ⭐ NEW ARGUMENTS ADDED
+# parser.add_argument("--track", type=str, default=None,
+#                     help="Track file inside data/tracks/. Example: track_20251205_111545.csv")
+
+# parser.add_argument("--progress-file", type=str, default="data/sim_progress.json",
+#                     help="File for progress updates so Streamlit can read it")
+
+# args = parser.parse_args()
+
+
+# # -------------------------------------------------------------
+# # Paths
+# # -------------------------------------------------------------
+# DATA_DIR = os.path.join(ROOT, "data")
+# TRACK_DIR = os.path.join(DATA_DIR, "tracks")
+# LOG_DIR = os.path.join(DATA_DIR, "logs")
+# STOP_FILE = os.path.join(DATA_DIR, "stop_signal.txt")
+# os.makedirs(LOG_DIR, exist_ok=True)
+
+# PROGRESS_FILE = os.path.join(ROOT, args.progress_file)
+
+
+# # -------------------------------------------------------------
+# # Load configs
+# # -------------------------------------------------------------
+# sim_cfg = load_yaml(os.path.join(ROOT, "configs", "simulation.yaml"))
+# car_cfg = load_yaml(os.path.join(ROOT, "configs", "car_simple.yaml"))
+# sensor_cfg = load_yaml(os.path.join(ROOT, "configs", "sensors.yaml"))
+
+# dt = sim_cfg.get("dt", 0.1)
+
+
+# # -------------------------------------------------------------
+# # Track loading
+# # -------------------------------------------------------------
+# if args.track:
+#     track_path = os.path.join(TRACK_DIR, args.track)
+#     if os.path.exists(track_path):
+#         print(f"📌 Loading track: {track_path}")
+#         track = load_track_csv(track_path)
+#     else:
+#         print(f"⚠ Track not found: {track_path}, using oval")
+#         track = generate_oval_track()
+# else:
+#     print("📌 No custom track selected — using oval track")
+#     track = generate_oval_track()
+
+# gps = GPSMock(track)
+
+
+# # -------------------------------------------------------------
+# # Prepare sensors
+# # -------------------------------------------------------------
+# wheel_sensor = WheelSpeedSensor(sensor_cfg["wheel_speed"]["std"],
+#                                 sensor_cfg["wheel_speed"]["dropout_prob"])
+
+# brake_sensor = BrakePressureSensor(sensor_cfg["brake_pressure"]["std"],
+#                                    sensor_cfg["brake_pressure"]["dropout_prob"])
+
+# coolant_sensor = CoolantTempSensor(sensor_cfg["coolant_temp"]["std"],
+#                                    sensor_cfg["coolant_temp"]["dropout_prob"])
+
+# imu_sensor = IMUSensor(
+#     accel_std=sensor_cfg["imu"]["accel_std"],
+#     yaw_std=sensor_cfg["imu"]["yaw_std"],
+#     dropout_prob=sensor_cfg["imu"]["dropout_prob"]
+# )
+
+
+# # -------------------------------------------------------------
+# # State initialization
+# # -------------------------------------------------------------
+# v_ms = 0.0
+# coolant = car_cfg["initial_coolant_temp"]
+# yaw_deg = 0.0
+
+
+# # -------------------------------------------------------------
+# # Prepare logging
+# # -------------------------------------------------------------
+# session = []
+# session_name = f"race_session_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+# session_path = os.path.join(LOG_DIR, session_name)
+
+
+# # -------------------------------------------------------------
+# # Helper: write progress
+# # -------------------------------------------------------------
+# def write_progress(lap, target):
+#     data = {"lap": lap, "target": target}
+#     with open(PROGRESS_FILE, "w") as f:
+#         json.dump(data, f)
+
+
+# # -------------------------------------------------------------
+# # TRAIN MODELS (optional)
+# # -------------------------------------------------------------
+# if args.train_models:
+#     print("📘 Building session database…")
+#     db = build_segment_database(limit=args.limit_sessions)
+#     print(f"📘 Training models using {len(db)} samples…")
+#     train_models(db)
+
+
+# # -------------------------------------------------------------
+# # Load recommender policy (optional)
+# # -------------------------------------------------------------
+# policy = None
+# if args.use_policy:
+#     policy = load_driver_policy(args.driver_id)
+#     print(f"🤖 Using learned driver policy: {args.driver_id}")
+
+
+# # -------------------------------------------------------------
+# # MAIN SIMULATION LOOP
+# # -------------------------------------------------------------
+# print(f"🏁 Starting simulation for {args.target_laps} laps…")
+# pbar = tqdm(total=args.target_laps, dynamic_ncols=True)
+
+# t = 0.0
+# last_lap = 0
+
+# try:
+#     while True:
+
+#         # STOP SIGNAL SUPPORT
+#         if os.path.exists(STOP_FILE):
+#             print("🛑 Stop signal detected — exiting simulation.")
+#             break
+
+#         # -----------------------------
+#         #  Driver control logic
+#         # -----------------------------
+#         if policy:
+#             throttle, brake_cmd, steering = choose_action_from_policy(policy)
+#         else:
+#             throttle, brake_cmd, steering = simple_lap_profile(t)
+
+#         # -----------------------------
+#         #  Physics
+#         # -----------------------------
+#         v_ms = update_speed(v_ms, throttle, brake_cmd, dt)
+#         speed_kmh = v_ms * 3.6
+
+#         coolant = update_coolant_temp(coolant, throttle, speed_kmh, dt)
+#         yaw_deg = compute_yaw_rate(steering, speed_kmh)
+
+#         # GPS movement
+#         dist = v_ms * dt
+#         (x, y), idx, laps = gps.advance(dist)
+
+#         # Progress update
+#         if laps > last_lap:
+#             pbar.update(1)
+#             last_lap = laps
+
+#         write_progress(laps, args.target_laps)
+
+#         if laps >= args.target_laps:
+#             print("🏁 Target laps reached!")
+#             break
+
+#         # -----------------------------
+#         # Sensors
+#         # -----------------------------
+#         ws = wheel_sensor.read(speed_kmh)
+#         bp = brake_sensor.read(brake_cmd * 100)
+#         ct = coolant_sensor.read(coolant)
+#         imu = imu_sensor.read(true_ax=0.0, true_ay=0.0, true_yaw=yaw_deg)
+
+#         packet = {
+#             "timestamp": time.time(),
+#             "t": t,
+#             "lap": laps,
+#             "track_index": idx,
+#             "gps": {"x": x, "y": y},
+#             "true": {
+#                 "speed_kmh": speed_kmh,
+#                 "coolant_temp": coolant,
+#                 "brake_cmd": brake_cmd,
+#                 "throttle": throttle,
+#                 "yaw_deg": yaw_deg,
+#             },
+#             "sensors": {
+#                 "wheel_speed": ws,
+#                 "brake_pressure": bp,
+#                 "coolant_temp": ct,
+#                 "imu": imu,
+#             },
+#         }
+
+#         write_realtime_json(os.path.join(DATA_DIR, "realtime.json"), packet)
+#         session.append(packet)
+#         write_session_log(session_path, session)
+
+#         # Step time
+#         t += dt
+#         time.sleep(dt)
+
+# except KeyboardInterrupt:
+#     print("🛑 Interrupted by user")
+
+# finally:
+#     pbar.close()
+#     print(f"💾 Session saved to {session_path}")
 
 
 # # simulator/run_simulator_with_recommender.py
