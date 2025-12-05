@@ -1,9 +1,14 @@
-import streamlit as st
-import numpy as np
-import matplotlib.pyplot as plt
+# streamlit_app/pages/7_Custom_Track_Designer.py
+
 import sys, os
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 sys.path.append(ROOT)
+
+import streamlit as st
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from datetime import datetime
 
 from simulator.track_loader import generate_custom_track
 
@@ -22,6 +27,18 @@ radius_min = st.slider("Min Turn Radius (m)", 10, 80, 30)
 radius_max = st.slider("Max Turn Radius (m)", 10, 150, 60)
 
 points_per_turn = st.slider("Points per Turn", 10, 120, 40)
+
+# -----------------------------------------------------------
+# Helper: Generate timestamped filename
+# -----------------------------------------------------------
+def generate_track_filename():
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"track_{timestamp}.csv"
+    folder = "data/tracks"
+    os.makedirs(folder, exist_ok=True)
+    return os.path.join(folder, filename)
+
+# -----------------------------------------------------------
 
 if st.button("Generate Track"):
     track = generate_custom_track(
@@ -47,9 +64,10 @@ if st.button("Generate Track"):
     
     st.pyplot(fig)
 
-    # Save track to CSV
-    import pandas as pd
+    # Save uniquely using timestamp
+    save_path = generate_track_filename()
     df = pd.DataFrame({"x": xs, "y": ys})
-    df.to_csv("data/tracks/custom_track.csv", index=False)
+    df.to_csv(save_path, index=False)
 
-    st.success("Track saved to data/tracks/custom_track.csv")
+    st.success(f"Track saved: `{save_path}`")
+

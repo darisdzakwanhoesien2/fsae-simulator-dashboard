@@ -1,0 +1,7535 @@
+[
+  {
+    "timestamp": 1764926360.9319649,
+    "t": 0.0,
+    "lap": 0,
+    "track_index": 0,
+    "gps": {
+      "x": 0.249,
+      "y": 0.009
+    },
+    "true": {
+      "speed_kmh": 8.97,
+      "coolant_temp": 60.77,
+      "brake_cmd": 0.0,
+      "throttle": 0.88,
+      "yaw_deg": -0.201
+    },
+    "sensors": {
+      "wheel_speed": 8.08,
+      "brake_pressure": 0.4,
+      "coolant_temp": 60.92,
+      "imu": {
+        "ax": -0.046,
+        "ay": 0.049,
+        "yaw": -0.197
+      }
+    }
+  },
+  {
+    "timestamp": 1764926361.035071,
+    "t": 0.1,
+    "lap": 0,
+    "track_index": 0,
+    "gps": {
+      "x": 0.469,
+      "y": 0.018
+    },
+    "true": {
+      "speed_kmh": 16.91,
+      "coolant_temp": 61.53,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": 0.016
+    },
+    "sensors": {
+      "wheel_speed": 16.75,
+      "brake_pressure": 0.0,
+      "coolant_temp": 61.45,
+      "imu": {
+        "ax": -0.016,
+        "ay": 0.002,
+        "yaw": 0.024
+      }
+    }
+  },
+  {
+    "timestamp": 1764926361.1396601,
+    "t": 0.2,
+    "lap": 0,
+    "track_index": 1,
+    "gps": {
+      "x": 0.691,
+      "y": 0.033
+    },
+    "true": {
+      "speed_kmh": 24.92,
+      "coolant_temp": 62.36,
+      "brake_cmd": 0.0,
+      "throttle": 0.79,
+      "yaw_deg": 0.082
+    },
+    "sensors": {
+      "wheel_speed": 25.11,
+      "brake_pressure": 0.0,
+      "coolant_temp": 62.54,
+      "imu": {
+        "ax": -0.032,
+        "ay": 0.0,
+        "yaw": 0.07
+      }
+    }
+  },
+  {
+    "timestamp": 1764926361.2408,
+    "t": 0.3,
+    "lap": 0,
+    "track_index": 2,
+    "gps": {
+      "x": 1.399,
+      "y": 0.102
+    },
+    "true": {
+      "speed_kmh": 32.53,
+      "coolant_temp": 63.22,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": -0.152
+    },
+    "sensors": {
+      "wheel_speed": 31.76,
+      "brake_pressure": 0.0,
+      "coolant_temp": 63.14,
+      "imu": {
+        "ax": -0.067,
+        "ay": -0.057,
+        "yaw": -0.153
+      }
+    }
+  },
+  {
+    "timestamp": 1764926361.346945,
+    "t": 0.4,
+    "lap": 0,
+    "track_index": 4,
+    "gps": {
+      "x": 2.132,
+      "y": 0.216
+    },
+    "true": {
+      "speed_kmh": 41.23,
+      "coolant_temp": 64.24,
+      "brake_cmd": 0.0,
+      "throttle": 0.86,
+      "yaw_deg": -0.118
+    },
+    "sensors": {
+      "wheel_speed": 41.01,
+      "brake_pressure": 0.0,
+      "coolant_temp": 64.25,
+      "imu": {
+        "ax": 0.104,
+        "ay": 0.066,
+        "yaw": -0.117
+      }
+    }
+  },
+  {
+    "timestamp": 1764926361.455269,
+    "t": 0.5,
+    "lap": 0,
+    "track_index": 6,
+    "gps": {
+      "x": 3.342,
+      "y": 0.496
+    },
+    "true": {
+      "speed_kmh": 49.98,
+      "coolant_temp": 65.33,
+      "brake_cmd": 0.0,
+      "throttle": 0.87,
+      "yaw_deg": 0.144
+    },
+    "sensors": {
+      "wheel_speed": 50.45,
+      "brake_pressure": 0.6,
+      "coolant_temp": 65.28,
+      "imu": {
+        "ax": -0.133,
+        "ay": -0.115,
+        "yaw": 0.157
+      }
+    }
+  },
+  {
+    "timestamp": 1764926361.5614522,
+    "t": 0.6,
+    "lap": 0,
+    "track_index": 9,
+    "gps": {
+      "x": 4.517,
+      "y": 0.887
+    },
+    "true": {
+      "speed_kmh": 58.58,
+      "coolant_temp": 66.49,
+      "brake_cmd": 0.0,
+      "throttle": 0.86,
+      "yaw_deg": -0.182
+    },
+    "sensors": {
+      "wheel_speed": 58.62,
+      "brake_pressure": 0.0,
+      "coolant_temp": 66.49,
+      "imu": {
+        "ax": 0.055,
+        "ay": 0.01,
+        "yaw": -0.19
+      }
+    }
+  },
+  {
+    "timestamp": 1764926361.666479,
+    "t": 0.7,
+    "lap": 0,
+    "track_index": 12,
+    "gps": {
+      "x": 6.093,
+      "y": 1.617
+    },
+    "true": {
+      "speed_kmh": 67.13,
+      "coolant_temp": 67.71,
+      "brake_cmd": 0.0,
+      "throttle": 0.86,
+      "yaw_deg": -0.175
+    },
+    "sensors": {
+      "wheel_speed": 66.75,
+      "brake_pressure": 0.52,
+      "coolant_temp": 68.08,
+      "imu": {
+        "ax": 0.053,
+        "ay": 0.02,
+        "yaw": -0.153
+      }
+    }
+  },
+  {
+    "timestamp": 1764926361.7730172,
+    "t": 0.8,
+    "lap": 0,
+    "track_index": 16,
+    "gps": {
+      "x": 7.553,
+      "y": 2.542
+    },
+    "true": {
+      "speed_kmh": 75.39,
+      "coolant_temp": 68.99,
+      "brake_cmd": 0.0,
+      "throttle": 0.84,
+      "yaw_deg": -0.005
+    },
+    "sensors": {
+      "wheel_speed": 75.7,
+      "brake_pressure": 0.28,
+      "coolant_temp": 69.01,
+      "imu": {
+        "ax": 0.037,
+        "ay": 0.079,
+        "yaw": -0.008
+      }
+    }
+  },
+  {
+    "timestamp": 1764926361.875057,
+    "t": 0.9,
+    "lap": 0,
+    "track_index": 20,
+    "gps": {
+      "x": 9.231,
+      "y": 3.997
+    },
+    "true": {
+      "speed_kmh": 83.46,
+      "coolant_temp": 70.32,
+      "brake_cmd": 0.0,
+      "throttle": 0.83,
+      "yaw_deg": -0.115
+    },
+    "sensors": {
+      "wheel_speed": 83.54,
+      "brake_pressure": 0.87,
+      "coolant_temp": 70.08,
+      "imu": {
+        "ax": 0.069,
+        "ay": -0.035,
+        "yaw": -0.126
+      }
+    }
+  },
+  {
+    "timestamp": 1764926361.9838269,
+    "t": 1.0,
+    "lap": 0,
+    "track_index": 25,
+    "gps": {
+      "x": 10.631,
+      "y": 5.691
+    },
+    "true": {
+      "speed_kmh": 90.67,
+      "coolant_temp": 71.65,
+      "brake_cmd": 0.0,
+      "throttle": 0.76,
+      "yaw_deg": -0.077
+    },
+    "sensors": {
+      "wheel_speed": 90.4,
+      "brake_pressure": 1.06,
+      "coolant_temp": 71.69,
+      "imu": {
+        "ax": -0.041,
+        "ay": 0.016,
+        "yaw": -0.091
+      }
+    }
+  },
+  {
+    "timestamp": 1764926362.0879,
+    "t": 1.1,
+    "lap": 0,
+    "track_index": 30,
+    "gps": {
+      "x": 11.947,
+      "y": 8.085
+    },
+    "true": {
+      "speed_kmh": 99.2,
+      "coolant_temp": 73.16,
+      "brake_cmd": 0.0,
+      "throttle": 0.89,
+      "yaw_deg": 0.053
+    },
+    "sensors": {
+      "wheel_speed": 99.55,
+      "brake_pressure": 1.92,
+      "coolant_temp": 73.52,
+      "imu": {
+        "ax": 0.028,
+        "ay": -0.029,
+        "yaw": 0.047
+      }
+    }
+  },
+  {
+    "timestamp": 1764926362.194988,
+    "t": 1.2,
+    "lap": 0,
+    "track_index": 35,
+    "gps": {
+      "x": 12.741,
+      "y": 10.668
+    },
+    "true": {
+      "speed_kmh": 106.66,
+      "coolant_temp": 74.65,
+      "brake_cmd": 0.0,
+      "throttle": 0.8,
+      "yaw_deg": 0.083
+    },
+    "sensors": {
+      "wheel_speed": 106.27,
+      "brake_pressure": 1.31,
+      "coolant_temp": 74.44,
+      "imu": {
+        "ax": -0.035,
+        "ay": 0.02,
+        "yaw": 0.069
+      }
+    }
+  },
+  {
+    "timestamp": 1764926362.304627,
+    "t": 1.3,
+    "lap": 0,
+    "track_index": 41,
+    "gps": {
+      "x": 13.051,
+      "y": 13.356
+    },
+    "true": {
+      "speed_kmh": 114.12,
+      "coolant_temp": 76.21,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": -0.066
+    },
+    "sensors": {
+      "wheel_speed": 114.86,
+      "brake_pressure": 0.16,
+      "coolant_temp": 76.08,
+      "imu": {
+        "ax": -0.05,
+        "ay": 0.027,
+        "yaw": -0.058
+      }
+    }
+  },
+  {
+    "timestamp": 1764926362.413171,
+    "t": 1.4,
+    "lap": 0,
+    "track_index": 47,
+    "gps": {
+      "x": 13.76,
+      "y": 16.459
+    },
+    "true": {
+      "speed_kmh": 120.92,
+      "coolant_temp": 77.78,
+      "brake_cmd": 0.0,
+      "throttle": 0.76,
+      "yaw_deg": 0.071
+    },
+    "sensors": {
+      "wheel_speed": 120.55,
+      "brake_pressure": 0.0,
+      "coolant_temp": 77.33,
+      "imu": {
+        "ax": -0.102,
+        "ay": -0.072,
+        "yaw": 0.071
+      }
+    }
+  },
+  {
+    "timestamp": 1764926362.517035,
+    "t": 1.5,
+    "lap": 0,
+    "track_index": 54,
+    "gps": {
+      "x": 15.105,
+      "y": 19.366
+    },
+    "true": {
+      "speed_kmh": 128.47,
+      "coolant_temp": 79.49,
+      "brake_cmd": 0.0,
+      "throttle": 0.84,
+      "yaw_deg": -0.075
+    },
+    "sensors": {
+      "wheel_speed": 128.6,
+      "brake_pressure": 0.0,
+      "coolant_temp": 79.11,
+      "imu": {
+        "ax": -0.038,
+        "ay": -0.07,
+        "yaw": -0.104
+      }
+    }
+  },
+  {
+    "timestamp": 1764926362.6249878,
+    "t": 1.6,
+    "lap": 0,
+    "track_index": 61,
+    "gps": {
+      "x": 17.362,
+      "y": 22.281
+    },
+    "true": {
+      "speed_kmh": 135.52,
+      "coolant_temp": 81.22,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": -0.077
+    },
+    "sensors": {
+      "wheel_speed": 135.58,
+      "brake_pressure": 0.0,
+      "coolant_temp": 81.23,
+      "imu": {
+        "ax": -0.057,
+        "ay": -0.011,
+        "yaw": -0.075
+      }
+    }
+  },
+  {
+    "timestamp": 1764926362.7354188,
+    "t": 1.7,
+    "lap": 0,
+    "track_index": 68,
+    "gps": {
+      "x": 20.25,
+      "y": 24.574
+    },
+    "true": {
+      "speed_kmh": 142.58,
+      "coolant_temp": 83.02,
+      "brake_cmd": 0.0,
+      "throttle": 0.82,
+      "yaw_deg": -0.04
+    },
+    "sensors": {
+      "wheel_speed": 142.06,
+      "brake_pressure": 0.58,
+      "coolant_temp": 83.11,
+      "imu": {
+        "ax": -0.024,
+        "ay": 0.087,
+        "yaw": -0.038
+      }
+    }
+  },
+  {
+    "timestamp": 1764926362.844791,
+    "t": 1.8,
+    "lap": 0,
+    "track_index": 76,
+    "gps": {
+      "x": 23.613,
+      "y": 26.112
+    },
+    "true": {
+      "speed_kmh": 150.05,
+      "coolant_temp": 84.92,
+      "brake_cmd": 0.0,
+      "throttle": 0.88,
+      "yaw_deg": 0.065
+    },
+    "sensors": {
+      "wheel_speed": 150.17,
+      "brake_pressure": 0.0,
+      "coolant_temp": 84.88,
+      "imu": {
+        "ax": -0.037,
+        "ay": -0.026,
+        "yaw": 0.058
+      }
+    }
+  },
+  {
+    "timestamp": 1764926362.951692,
+    "t": 1.9,
+    "lap": 0,
+    "track_index": 84,
+    "gps": {
+      "x": 27.704,
+      "y": 26.847
+    },
+    "true": {
+      "speed_kmh": 156.1,
+      "coolant_temp": 86.77,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": -0.025
+    },
+    "sensors": {
+      "wheel_speed": 156.33,
+      "brake_pressure": 0.0,
+      "coolant_temp": 86.54,
+      "imu": {
+        "ax": 0.025,
+        "ay": 0.034,
+        "yaw": -0.028
+      }
+    }
+  },
+  {
+    "timestamp": 1764926363.0604491,
+    "t": 2.0,
+    "lap": 0,
+    "track_index": 93,
+    "gps": {
+      "x": 31.864,
+      "y": 26.563
+    },
+    "true": {
+      "speed_kmh": 162.6,
+      "coolant_temp": 88.72,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": -0.012
+    },
+    "sensors": {
+      "wheel_speed": 162.84,
+      "brake_pressure": 0.0,
+      "coolant_temp": 88.94,
+      "imu": {
+        "ax": 0.109,
+        "ay": 0.058,
+        "yaw": -0.027
+      }
+    }
+  },
+  {
+    "timestamp": 1764926363.169523,
+    "t": 2.1,
+    "lap": 0,
+    "track_index": 102,
+    "gps": {
+      "x": 36.278,
+      "y": 25.062
+    },
+    "true": {
+      "speed_kmh": 168.95,
+      "coolant_temp": 90.72,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": 0.002
+    },
+    "sensors": {
+      "wheel_speed": 168.33,
+      "brake_pressure": 0.01,
+      "coolant_temp": 90.83,
+      "imu": {
+        "ax": 0.023,
+        "ay": -0.037,
+        "yaw": -0.001
+      }
+    }
+  },
+  {
+    "timestamp": 1764926363.2759051,
+    "t": 2.2,
+    "lap": 0,
+    "track_index": 111,
+    "gps": {
+      "x": 40.127,
+      "y": 22.421
+    },
+    "true": {
+      "speed_kmh": 175.55,
+      "coolant_temp": 92.8,
+      "brake_cmd": 0.0,
+      "throttle": 0.85,
+      "yaw_deg": -0.048
+    },
+    "sensors": {
+      "wheel_speed": 175.36,
+      "brake_pressure": 0.0,
+      "coolant_temp": 92.55,
+      "imu": {
+        "ax": -0.073,
+        "ay": 0.006,
+        "yaw": -0.049
+      }
+    }
+  },
+  {
+    "timestamp": 1764926363.3853388,
+    "t": 2.3,
+    "lap": 0,
+    "track_index": 121,
+    "gps": {
+      "x": 43.149,
+      "y": 18.847
+    },
+    "true": {
+      "speed_kmh": 182.44,
+      "coolant_temp": 94.97,
+      "brake_cmd": 0.0,
+      "throttle": 0.89,
+      "yaw_deg": -0.029
+    },
+    "sensors": {
+      "wheel_speed": 182.33,
+      "brake_pressure": 0.34,
+      "coolant_temp": 94.77,
+      "imu": {
+        "ax": 0.036,
+        "ay": 0.004,
+        "yaw": -0.042
+      }
+    }
+  },
+  {
+    "timestamp": 1764926363.495954,
+    "t": 2.4,
+    "lap": 0,
+    "track_index": 131,
+    "gps": {
+      "x": 46.637,
+      "y": 15.056
+    },
+    "true": {
+      "speed_kmh": 188.25,
+      "coolant_temp": 97.12,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": 0.021
+    },
+    "sensors": {
+      "wheel_speed": 188.3,
+      "brake_pressure": 0.0,
+      "coolant_temp": 97.04,
+      "imu": {
+        "ax": -0.031,
+        "ay": -0.065,
+        "yaw": 0.03
+      }
+    }
+  },
+  {
+    "timestamp": 1764926363.605085,
+    "t": 2.5,
+    "lap": 0,
+    "track_index": 141,
+    "gps": {
+      "x": 50.838,
+      "y": 12.074
+    },
+    "true": {
+      "speed_kmh": 194.07,
+      "coolant_temp": 99.33,
+      "brake_cmd": 0.0,
+      "throttle": 0.82,
+      "yaw_deg": -0.057
+    },
+    "sensors": {
+      "wheel_speed": 193.55,
+      "brake_pressure": 0.51,
+      "coolant_temp": 99.36,
+      "imu": {
+        "ax": 0.064,
+        "ay": -0.081,
+        "yaw": -0.043
+      }
+    }
+  },
+  {
+    "timestamp": 1764926363.71661,
+    "t": 2.6,
+    "lap": 0,
+    "track_index": 152,
+    "gps": {
+      "x": 55.543,
+      "y": 10.039
+    },
+    "true": {
+      "speed_kmh": 198.94,
+      "coolant_temp": 101.52,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": -0.02
+    },
+    "sensors": {
+      "wheel_speed": 198.72,
+      "brake_pressure": 0.0,
+      "coolant_temp": 101.3,
+      "imu": {
+        "ax": 0.007,
+        "ay": 0.009,
+        "yaw": -0.019
+      }
+    }
+  },
+  {
+    "timestamp": 1764926363.826941,
+    "t": 2.7,
+    "lap": 0,
+    "track_index": 163,
+    "gps": {
+      "x": 61.092,
+      "y": 8.993
+    },
+    "true": {
+      "speed_kmh": 204.72,
+      "coolant_temp": 103.84,
+      "brake_cmd": 0.0,
+      "throttle": 0.85,
+      "yaw_deg": 0.047
+    },
+    "sensors": {
+      "wheel_speed": 206.02,
+      "brake_pressure": 0.24,
+      "coolant_temp": 103.61,
+      "imu": {
+        "ax": -0.019,
+        "ay": 0.028,
+        "yaw": 0.04
+      }
+    }
+  },
+  {
+    "timestamp": 1764926363.936667,
+    "t": 2.8,
+    "lap": 0,
+    "track_index": 174,
+    "gps": {
+      "x": 66.684,
+      "y": 9.412
+    },
+    "true": {
+      "speed_kmh": 209.22,
+      "coolant_temp": 106.1,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": 0.051
+    },
+    "sensors": {
+      "wheel_speed": 209.0,
+      "brake_pressure": 0.0,
+      "coolant_temp": 105.94,
+      "imu": {
+        "ax": -0.032,
+        "ay": -0.042,
+        "yaw": 0.052
+      }
+    }
+  },
+  {
+    "timestamp": 1764926364.045299,
+    "t": 2.9,
+    "lap": 0,
+    "track_index": 185,
+    "gps": {
+      "x": 71.961,
+      "y": 11.302
+    },
+    "true": {
+      "speed_kmh": 213.63,
+      "coolant_temp": 108.41,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": 0.029
+    },
+    "sensors": {
+      "wheel_speed": 213.85,
+      "brake_pressure": 0.5,
+      "coolant_temp": 108.51,
+      "imu": {
+        "ax": 0.013,
+        "ay": 0.005,
+        "yaw": 0.021
+      }
+    }
+  },
+  {
+    "timestamp": 1764926364.156613,
+    "t": 3.0,
+    "lap": 0,
+    "track_index": 196,
+    "gps": {
+      "x": 76.397,
+      "y": 14.391
+    },
+    "true": {
+      "speed_kmh": 210.76,
+      "coolant_temp": 110.29,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.124
+    },
+    "sensors": {
+      "wheel_speed": 211.37,
+      "brake_pressure": 81.06,
+      "coolant_temp": 110.4,
+      "imu": {
+        "ax": 0.071,
+        "ay": -0.035,
+        "yaw": -5.115
+      }
+    }
+  },
+  {
+    "timestamp": 1764926364.265606,
+    "t": 3.1,
+    "lap": 0,
+    "track_index": 207,
+    "gps": {
+      "x": 79.825,
+      "y": 18.565
+    },
+    "true": {
+      "speed_kmh": 207.98,
+      "coolant_temp": 112.16,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.193
+    },
+    "sensors": {
+      "wheel_speed": 207.44,
+      "brake_pressure": 79.08,
+      "coolant_temp": 111.94,
+      "imu": {
+        "ax": -0.031,
+        "ay": 0.063,
+        "yaw": -5.189
+      }
+    }
+  },
+  {
+    "timestamp": 1764926364.377192,
+    "t": 3.2,
+    "lap": 0,
+    "track_index": 218,
+    "gps": {
+      "x": 81.797,
+      "y": 23.595
+    },
+    "true": {
+      "speed_kmh": 205.29,
+      "coolant_temp": 114.0,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.261
+    },
+    "sensors": {
+      "wheel_speed": 204.69,
+      "brake_pressure": 79.71,
+      "coolant_temp": 114.15,
+      "imu": {
+        "ax": 0.056,
+        "ay": -0.041,
+        "yaw": -5.267
+      }
+    }
+  },
+  {
+    "timestamp": 1764926364.489311,
+    "t": 3.3,
+    "lap": 0,
+    "track_index": 229,
+    "gps": {
+      "x": 82.109,
+      "y": 28.99
+    },
+    "true": {
+      "speed_kmh": 202.68,
+      "coolant_temp": 115.82,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.329
+    },
+    "sensors": {
+      "wheel_speed": 202.71,
+      "brake_pressure": 80.74,
+      "coolant_temp": 115.9,
+      "imu": {
+        "ax": -0.044,
+        "ay": 0.02,
+        "yaw": -5.302
+      }
+    }
+  },
+  {
+    "timestamp": 1764926364.6019058,
+    "t": 3.4,
+    "lap": 0,
+    "track_index": 240,
+    "gps": {
+      "x": 80.728,
+      "y": 34.218
+    },
+    "true": {
+      "speed_kmh": 200.14,
+      "coolant_temp": 117.62,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.396
+    },
+    "sensors": {
+      "wheel_speed": 201.06,
+      "brake_pressure": 80.6,
+      "coolant_temp": 117.97,
+      "imu": {
+        "ax": 0.002,
+        "ay": -0.032,
+        "yaw": -5.402
+      }
+    }
+  },
+  {
+    "timestamp": 1764926364.7146828,
+    "t": 3.5,
+    "lap": 0,
+    "track_index": 250,
+    "gps": {
+      "x": 77.568,
+      "y": 38.589
+    },
+    "true": {
+      "speed_kmh": 197.68,
+      "coolant_temp": 119.4,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.463
+    },
+    "sensors": {
+      "wheel_speed": 196.65,
+      "brake_pressure": 78.26,
+      "coolant_temp": 119.7,
+      "imu": {
+        "ax": 0.011,
+        "ay": -0.165,
+        "yaw": -5.462
+      }
+    }
+  },
+  {
+    "timestamp": 1764926364.825433,
+    "t": 3.6,
+    "lap": 0,
+    "track_index": 260,
+    "gps": {
+      "x": 73.398,
+      "y": 41.173
+    },
+    "true": {
+      "speed_kmh": 195.3,
+      "coolant_temp": 121.17,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.53
+    },
+    "sensors": {
+      "wheel_speed": 195.22,
+      "brake_pressure": 79.56,
+      "coolant_temp": 121.0,
+      "imu": {
+        "ax": -0.022,
+        "ay": -0.123,
+        "yaw": -5.54
+      }
+    }
+  },
+  {
+    "timestamp": 1764926364.93705,
+    "t": 3.7,
+    "lap": 0,
+    "track_index": 270,
+    "gps": {
+      "x": 68.574,
+      "y": 42.068
+    },
+    "true": {
+      "speed_kmh": 192.98,
+      "coolant_temp": 122.91,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.597
+    },
+    "sensors": {
+      "wheel_speed": 192.99,
+      "brake_pressure": 80.73,
+      "coolant_temp": 122.92,
+      "imu": {
+        "ax": -0.004,
+        "ay": 0.064,
+        "yaw": -5.574
+      }
+    }
+  },
+  {
+    "timestamp": 1764926365.050813,
+    "t": 3.8,
+    "lap": 0,
+    "track_index": 280,
+    "gps": {
+      "x": 63.744,
+      "y": 41.172
+    },
+    "true": {
+      "speed_kmh": 190.72,
+      "coolant_temp": 124.64,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.663
+    },
+    "sensors": {
+      "wheel_speed": 191.25,
+      "brake_pressure": 80.01,
+      "coolant_temp": 124.59,
+      "imu": {
+        "ax": -0.004,
+        "ay": -0.074,
+        "yaw": -5.643
+      }
+    }
+  },
+  {
+    "timestamp": 1764926365.1565151,
+    "t": 3.9,
+    "lap": 0,
+    "track_index": 290,
+    "gps": {
+      "x": 58.861,
+      "y": 40.668
+    },
+    "true": {
+      "speed_kmh": 188.53,
+      "coolant_temp": 126.34,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.729
+    },
+    "sensors": {
+      "wheel_speed": 188.24,
+      "brake_pressure": 80.16,
+      "coolant_temp": 126.19,
+      "imu": {
+        "ax": -0.069,
+        "ay": -0.061,
+        "yaw": -5.709
+      }
+    }
+  },
+  {
+    "timestamp": 1764926365.26515,
+    "t": 4.0,
+    "lap": 0,
+    "track_index": 300,
+    "gps": {
+      "x": 54.131,
+      "y": 41.992
+    },
+    "true": {
+      "speed_kmh": 186.4,
+      "coolant_temp": 128.04,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.794
+    },
+    "sensors": {
+      "wheel_speed": 187.05,
+      "brake_pressure": 79.38,
+      "coolant_temp": 128.02,
+      "imu": {
+        "ax": 0.035,
+        "ay": -0.06,
+        "yaw": -5.789
+      }
+    }
+  },
+  {
+    "timestamp": 1764926365.376235,
+    "t": 4.1,
+    "lap": 0,
+    "track_index": 310,
+    "gps": {
+      "x": 50.217,
+      "y": 44.961
+    },
+    "true": {
+      "speed_kmh": 184.33,
+      "coolant_temp": 129.71,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.859
+    },
+    "sensors": {
+      "wheel_speed": 184.78,
+      "brake_pressure": 79.37,
+      "coolant_temp": 129.56,
+      "imu": {
+        "ax": 0.064,
+        "ay": 0.02,
+        "yaw": -5.865
+      }
+    }
+  },
+  {
+    "timestamp": 1764926365.4887412,
+    "t": 4.2,
+    "lap": 0,
+    "track_index": 320,
+    "gps": {
+      "x": 47.665,
+      "y": 49.162
+    },
+    "true": {
+      "speed_kmh": 182.31,
+      "coolant_temp": 131.37,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.924
+    },
+    "sensors": {
+      "wheel_speed": 182.76,
+      "brake_pressure": 79.17,
+      "coolant_temp": 131.54,
+      "imu": {
+        "ax": 0.025,
+        "ay": 0.004,
+        "yaw": -5.918
+      }
+    }
+  },
+  {
+    "timestamp": 1764926365.600022,
+    "t": 4.3,
+    "lap": 0,
+    "track_index": 330,
+    "gps": {
+      "x": 46.278,
+      "y": 53.902
+    },
+    "true": {
+      "speed_kmh": 180.35,
+      "coolant_temp": 133.01,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -5.988
+    },
+    "sensors": {
+      "wheel_speed": 179.79,
+      "brake_pressure": 79.33,
+      "coolant_temp": 132.91,
+      "imu": {
+        "ax": -0.011,
+        "ay": 0.003,
+        "yaw": -5.993
+      }
+    }
+  },
+  {
+    "timestamp": 1764926365.713109,
+    "t": 4.4,
+    "lap": 0,
+    "track_index": 339,
+    "gps": {
+      "x": 45.721,
+      "y": 58.812
+    },
+    "true": {
+      "speed_kmh": 178.44,
+      "coolant_temp": 134.64,
+      "brake_cmd": 0.8,
+      "throttle": 0.25,
+      "yaw_deg": -6.052
+    },
+    "sensors": {
+      "wheel_speed": 178.05,
+      "brake_pressure": 81.98,
+      "coolant_temp": 134.59,
+      "imu": {
+        "ax": 0.054,
+        "ay": 0.034,
+        "yaw": -6.07
+      }
+    }
+  },
+  {
+    "timestamp": 1764926365.822866,
+    "t": 4.5,
+    "lap": 0,
+    "track_index": 349,
+    "gps": {
+      "x": 45.975,
+      "y": 63.491
+    },
+    "true": {
+      "speed_kmh": 185.32,
+      "coolant_temp": 136.84,
+      "brake_cmd": 0.0,
+      "throttle": 0.9,
+      "yaw_deg": -0.034
+    },
+    "sensors": {
+      "wheel_speed": 185.36,
+      "brake_pressure": 0.0,
+      "coolant_temp": 136.47,
+      "imu": {
+        "ax": -0.037,
+        "ay": -0.109,
+        "yaw": -0.034
+      }
+    }
+  },
+  {
+    "timestamp": 1764926365.934313,
+    "t": 4.6,
+    "lap": 0,
+    "track_index": 359,
+    "gps": {
+      "x": 47.124,
+      "y": 68.508
+    },
+    "true": {
+      "speed_kmh": 190.88,
+      "coolant_temp": 139.0,
+      "brake_cmd": 0.0,
+      "throttle": 0.79,
+      "yaw_deg": 0.056
+    },
+    "sensors": {
+      "wheel_speed": 190.46,
+      "brake_pressure": 0.0,
+      "coolant_temp": 138.9,
+      "imu": {
+        "ax": -0.049,
+        "ay": -0.005,
+        "yaw": 0.042
+      }
+    }
+  },
+  {
+    "timestamp": 1764926366.046974,
+    "t": 4.7,
+    "lap": 0,
+    "track_index": 369,
+    "gps": {
+      "x": 49.092,
+      "y": 73.292
+    },
+    "true": {
+      "speed_kmh": 197.26,
+      "coolant_temp": 141.29,
+      "brake_cmd": 0.0,
+      "throttle": 0.88,
+      "yaw_deg": -0.034
+    },
+    "sensors": {
+      "wheel_speed": 197.28,
+      "brake_pressure": 2.27,
+      "coolant_temp": 141.26,
+      "imu": {
+        "ax": -0.056,
+        "ay": -0.072,
+        "yaw": -0.032
+      }
+    }
+  },
+  {
+    "timestamp": 1764926366.159296,
+    "t": 4.8,
+    "lap": 0,
+    "track_index": 380,
+    "gps": {
+      "x": 51.758,
+      "y": 77.714
+    },
+    "true": {
+      "speed_kmh": 203.36,
+      "coolant_temp": 143.61,
+      "brake_cmd": 0.0,
+      "throttle": 0.87,
+      "yaw_deg": 0.018
+    },
+    "sensors": {
+      "wheel_speed": 202.86,
+      "brake_pressure": 0.52,
+      "coolant_temp": 143.65,
+      "imu": {
+        "ax": 0.051,
+        "ay": 0.048,
+        "yaw": 0.018
+      }
+    }
+  },
+  {
+    "timestamp": 1764926366.270626,
+    "t": 4.9,
+    "lap": 0,
+    "track_index": 391,
+    "gps": {
+      "x": 55.381,
+      "y": 82.005
+    },
+    "true": {
+      "speed_kmh": 207.75,
+      "coolant_temp": 145.85,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": 0.039
+    },
+    "sensors": {
+      "wheel_speed": 207.34,
+      "brake_pressure": 0.0,
+      "coolant_temp": 145.35,
+      "imu": {
+        "ax": 0.076,
+        "ay": 0.114,
+        "yaw": 0.025
+      }
+    }
+  },
+  {
+    "timestamp": 1764926366.3851259,
+    "t": 5.0,
+    "lap": 0,
+    "track_index": 402,
+    "gps": {
+      "x": 59.694,
+      "y": 85.663
+    },
+    "true": {
+      "speed_kmh": 213.59,
+      "coolant_temp": 148.27,
+      "brake_cmd": 0.0,
+      "throttle": 0.88,
+      "yaw_deg": -0.056
+    },
+    "sensors": {
+      "wheel_speed": 214.12,
+      "brake_pressure": 0.0,
+      "coolant_temp": 148.19,
+      "imu": {
+        "ax": 0.047,
+        "ay": -0.028,
+        "yaw": -0.066
+      }
+    }
+  },
+  {
+    "timestamp": 1764926366.519657,
+    "t": 5.1,
+    "lap": 0,
+    "track_index": 414,
+    "gps": {
+      "x": 64.582,
+      "y": 88.506
+    },
+    "true": {
+      "speed_kmh": 219.44,
+      "coolant_temp": 150.74,
+      "brake_cmd": 0.0,
+      "throttle": 0.9,
+      "yaw_deg": -0.028
+    },
+    "sensors": {
+      "wheel_speed": 219.92,
+      "brake_pressure": 0.19,
+      "coolant_temp": 150.88,
+      "imu": {
+        "ax": -0.016,
+        "ay": -0.002,
+        "yaw": -0.032
+      }
+    }
+  },
+  {
+    "timestamp": 1764926366.629766,
+    "t": 5.2,
+    "lap": 0,
+    "track_index": 426,
+    "gps": {
+      "x": 70.348,
+      "y": 90.545
+    },
+    "true": {
+      "speed_kmh": 223.93,
+      "coolant_temp": 153.16,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": -0.004
+    },
+    "sensors": {
+      "wheel_speed": 224.16,
+      "brake_pressure": 0.36,
+      "coolant_temp": 153.23,
+      "imu": {
+        "ax": 0.038,
+        "ay": -0.022,
+        "yaw": -0.004
+      }
+    }
+  },
+  {
+    "timestamp": 1764926366.740638,
+    "t": 5.3,
+    "lap": 0,
+    "track_index": 438,
+    "gps": {
+      "x": 76.389,
+      "y": 91.432
+    },
+    "true": {
+      "speed_kmh": 228.1,
+      "coolant_temp": 155.59,
+      "brake_cmd": 0.0,
+      "throttle": 0.77,
+      "yaw_deg": 0.008
+    },
+    "sensors": {
+      "wheel_speed": 227.82,
+      "brake_pressure": 0.07,
+      "coolant_temp": 155.59,
+      "imu": {
+        "ax": 0.066,
+        "ay": -0.052,
+        "yaw": -0.013
+      }
+    }
+  },
+  {
+    "timestamp": 1764926366.85357,
+    "t": 5.4,
+    "lap": 0,
+    "track_index": 450,
+    "gps": {
+      "x": 82.426,
+      "y": 92.302
+    },
+    "true": {
+      "speed_kmh": 232.23,
+      "coolant_temp": 158.07,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": -0.004
+    },
+    "sensors": {
+      "wheel_speed": 232.5,
+      "brake_pressure": 0.0,
+      "coolant_temp": 157.74,
+      "imu": {
+        "ax": 0.038,
+        "ay": -0.055,
+        "yaw": -0.021
+      }
+    }
+  },
+  {
+    "timestamp": 1764926366.963583,
+    "t": 5.5,
+    "lap": 0,
+    "track_index": 463,
+    "gps": {
+      "x": 88.062,
+      "y": 94.608
+    },
+    "true": {
+      "speed_kmh": 235.99,
+      "coolant_temp": 160.56,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": -0.019
+    },
+    "sensors": {
+      "wheel_speed": 236.76,
+      "brake_pressure": 0.35,
+      "coolant_temp": 160.43,
+      "imu": {
+        "ax": 0.034,
+        "ay": 0.065,
+        "yaw": -0.002
+      }
+    }
+  },
+  {
+    "timestamp": 1764926367.136831,
+    "t": 5.6,
+    "lap": 0,
+    "track_index": 476,
+    "gps": {
+      "x": 93.318,
+      "y": 98.555
+    },
+    "true": {
+      "speed_kmh": 239.31,
+      "coolant_temp": 163.06,
+      "brake_cmd": 0.0,
+      "throttle": 0.72,
+      "yaw_deg": -0.027
+    },
+    "sensors": {
+      "wheel_speed": 239.65,
+      "brake_pressure": 0.0,
+      "coolant_temp": 163.07,
+      "imu": {
+        "ax": 0.005,
+        "ay": -0.018,
+        "yaw": -0.023
+      }
+    }
+  },
+  {
+    "timestamp": 1764926367.3140988,
+    "t": 5.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 91.332,
+      "y": 96.459
+    },
+    "true": {
+      "speed_kmh": 242.61,
+      "coolant_temp": 165.58,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": 0.013
+    },
+    "sensors": {
+      "wheel_speed": 243.42,
+      "brake_pressure": 0.0,
+      "coolant_temp": 165.59,
+      "imu": {
+        "ax": 0.022,
+        "ay": 0.056,
+        "yaw": 0.036
+      }
+    }
+  },
+  {
+    "timestamp": 1764926367.451139,
+    "t": 5.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.882,
+      "y": 94.928
+    },
+    "true": {
+      "speed_kmh": 246.52,
+      "coolant_temp": 168.2,
+      "brake_cmd": 0.0,
+      "throttle": 0.8,
+      "yaw_deg": -0.009
+    },
+    "sensors": {
+      "wheel_speed": 246.91,
+      "brake_pressure": 0.0,
+      "coolant_temp": 168.05,
+      "imu": {
+        "ax": 0.006,
+        "ay": 0.032,
+        "yaw": -0.03
+      }
+    }
+  },
+  {
+    "timestamp": 1764926367.572923,
+    "t": 5.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.796,
+      "y": 94.837
+    },
+    "true": {
+      "speed_kmh": 251.02,
+      "coolant_temp": 170.9,
+      "brake_cmd": 0.0,
+      "throttle": 0.87,
+      "yaw_deg": 0.019
+    },
+    "sensors": {
+      "wheel_speed": 251.02,
+      "brake_pressure": 0.0,
+      "coolant_temp": 171.17,
+      "imu": {
+        "ax": -0.012,
+        "ay": -0.017,
+        "yaw": 0.021
+      }
+    }
+  },
+  {
+    "timestamp": 1764926367.68715,
+    "t": 6.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.728,
+      "y": 94.765
+    },
+    "true": {
+      "speed_kmh": 254.61,
+      "coolant_temp": 173.58,
+      "brake_cmd": 0.0,
+      "throttle": 0.8,
+      "yaw_deg": 0.007
+    },
+    "sensors": {
+      "wheel_speed": 255.3,
+      "brake_pressure": 0.05,
+      "coolant_temp": 173.64,
+      "imu": {
+        "ax": 0.015,
+        "ay": -0.003,
+        "yaw": 0.017
+      }
+    }
+  },
+  {
+    "timestamp": 1764926367.799031,
+    "t": 6.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.671,
+      "y": 94.704
+    },
+    "true": {
+      "speed_kmh": 257.61,
+      "coolant_temp": 176.25,
+      "brake_cmd": 0.0,
+      "throttle": 0.76,
+      "yaw_deg": -0.002
+    },
+    "sensors": {
+      "wheel_speed": 257.18,
+      "brake_pressure": 2.35,
+      "coolant_temp": 176.48,
+      "imu": {
+        "ax": -0.063,
+        "ay": 0.041,
+        "yaw": 0.0
+      }
+    }
+  },
+  {
+    "timestamp": 1764926367.910809,
+    "t": 6.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.593,
+      "y": 94.622
+    },
+    "true": {
+      "speed_kmh": 261.67,
+      "coolant_temp": 179.04,
+      "brake_cmd": 0.0,
+      "throttle": 0.87,
+      "yaw_deg": -0.002
+    },
+    "sensors": {
+      "wheel_speed": 261.6,
+      "brake_pressure": 0.0,
+      "coolant_temp": 179.0,
+      "imu": {
+        "ax": -0.054,
+        "ay": -0.044,
+        "yaw": 0.009
+      }
+    }
+  },
+  {
+    "timestamp": 1764926368.022828,
+    "t": 6.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.546,
+      "y": 94.573
+    },
+    "true": {
+      "speed_kmh": 264.14,
+      "coolant_temp": 181.73,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": 0.034
+    },
+    "sensors": {
+      "wheel_speed": 264.74,
+      "brake_pressure": 0.0,
+      "coolant_temp": 181.82,
+      "imu": {
+        "ax": -0.06,
+        "ay": -0.027,
+        "yaw": 0.024
+      }
+    }
+  },
+  {
+    "timestamp": 1764926368.134167,
+    "t": 6.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.484,
+      "y": 94.507
+    },
+    "true": {
+      "speed_kmh": 267.37,
+      "coolant_temp": 184.52,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": 0.013
+    },
+    "sensors": {
+      "wheel_speed": 267.87,
+      "brake_pressure": 0.0,
+      "coolant_temp": 184.61,
+      "imu": {
+        "ax": -0.028,
+        "ay": -0.002,
+        "yaw": 0.013
+      }
+    }
+  },
+  {
+    "timestamp": 1764926368.246711,
+    "t": 6.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.413,
+      "y": 94.432
+    },
+    "true": {
+      "speed_kmh": 271.09,
+      "coolant_temp": 187.39,
+      "brake_cmd": 0.0,
+      "throttle": 0.87,
+      "yaw_deg": 0.001
+    },
+    "sensors": {
+      "wheel_speed": 271.58,
+      "brake_pressure": 0.9,
+      "coolant_temp": 187.51,
+      "imu": {
+        "ax": 0.061,
+        "ay": -0.057,
+        "yaw": 0.01
+      }
+    }
+  },
+  {
+    "timestamp": 1764926368.356138,
+    "t": 6.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.373,
+      "y": 94.39
+    },
+    "true": {
+      "speed_kmh": 273.19,
+      "coolant_temp": 190.16,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": 0.02
+    },
+    "sensors": {
+      "wheel_speed": 272.35,
+      "brake_pressure": 0.0,
+      "coolant_temp": 190.07,
+      "imu": {
+        "ax": 0.006,
+        "ay": -0.098,
+        "yaw": 0.02
+      }
+    }
+  },
+  {
+    "timestamp": 1764926368.4707341,
+    "t": 6.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.329,
+      "y": 94.343
+    },
+    "true": {
+      "speed_kmh": 275.5,
+      "coolant_temp": 192.97,
+      "brake_cmd": 0.0,
+      "throttle": 0.76,
+      "yaw_deg": 0.033
+    },
+    "sensors": {
+      "wheel_speed": 275.12,
+      "brake_pressure": 0.0,
+      "coolant_temp": 192.79,
+      "imu": {
+        "ax": 0.016,
+        "ay": -0.061,
+        "yaw": 0.029
+      }
+    }
+  },
+  {
+    "timestamp": 1764926368.5872982,
+    "t": 6.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.28,
+      "y": 94.292
+    },
+    "true": {
+      "speed_kmh": 278.04,
+      "coolant_temp": 195.83,
+      "brake_cmd": 0.0,
+      "throttle": 0.79,
+      "yaw_deg": 0.004
+    },
+    "sensors": {
+      "wheel_speed": 276.85,
+      "brake_pressure": 0.0,
+      "coolant_temp": 195.7,
+      "imu": {
+        "ax": -0.119,
+        "ay": -0.009,
+        "yaw": 0.003
+      }
+    }
+  },
+  {
+    "timestamp": 1764926369.120538,
+    "t": 6.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.226,
+      "y": 94.235
+    },
+    "true": {
+      "speed_kmh": 280.86,
+      "coolant_temp": 198.74,
+      "brake_cmd": 0.0,
+      "throttle": 0.83,
+      "yaw_deg": -0.01
+    },
+    "sensors": {
+      "wheel_speed": 280.38,
+      "brake_pressure": 0.0,
+      "coolant_temp": 198.73,
+      "imu": {
+        "ax": -0.019,
+        "ay": 0.077,
+        "yaw": -0.001
+      }
+    }
+  },
+  {
+    "timestamp": 1764926369.230516,
+    "t": 7.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.176,
+      "y": 94.182
+    },
+    "true": {
+      "speed_kmh": 283.5,
+      "coolant_temp": 201.66,
+      "brake_cmd": 0.0,
+      "throttle": 0.82,
+      "yaw_deg": -0.036
+    },
+    "sensors": {
+      "wheel_speed": 283.13,
+      "brake_pressure": 0.91,
+      "coolant_temp": 202.03,
+      "imu": {
+        "ax": -0.025,
+        "ay": 0.057,
+        "yaw": -0.045
+      }
+    }
+  },
+  {
+    "timestamp": 1764926369.334898,
+    "t": 7.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.123,
+      "y": 94.126
+    },
+    "true": {
+      "speed_kmh": 286.27,
+      "coolant_temp": 204.63,
+      "brake_cmd": 0.0,
+      "throttle": 0.84,
+      "yaw_deg": 0.009
+    },
+    "sensors": {
+      "wheel_speed": 285.77,
+      "brake_pressure": 0.0,
+      "coolant_temp": 204.67,
+      "imu": {
+        "ax": 0.028,
+        "ay": 0.011,
+        "yaw": 0.003
+      }
+    }
+  },
+  {
+    "timestamp": 1764926369.474814,
+    "t": 7.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.063,
+      "y": 94.063
+    },
+    "true": {
+      "speed_kmh": 289.42,
+      "coolant_temp": 207.66,
+      "brake_cmd": 0.0,
+      "throttle": 0.89,
+      "yaw_deg": -0.021
+    },
+    "sensors": {
+      "wheel_speed": 288.3,
+      "brake_pressure": 0.0,
+      "coolant_temp": 207.54,
+      "imu": {
+        "ax": -0.067,
+        "ay": -0.029,
+        "yaw": -0.038
+      }
+    }
+  },
+  {
+    "timestamp": 1764926369.597184,
+    "t": 7.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.034,
+      "y": 94.032
+    },
+    "true": {
+      "speed_kmh": 290.93,
+      "coolant_temp": 210.58,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": -0.023
+    },
+    "sensors": {
+      "wheel_speed": 290.57,
+      "brake_pressure": 0.56,
+      "coolant_temp": 210.93,
+      "imu": {
+        "ax": 0.013,
+        "ay": 0.005,
+        "yaw": -0.008
+      }
+    }
+  },
+  {
+    "timestamp": 1764926369.738881,
+    "t": 7.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.984,
+      "y": 93.979
+    },
+    "true": {
+      "speed_kmh": 293.57,
+      "coolant_temp": 213.62,
+      "brake_cmd": 0.0,
+      "throttle": 0.86,
+      "yaw_deg": -0.039
+    },
+    "sensors": {
+      "wheel_speed": 292.48,
+      "brake_pressure": 0.96,
+      "coolant_temp": 213.2,
+      "imu": {
+        "ax": 0.096,
+        "ay": -0.063,
+        "yaw": -0.034
+      }
+    }
+  },
+  {
+    "timestamp": 1764926369.8500018,
+    "t": 7.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.955,
+      "y": 93.949
+    },
+    "true": {
+      "speed_kmh": 295.07,
+      "coolant_temp": 216.59,
+      "brake_cmd": 0.0,
+      "throttle": 0.76,
+      "yaw_deg": -0.007
+    },
+    "sensors": {
+      "wheel_speed": 295.83,
+      "brake_pressure": 0.0,
+      "coolant_temp": 216.61,
+      "imu": {
+        "ax": -0.039,
+        "ay": -0.023,
+        "yaw": 0.004
+      }
+    }
+  },
+  {
+    "timestamp": 1764926369.969824,
+    "t": 7.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.932,
+      "y": 93.924
+    },
+    "true": {
+      "speed_kmh": 296.28,
+      "coolant_temp": 219.55,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": 0.027
+    },
+    "sensors": {
+      "wheel_speed": 296.38,
+      "brake_pressure": 1.6,
+      "coolant_temp": 219.69,
+      "imu": {
+        "ax": -0.016,
+        "ay": -0.029,
+        "yaw": 0.034
+      }
+    }
+  },
+  {
+    "timestamp": 1764926370.0843441,
+    "t": 7.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.903,
+      "y": 93.894
+    },
+    "true": {
+      "speed_kmh": 297.79,
+      "coolant_temp": 222.55,
+      "brake_cmd": 0.0,
+      "throttle": 0.77,
+      "yaw_deg": -0.039
+    },
+    "sensors": {
+      "wheel_speed": 297.79,
+      "brake_pressure": 0.87,
+      "coolant_temp": 222.31,
+      "imu": {
+        "ax": 0.056,
+        "ay": 0.11,
+        "yaw": -0.053
+      }
+    }
+  },
+  {
+    "timestamp": 1764926370.212964,
+    "t": 7.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.851,
+      "y": 93.839
+    },
+    "true": {
+      "speed_kmh": 300.52,
+      "coolant_temp": 225.68,
+      "brake_cmd": 0.0,
+      "throttle": 0.9,
+      "yaw_deg": 0.034
+    },
+    "sensors": {
+      "wheel_speed": 301.17,
+      "brake_pressure": 1.0,
+      "coolant_temp": 225.73,
+      "imu": {
+        "ax": -0.025,
+        "ay": 0.01,
+        "yaw": 0.033
+      }
+    }
+  },
+  {
+    "timestamp": 1764926370.328674,
+    "t": 7.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.802,
+      "y": 93.788
+    },
+    "true": {
+      "speed_kmh": 303.06,
+      "coolant_temp": 228.81,
+      "brake_cmd": 0.0,
+      "throttle": 0.89,
+      "yaw_deg": 0.036
+    },
+    "sensors": {
+      "wheel_speed": 302.4,
+      "brake_pressure": 0.0,
+      "coolant_temp": 228.72,
+      "imu": {
+        "ax": 0.072,
+        "ay": 0.038,
+        "yaw": 0.04
+      }
+    }
+  },
+  {
+    "timestamp": 1764926370.756945,
+    "t": 8.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.758,
+      "y": 93.741
+    },
+    "true": {
+      "speed_kmh": 305.36,
+      "coolant_temp": 231.96,
+      "brake_cmd": 0.0,
+      "throttle": 0.88,
+      "yaw_deg": -0.026
+    },
+    "sensors": {
+      "wheel_speed": 305.25,
+      "brake_pressure": 0.64,
+      "coolant_temp": 232.29,
+      "imu": {
+        "ax": 0.049,
+        "ay": 0.005,
+        "yaw": -0.015
+      }
+    }
+  },
+  {
+    "timestamp": 1764926370.926728,
+    "t": 8.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.87,
+      "y": 93.859
+    },
+    "true": {
+      "speed_kmh": 299.54,
+      "coolant_temp": 234.56,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 3.405
+    },
+    "sensors": {
+      "wheel_speed": 299.9,
+      "brake_pressure": 59.57,
+      "coolant_temp": 234.49,
+      "imu": {
+        "ax": 0.072,
+        "ay": -0.014,
+        "yaw": 3.409
+      }
+    }
+  },
+  {
+    "timestamp": 1764926371.0871942,
+    "t": 8.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.976,
+      "y": 93.971
+    },
+    "true": {
+      "speed_kmh": 293.97,
+      "coolant_temp": 237.11,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 3.47
+    },
+    "sensors": {
+      "wheel_speed": 294.1,
+      "brake_pressure": 58.98,
+      "coolant_temp": 237.21,
+      "imu": {
+        "ax": 0.032,
+        "ay": -0.045,
+        "yaw": 3.465
+      }
+    }
+  },
+  {
+    "timestamp": 1764926371.1982431,
+    "t": 8.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.078,
+      "y": 94.078
+    },
+    "true": {
+      "speed_kmh": 288.65,
+      "coolant_temp": 239.62,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 3.534
+    },
+    "sensors": {
+      "wheel_speed": 288.05,
+      "brake_pressure": 61.44,
+      "coolant_temp": 239.7,
+      "imu": {
+        "ax": 0.024,
+        "ay": -0.062,
+        "yaw": 3.53
+      }
+    }
+  },
+  {
+    "timestamp": 1764926371.311299,
+    "t": 8.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.175,
+      "y": 94.181
+    },
+    "true": {
+      "speed_kmh": 283.55,
+      "coolant_temp": 242.09,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 3.597
+    },
+    "sensors": {
+      "wheel_speed": 283.65,
+      "brake_pressure": 59.57,
+      "coolant_temp": 242.09,
+      "imu": {
+        "ax": -0.019,
+        "ay": -0.031,
+        "yaw": 3.6
+      }
+    }
+  },
+  {
+    "timestamp": 1764926371.4226692,
+    "t": 8.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.268,
+      "y": 94.28
+    },
+    "true": {
+      "speed_kmh": 278.66,
+      "coolant_temp": 244.52,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 3.66
+    },
+    "sensors": {
+      "wheel_speed": 278.84,
+      "brake_pressure": 58.7,
+      "coolant_temp": 244.84,
+      "imu": {
+        "ax": 0.034,
+        "ay": 0.04,
+        "yaw": 3.636
+      }
+    }
+  },
+  {
+    "timestamp": 1764926371.5304818,
+    "t": 8.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.358,
+      "y": 94.374
+    },
+    "true": {
+      "speed_kmh": 273.97,
+      "coolant_temp": 246.91,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 3.723
+    },
+    "sensors": {
+      "wheel_speed": 273.47,
+      "brake_pressure": 58.88,
+      "coolant_temp": 246.8,
+      "imu": {
+        "ax": 0.004,
+        "ay": -0.008,
+        "yaw": 3.72
+      }
+    }
+  },
+  {
+    "timestamp": 1764926371.639334,
+    "t": 8.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.444,
+      "y": 94.465
+    },
+    "true": {
+      "speed_kmh": 269.48,
+      "coolant_temp": 249.26,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 3.785
+    },
+    "sensors": {
+      "wheel_speed": 269.31,
+      "brake_pressure": 56.73,
+      "coolant_temp": 248.95,
+      "imu": {
+        "ax": 0.011,
+        "ay": -0.051,
+        "yaw": 3.785
+      }
+    }
+  },
+  {
+    "timestamp": 1764926371.749572,
+    "t": 8.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.526,
+      "y": 94.552
+    },
+    "true": {
+      "speed_kmh": 265.16,
+      "coolant_temp": 251.59,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 3.847
+    },
+    "sensors": {
+      "wheel_speed": 265.27,
+      "brake_pressure": 60.75,
+      "coolant_temp": 251.47,
+      "imu": {
+        "ax": 0.038,
+        "ay": 0.01,
+        "yaw": 3.852
+      }
+    }
+  },
+  {
+    "timestamp": 1764926371.8813848,
+    "t": 8.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.606,
+      "y": 94.636
+    },
+    "true": {
+      "speed_kmh": 261.0,
+      "coolant_temp": 253.87,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 3.908
+    },
+    "sensors": {
+      "wheel_speed": 261.14,
+      "brake_pressure": 60.23,
+      "coolant_temp": 253.63,
+      "imu": {
+        "ax": 0.022,
+        "ay": 0.044,
+        "yaw": 3.922
+      }
+    }
+  },
+  {
+    "timestamp": 1764926372.0064042,
+    "t": 9.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.682,
+      "y": 94.716
+    },
+    "true": {
+      "speed_kmh": 257.01,
+      "coolant_temp": 256.13,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 3.969
+    },
+    "sensors": {
+      "wheel_speed": 256.73,
+      "brake_pressure": 62.35,
+      "coolant_temp": 256.23,
+      "imu": {
+        "ax": 0.009,
+        "ay": 0.016,
+        "yaw": 3.965
+      }
+    }
+  },
+  {
+    "timestamp": 1764926372.135663,
+    "t": 9.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.755,
+      "y": 94.794
+    },
+    "true": {
+      "speed_kmh": 253.17,
+      "coolant_temp": 258.35,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 4.029
+    },
+    "sensors": {
+      "wheel_speed": 252.54,
+      "brake_pressure": 59.56,
+      "coolant_temp": 258.36,
+      "imu": {
+        "ax": -0.136,
+        "ay": 0.002,
+        "yaw": 4.021
+      }
+    }
+  },
+  {
+    "timestamp": 1764926372.239574,
+    "t": 9.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.826,
+      "y": 94.868
+    },
+    "true": {
+      "speed_kmh": 249.47,
+      "coolant_temp": 260.55,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 4.089
+    },
+    "sensors": {
+      "wheel_speed": 249.32,
+      "brake_pressure": 62.01,
+      "coolant_temp": 260.66,
+      "imu": {
+        "ax": -0.047,
+        "ay": -0.012,
+        "yaw": 4.102
+      }
+    }
+  },
+  {
+    "timestamp": 1764926372.3529348,
+    "t": 9.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.894,
+      "y": 94.94
+    },
+    "true": {
+      "speed_kmh": 245.91,
+      "coolant_temp": 262.72,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 4.148
+    },
+    "sensors": {
+      "wheel_speed": 245.27,
+      "brake_pressure": 61.22,
+      "coolant_temp": 262.68,
+      "imu": {
+        "ax": 0.044,
+        "ay": -0.005,
+        "yaw": 4.139
+      }
+    }
+  },
+  {
+    "timestamp": 1764926372.4638562,
+    "t": 9.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.959,
+      "y": 95.009
+    },
+    "true": {
+      "speed_kmh": 242.48,
+      "coolant_temp": 264.86,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 4.207
+    },
+    "sensors": {
+      "wheel_speed": 241.98,
+      "brake_pressure": 60.01,
+      "coolant_temp": 264.71,
+      "imu": {
+        "ax": 0.005,
+        "ay": 0.043,
+        "yaw": 4.207
+      }
+    }
+  },
+  {
+    "timestamp": 1764926372.575211,
+    "t": 9.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 90.023,
+      "y": 95.076
+    },
+    "true": {
+      "speed_kmh": 239.17,
+      "coolant_temp": 266.97,
+      "brake_cmd": 0.6,
+      "throttle": 0.25,
+      "yaw_deg": 4.265
+    },
+    "sensors": {
+      "wheel_speed": 238.79,
+      "brake_pressure": 60.87,
+      "coolant_temp": 267.43,
+      "imu": {
+        "ax": -0.025,
+        "ay": -0.026,
+        "yaw": 4.277
+      }
+    }
+  },
+  {
+    "timestamp": 1764926372.6825159,
+    "t": 9.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.95,
+      "y": 95.0
+    },
+    "true": {
+      "speed_kmh": 242.96,
+      "coolant_temp": 269.54,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": -0.034
+    },
+    "sensors": {
+      "wheel_speed": 243.63,
+      "brake_pressure": 0.0,
+      "coolant_temp": 269.8,
+      "imu": {
+        "ax": -0.05,
+        "ay": 0.012,
+        "yaw": -0.038
+      }
+    }
+  },
+  {
+    "timestamp": 1764926372.789414,
+    "t": 9.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.887,
+      "y": 94.933
+    },
+    "true": {
+      "speed_kmh": 246.27,
+      "coolant_temp": 272.11,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": 0.032
+    },
+    "sensors": {
+      "wheel_speed": 246.17,
+      "brake_pressure": 0.0,
+      "coolant_temp": 272.34,
+      "imu": {
+        "ax": -0.048,
+        "ay": 0.012,
+        "yaw": 0.046
+      }
+    }
+  },
+  {
+    "timestamp": 1764926372.902862,
+    "t": 9.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.814,
+      "y": 94.855
+    },
+    "true": {
+      "speed_kmh": 250.11,
+      "coolant_temp": 274.75,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": 0.012
+    },
+    "sensors": {
+      "wheel_speed": 250.11,
+      "brake_pressure": 0.69,
+      "coolant_temp": 274.78,
+      "imu": {
+        "ax": -0.012,
+        "ay": 0.004,
+        "yaw": 0.001
+      }
+    }
+  },
+  {
+    "timestamp": 1764926373.017199,
+    "t": 9.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.759,
+      "y": 94.798
+    },
+    "true": {
+      "speed_kmh": 252.97,
+      "coolant_temp": 277.36,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": 0.002
+    },
+    "sensors": {
+      "wheel_speed": 252.96,
+      "brake_pressure": 0.98,
+      "coolant_temp": 277.21,
+      "imu": {
+        "ax": 0.014,
+        "ay": 0.068,
+        "yaw": 0.001
+      }
+    }
+  },
+  {
+    "timestamp": 1764926373.1325881,
+    "t": 10.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.685,
+      "y": 94.719
+    },
+    "true": {
+      "speed_kmh": 256.87,
+      "coolant_temp": 280.08,
+      "brake_cmd": 0.0,
+      "throttle": 0.84,
+      "yaw_deg": 0.01
+    },
+    "sensors": {
+      "wheel_speed": 257.08,
+      "brake_pressure": 2.36,
+      "coolant_temp": 279.89,
+      "imu": {
+        "ax": 0.007,
+        "ay": 0.011,
+        "yaw": 0.021
+      }
+    }
+  },
+  {
+    "timestamp": 1764926373.2394938,
+    "t": 10.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.632,
+      "y": 94.664
+    },
+    "true": {
+      "speed_kmh": 259.62,
+      "coolant_temp": 282.75,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": 0.043
+    },
+    "sensors": {
+      "wheel_speed": 259.63,
+      "brake_pressure": 2.66,
+      "coolant_temp": 282.69,
+      "imu": {
+        "ax": -0.029,
+        "ay": 0.018,
+        "yaw": 0.038
+      }
+    }
+  },
+  {
+    "timestamp": 1764926373.3547451,
+    "t": 10.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.574,
+      "y": 94.603
+    },
+    "true": {
+      "speed_kmh": 262.65,
+      "coolant_temp": 285.48,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": 0.033
+    },
+    "sensors": {
+      "wheel_speed": 262.6,
+      "brake_pressure": 0.08,
+      "coolant_temp": 285.37,
+      "imu": {
+        "ax": -0.044,
+        "ay": -0.009,
+        "yaw": 0.044
+      }
+    }
+  },
+  {
+    "timestamp": 1764926373.469791,
+    "t": 10.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.517,
+      "y": 94.542
+    },
+    "true": {
+      "speed_kmh": 265.64,
+      "coolant_temp": 288.23,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": -0.011
+    },
+    "sensors": {
+      "wheel_speed": 265.62,
+      "brake_pressure": 0.93,
+      "coolant_temp": 288.19,
+      "imu": {
+        "ax": 0.045,
+        "ay": -0.036,
+        "yaw": -0.025
+      }
+    }
+  },
+  {
+    "timestamp": 1764926373.588324,
+    "t": 10.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.444,
+      "y": 94.465
+    },
+    "true": {
+      "speed_kmh": 269.48,
+      "coolant_temp": 291.09,
+      "brake_cmd": 0.0,
+      "throttle": 0.88,
+      "yaw_deg": -0.044
+    },
+    "sensors": {
+      "wheel_speed": 269.76,
+      "brake_pressure": 1.39,
+      "coolant_temp": 290.97,
+      "imu": {
+        "ax": 0.006,
+        "ay": 0.014,
+        "yaw": -0.044
+      }
+    }
+  },
+  {
+    "timestamp": 1764926373.697984,
+    "t": 10.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.383,
+      "y": 94.401
+    },
+    "true": {
+      "speed_kmh": 272.64,
+      "coolant_temp": 293.93,
+      "brake_cmd": 0.0,
+      "throttle": 0.83,
+      "yaw_deg": -0.038
+    },
+    "sensors": {
+      "wheel_speed": 272.13,
+      "brake_pressure": 0.0,
+      "coolant_temp": 294.21,
+      "imu": {
+        "ax": -0.057,
+        "ay": 0.051,
+        "yaw": -0.03
+      }
+    }
+  },
+  {
+    "timestamp": 1764926373.826522,
+    "t": 10.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.328,
+      "y": 94.343
+    },
+    "true": {
+      "speed_kmh": 275.54,
+      "coolant_temp": 296.79,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": 0.009
+    },
+    "sensors": {
+      "wheel_speed": 276.13,
+      "brake_pressure": 1.15,
+      "coolant_temp": 296.81,
+      "imu": {
+        "ax": 0.074,
+        "ay": 0.12,
+        "yaw": 0.024
+      }
+    }
+  },
+  {
+    "timestamp": 1764926374.356964,
+    "t": 10.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.262,
+      "y": 94.273
+    },
+    "true": {
+      "speed_kmh": 279.01,
+      "coolant_temp": 299.72,
+      "brake_cmd": 0.0,
+      "throttle": 0.88,
+      "yaw_deg": 0.007
+    },
+    "sensors": {
+      "wheel_speed": 279.47,
+      "brake_pressure": 0.19,
+      "coolant_temp": 299.73,
+      "imu": {
+        "ax": 0.056,
+        "ay": -0.001,
+        "yaw": 0.012
+      }
+    }
+  },
+  {
+    "timestamp": 1764926374.5705972,
+    "t": 10.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.224,
+      "y": 94.233
+    },
+    "true": {
+      "speed_kmh": 280.98,
+      "coolant_temp": 302.57,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": -0.002
+    },
+    "sensors": {
+      "wheel_speed": 280.69,
+      "brake_pressure": 0.0,
+      "coolant_temp": 302.31,
+      "imu": {
+        "ax": 0.005,
+        "ay": 0.041,
+        "yaw": 0.005
+      }
+    }
+  },
+  {
+    "timestamp": 1764926374.7141361,
+    "t": 10.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.184,
+      "y": 94.191
+    },
+    "true": {
+      "speed_kmh": 283.06,
+      "coolant_temp": 305.45,
+      "brake_cmd": 0.0,
+      "throttle": 0.77,
+      "yaw_deg": -0.028
+    },
+    "sensors": {
+      "wheel_speed": 282.44,
+      "brake_pressure": 0.83,
+      "coolant_temp": 304.92,
+      "imu": {
+        "ax": -0.018,
+        "ay": -0.003,
+        "yaw": -0.026
+      }
+    }
+  },
+  {
+    "timestamp": 1764926374.86835,
+    "t": 11.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.129,
+      "y": 94.133
+    },
+    "true": {
+      "speed_kmh": 285.95,
+      "coolant_temp": 308.42,
+      "brake_cmd": 0.0,
+      "throttle": 0.85,
+      "yaw_deg": 0.022
+    },
+    "sensors": {
+      "wheel_speed": 285.73,
+      "brake_pressure": 0.21,
+      "coolant_temp": 308.41,
+      "imu": {
+        "ax": 0.009,
+        "ay": -0.052,
+        "yaw": 0.032
+      }
+    }
+  },
+  {
+    "timestamp": 1764926375.057842,
+    "t": 11.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.101,
+      "y": 94.102
+    },
+    "true": {
+      "speed_kmh": 287.45,
+      "coolant_temp": 311.3,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": 0.014
+    },
+    "sensors": {
+      "wheel_speed": 287.64,
+      "brake_pressure": 1.07,
+      "coolant_temp": 311.16,
+      "imu": {
+        "ax": 0.027,
+        "ay": -0.004,
+        "yaw": 0.014
+      }
+    }
+  },
+  {
+    "timestamp": 1764926375.172603,
+    "t": 11.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.06,
+      "y": 94.06
+    },
+    "true": {
+      "speed_kmh": 289.56,
+      "coolant_temp": 314.26,
+      "brake_cmd": 0.0,
+      "throttle": 0.8,
+      "yaw_deg": 0.039
+    },
+    "sensors": {
+      "wheel_speed": 289.31,
+      "brake_pressure": 0.0,
+      "coolant_temp": 314.43,
+      "imu": {
+        "ax": -0.043,
+        "ay": -0.046,
+        "yaw": 0.048
+      }
+    }
+  },
+  {
+    "timestamp": 1764926375.279872,
+    "t": 11.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.034,
+      "y": 94.032
+    },
+    "true": {
+      "speed_kmh": 290.93,
+      "coolant_temp": 317.17,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": 0.011
+    },
+    "sensors": {
+      "wheel_speed": 290.66,
+      "brake_pressure": 0.47,
+      "coolant_temp": 317.18,
+      "imu": {
+        "ax": 0.007,
+        "ay": -0.044,
+        "yaw": 0.003
+      }
+    }
+  },
+  {
+    "timestamp": 1764926375.402664,
+    "t": 11.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.984,
+      "y": 93.98
+    },
+    "true": {
+      "speed_kmh": 293.53,
+      "coolant_temp": 320.2,
+      "brake_cmd": 0.0,
+      "throttle": 0.86,
+      "yaw_deg": -0.02
+    },
+    "sensors": {
+      "wheel_speed": 294.29,
+      "brake_pressure": 0.3,
+      "coolant_temp": 320.15,
+      "imu": {
+        "ax": 0.055,
+        "ay": 0.025,
+        "yaw": -0.033
+      }
+    }
+  },
+  {
+    "timestamp": 1764926375.652782,
+    "t": 11.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.945,
+      "y": 93.938
+    },
+    "true": {
+      "speed_kmh": 295.6,
+      "coolant_temp": 323.22,
+      "brake_cmd": 0.0,
+      "throttle": 0.82,
+      "yaw_deg": -0.03
+    },
+    "sensors": {
+      "wheel_speed": 295.93,
+      "brake_pressure": 0.74,
+      "coolant_temp": 323.36,
+      "imu": {
+        "ax": 0.032,
+        "ay": 0.028,
+        "yaw": -0.028
+      }
+    }
+  },
+  {
+    "timestamp": 1764926375.772773,
+    "t": 11.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.923,
+      "y": 93.915
+    },
+    "true": {
+      "speed_kmh": 296.76,
+      "coolant_temp": 326.19,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": -0.025
+    },
+    "sensors": {
+      "wheel_speed": 296.97,
+      "brake_pressure": 0.0,
+      "coolant_temp": 326.22,
+      "imu": {
+        "ax": 0.069,
+        "ay": -0.078,
+        "yaw": -0.021
+      }
+    }
+  },
+  {
+    "timestamp": 1764926375.8866,
+    "t": 11.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.882,
+      "y": 93.871
+    },
+    "true": {
+      "speed_kmh": 298.92,
+      "coolant_temp": 329.25,
+      "brake_cmd": 0.0,
+      "throttle": 0.84,
+      "yaw_deg": -0.002
+    },
+    "sensors": {
+      "wheel_speed": 298.89,
+      "brake_pressure": 0.3,
+      "coolant_temp": 329.39,
+      "imu": {
+        "ax": -0.02,
+        "ay": 0.033,
+        "yaw": 0.007
+      }
+    }
+  },
+  {
+    "timestamp": 1764926376.000103,
+    "t": 11.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.832,
+      "y": 93.818
+    },
+    "true": {
+      "speed_kmh": 301.53,
+      "coolant_temp": 332.38,
+      "brake_cmd": 0.0,
+      "throttle": 0.89,
+      "yaw_deg": -0.013
+    },
+    "sensors": {
+      "wheel_speed": 301.27,
+      "brake_pressure": 0.0,
+      "coolant_temp": 332.18,
+      "imu": {
+        "ax": 0.007,
+        "ay": 0.1,
+        "yaw": -0.012
+      }
+    }
+  },
+  {
+    "timestamp": 1764926376.120733,
+    "t": 11.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.814,
+      "y": 93.8
+    },
+    "true": {
+      "speed_kmh": 302.43,
+      "coolant_temp": 335.38,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": -0.007
+    },
+    "sensors": {
+      "wheel_speed": 302.73,
+      "brake_pressure": 0.06,
+      "coolant_temp": 335.27,
+      "imu": {
+        "ax": 0.045,
+        "ay": 0.01,
+        "yaw": -0.006
+      }
+    }
+  },
+  {
+    "timestamp": 1764926376.27008,
+    "t": 12.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.767,
+      "y": 93.75
+    },
+    "true": {
+      "speed_kmh": 304.93,
+      "coolant_temp": 338.54,
+      "brake_cmd": 0.0,
+      "throttle": 0.9,
+      "yaw_deg": 0.006
+    },
+    "sensors": {
+      "wheel_speed": 305.2,
+      "brake_pressure": 0.0,
+      "coolant_temp": 338.22,
+      "imu": {
+        "ax": -0.055,
+        "ay": -0.066,
+        "yaw": 0.006
+      }
+    }
+  },
+  {
+    "timestamp": 1764926376.376159,
+    "t": 12.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.733,
+      "y": 93.714
+    },
+    "true": {
+      "speed_kmh": 306.71,
+      "coolant_temp": 341.66,
+      "brake_cmd": 0.0,
+      "throttle": 0.84,
+      "yaw_deg": 0.032
+    },
+    "sensors": {
+      "wheel_speed": 306.02,
+      "brake_pressure": 0.78,
+      "coolant_temp": 341.49,
+      "imu": {
+        "ax": 0.079,
+        "ay": 0.009,
+        "yaw": 0.03
+      }
+    }
+  },
+  {
+    "timestamp": 1764926376.519396,
+    "t": 12.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.723,
+      "y": 93.704
+    },
+    "true": {
+      "speed_kmh": 307.21,
+      "coolant_temp": 344.7,
+      "brake_cmd": 0.0,
+      "throttle": 0.72,
+      "yaw_deg": -0.018
+    },
+    "sensors": {
+      "wheel_speed": 306.17,
+      "brake_pressure": 0.0,
+      "coolant_temp": 344.53,
+      "imu": {
+        "ax": -0.04,
+        "ay": -0.005,
+        "yaw": -0.002
+      }
+    }
+  },
+  {
+    "timestamp": 1764926376.6387389,
+    "t": 12.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.688,
+      "y": 93.667
+    },
+    "true": {
+      "speed_kmh": 309.05,
+      "coolant_temp": 347.85,
+      "brake_cmd": 0.0,
+      "throttle": 0.85,
+      "yaw_deg": -0.006
+    },
+    "sensors": {
+      "wheel_speed": 309.8,
+      "brake_pressure": 0.0,
+      "coolant_temp": 347.84,
+      "imu": {
+        "ax": 0.059,
+        "ay": -0.081,
+        "yaw": -0.019
+      }
+    }
+  },
+  {
+    "timestamp": 1764926376.8357792,
+    "t": 12.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.67,
+      "y": 93.648
+    },
+    "true": {
+      "speed_kmh": 310.0,
+      "coolant_temp": 350.95,
+      "brake_cmd": 0.0,
+      "throttle": 0.77,
+      "yaw_deg": -0.019
+    },
+    "sensors": {
+      "wheel_speed": 310.63,
+      "brake_pressure": 1.07,
+      "coolant_temp": 350.79,
+      "imu": {
+        "ax": 0.006,
+        "ay": 0.044,
+        "yaw": -0.025
+      }
+    }
+  },
+  {
+    "timestamp": 1764926376.968705,
+    "t": 12.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.663,
+      "y": 93.64
+    },
+    "true": {
+      "speed_kmh": 310.38,
+      "coolant_temp": 354.02,
+      "brake_cmd": 0.0,
+      "throttle": 0.72,
+      "yaw_deg": -0.024
+    },
+    "sensors": {
+      "wheel_speed": 310.05,
+      "brake_pressure": 0.0,
+      "coolant_temp": 353.8,
+      "imu": {
+        "ax": -0.082,
+        "ay": -0.005,
+        "yaw": -0.014
+      }
+    }
+  },
+  {
+    "timestamp": 1764926377.088355,
+    "t": 12.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.651,
+      "y": 93.627
+    },
+    "true": {
+      "speed_kmh": 310.99,
+      "coolant_temp": 357.1,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": -0.003
+    },
+    "sensors": {
+      "wheel_speed": 311.17,
+      "brake_pressure": 0.9,
+      "coolant_temp": 357.03,
+      "imu": {
+        "ax": -0.046,
+        "ay": 0.026,
+        "yaw": -0.004
+      }
+    }
+  },
+  {
+    "timestamp": 1764926377.2039318,
+    "t": 12.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.634,
+      "y": 93.61
+    },
+    "true": {
+      "speed_kmh": 311.86,
+      "coolant_temp": 360.22,
+      "brake_cmd": 0.0,
+      "throttle": 0.77,
+      "yaw_deg": -0.017
+    },
+    "sensors": {
+      "wheel_speed": 312.28,
+      "brake_pressure": 0.0,
+      "coolant_temp": 360.29,
+      "imu": {
+        "ax": 0.041,
+        "ay": -0.062,
+        "yaw": -0.016
+      }
+    }
+  },
+  {
+    "timestamp": 1764926377.314562,
+    "t": 12.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.623,
+      "y": 93.598
+    },
+    "true": {
+      "speed_kmh": 312.48,
+      "coolant_temp": 363.32,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": -0.018
+    },
+    "sensors": {
+      "wheel_speed": 312.99,
+      "brake_pressure": 0.69,
+      "coolant_temp": 363.23,
+      "imu": {
+        "ax": 0.062,
+        "ay": -0.002,
+        "yaw": -0.021
+      }
+    }
+  },
+  {
+    "timestamp": 1764926377.427837,
+    "t": 12.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.584,
+      "y": 93.556
+    },
+    "true": {
+      "speed_kmh": 314.51,
+      "coolant_temp": 366.55,
+      "brake_cmd": 0.0,
+      "throttle": 0.9,
+      "yaw_deg": -0.001
+    },
+    "sensors": {
+      "wheel_speed": 314.23,
+      "brake_pressure": 2.69,
+      "coolant_temp": 366.37,
+      "imu": {
+        "ax": 0.121,
+        "ay": -0.042,
+        "yaw": 0.011
+      }
+    }
+  },
+  {
+    "timestamp": 1764926377.53846,
+    "t": 13.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.546,
+      "y": 93.517
+    },
+    "true": {
+      "speed_kmh": 316.49,
+      "coolant_temp": 369.8,
+      "brake_cmd": 0.0,
+      "throttle": 0.9,
+      "yaw_deg": 0.027
+    },
+    "sensors": {
+      "wheel_speed": 316.9,
+      "brake_pressure": 1.5,
+      "coolant_temp": 369.81,
+      "imu": {
+        "ax": 0.07,
+        "ay": 0.016,
+        "yaw": 0.038
+      }
+    }
+  },
+  {
+    "timestamp": 1764926377.6497228,
+    "t": 13.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.515,
+      "y": 93.484
+    },
+    "true": {
+      "speed_kmh": 318.11,
+      "coolant_temp": 373.05,
+      "brake_cmd": 0.0,
+      "throttle": 0.87,
+      "yaw_deg": -0.007
+    },
+    "sensors": {
+      "wheel_speed": 318.44,
+      "brake_pressure": 0.22,
+      "coolant_temp": 372.83,
+      "imu": {
+        "ax": -0.021,
+        "ay": 0.001,
+        "yaw": -0.003
+      }
+    }
+  },
+  {
+    "timestamp": 1764926377.76496,
+    "t": 13.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.501,
+      "y": 93.469
+    },
+    "true": {
+      "speed_kmh": 318.84,
+      "coolant_temp": 376.23,
+      "brake_cmd": 0.0,
+      "throttle": 0.79,
+      "yaw_deg": -0.016
+    },
+    "sensors": {
+      "wheel_speed": 318.17,
+      "brake_pressure": 0.0,
+      "coolant_temp": 376.29,
+      "imu": {
+        "ax": -0.04,
+        "ay": 0.0,
+        "yaw": -0.031
+      }
+    }
+  },
+  {
+    "timestamp": 1764926377.8806348,
+    "t": 13.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.492,
+      "y": 93.46
+    },
+    "true": {
+      "speed_kmh": 319.31,
+      "coolant_temp": 379.4,
+      "brake_cmd": 0.0,
+      "throttle": 0.77,
+      "yaw_deg": -0.013
+    },
+    "sensors": {
+      "wheel_speed": 319.73,
+      "brake_pressure": 0.0,
+      "coolant_temp": 379.48,
+      "imu": {
+        "ax": 0.05,
+        "ay": 0.036,
+        "yaw": -0.002
+      }
+    }
+  },
+  {
+    "timestamp": 1764926377.992084,
+    "t": 13.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.468,
+      "y": 93.434
+    },
+    "true": {
+      "speed_kmh": 320.59,
+      "coolant_temp": 382.65,
+      "brake_cmd": 0.0,
+      "throttle": 0.85,
+      "yaw_deg": -0.004
+    },
+    "sensors": {
+      "wheel_speed": 321.92,
+      "brake_pressure": 1.94,
+      "coolant_temp": 382.67,
+      "imu": {
+        "ax": -0.026,
+        "ay": 0.025,
+        "yaw": -0.009
+      }
+    }
+  },
+  {
+    "timestamp": 1764926378.097766,
+    "t": 13.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.45,
+      "y": 93.416
+    },
+    "true": {
+      "speed_kmh": 321.5,
+      "coolant_temp": 385.88,
+      "brake_cmd": 0.0,
+      "throttle": 0.82,
+      "yaw_deg": 0.026
+    },
+    "sensors": {
+      "wheel_speed": 321.47,
+      "brake_pressure": 0.67,
+      "coolant_temp": 385.52,
+      "imu": {
+        "ax": 0.022,
+        "ay": -0.056,
+        "yaw": 0.017
+      }
+    }
+  },
+  {
+    "timestamp": 1764926378.2139509,
+    "t": 13.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.448,
+      "y": 93.414
+    },
+    "true": {
+      "speed_kmh": 321.6,
+      "coolant_temp": 389.05,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": -0.029
+    },
+    "sensors": {
+      "wheel_speed": 321.58,
+      "brake_pressure": 0.0,
+      "coolant_temp": 388.79,
+      "imu": {
+        "ax": 0.023,
+        "ay": 0.028,
+        "yaw": -0.029
+      }
+    }
+  },
+  {
+    "timestamp": 1764926378.331438,
+    "t": 13.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.431,
+      "y": 93.395
+    },
+    "true": {
+      "speed_kmh": 322.5,
+      "coolant_temp": 392.29,
+      "brake_cmd": 0.0,
+      "throttle": 0.83,
+      "yaw_deg": -0.031
+    },
+    "sensors": {
+      "wheel_speed": 321.87,
+      "brake_pressure": 0.32,
+      "coolant_temp": 392.31,
+      "imu": {
+        "ax": 0.036,
+        "ay": -0.011,
+        "yaw": -0.042
+      }
+    }
+  },
+  {
+    "timestamp": 1764926378.4466372,
+    "t": 13.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.416,
+      "y": 93.38
+    },
+    "true": {
+      "speed_kmh": 323.27,
+      "coolant_temp": 395.53,
+      "brake_cmd": 0.0,
+      "throttle": 0.82,
+      "yaw_deg": -0.022
+    },
+    "sensors": {
+      "wheel_speed": 322.47,
+      "brake_pressure": 0.0,
+      "coolant_temp": 395.75,
+      "imu": {
+        "ax": 0.05,
+        "ay": 0.138,
+        "yaw": -0.01
+      }
+    }
+  },
+  {
+    "timestamp": 1764926378.559872,
+    "t": 13.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.39,
+      "y": 93.352
+    },
+    "true": {
+      "speed_kmh": 324.66,
+      "coolant_temp": 398.83,
+      "brake_cmd": 0.0,
+      "throttle": 0.88,
+      "yaw_deg": -0.026
+    },
+    "sensors": {
+      "wheel_speed": 325.49,
+      "brake_pressure": 1.67,
+      "coolant_temp": 398.46,
+      "imu": {
+        "ax": 0.026,
+        "ay": 0.011,
+        "yaw": -0.021
+      }
+    }
+  },
+  {
+    "timestamp": 1764926378.6767318,
+    "t": 14.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.395,
+      "y": 93.357
+    },
+    "true": {
+      "speed_kmh": 324.42,
+      "coolant_temp": 402.01,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": 0.016
+    },
+    "sensors": {
+      "wheel_speed": 324.18,
+      "brake_pressure": 0.65,
+      "coolant_temp": 401.97,
+      "imu": {
+        "ax": 0.048,
+        "ay": -0.0,
+        "yaw": 0.014
+      }
+    }
+  },
+  {
+    "timestamp": 1764926378.793194,
+    "t": 14.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.4,
+      "y": 93.362
+    },
+    "true": {
+      "speed_kmh": 324.14,
+      "coolant_temp": 405.18,
+      "brake_cmd": 0.0,
+      "throttle": 0.72,
+      "yaw_deg": -0.015
+    },
+    "sensors": {
+      "wheel_speed": 324.47,
+      "brake_pressure": 0.0,
+      "coolant_temp": 405.1,
+      "imu": {
+        "ax": -0.022,
+        "ay": 0.059,
+        "yaw": -0.012
+      }
+    }
+  },
+  {
+    "timestamp": 1764926378.911468,
+    "t": 14.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.385,
+      "y": 93.347
+    },
+    "true": {
+      "speed_kmh": 324.92,
+      "coolant_temp": 408.44,
+      "brake_cmd": 0.0,
+      "throttle": 0.83,
+      "yaw_deg": -0.015
+    },
+    "sensors": {
+      "wheel_speed": 324.8,
+      "brake_pressure": 0.03,
+      "coolant_temp": 408.31,
+      "imu": {
+        "ax": -0.004,
+        "ay": 0.024,
+        "yaw": -0.005
+      }
+    }
+  },
+  {
+    "timestamp": 1764926379.02627,
+    "t": 14.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.531,
+      "y": 93.5
+    },
+    "true": {
+      "speed_kmh": 317.3,
+      "coolant_temp": 411.14,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.026
+    },
+    "sensors": {
+      "wheel_speed": 317.17,
+      "brake_pressure": 75.47,
+      "coolant_temp": 411.25,
+      "imu": {
+        "ax": 0.009,
+        "ay": -0.018,
+        "yaw": -3.036
+      }
+    }
+  },
+  {
+    "timestamp": 1764926379.1393,
+    "t": 14.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.669,
+      "y": 93.647
+    },
+    "true": {
+      "speed_kmh": 310.03,
+      "coolant_temp": 413.78,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.096
+    },
+    "sensors": {
+      "wheel_speed": 310.06,
+      "brake_pressure": 75.44,
+      "coolant_temp": 413.79,
+      "imu": {
+        "ax": 0.028,
+        "ay": -0.031,
+        "yaw": -3.081
+      }
+    }
+  },
+  {
+    "timestamp": 1764926379.254805,
+    "t": 14.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.802,
+      "y": 93.787
+    },
+    "true": {
+      "speed_kmh": 303.1,
+      "coolant_temp": 416.37,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.167
+    },
+    "sensors": {
+      "wheel_speed": 303.03,
+      "brake_pressure": 76.06,
+      "coolant_temp": 416.21,
+      "imu": {
+        "ax": -0.065,
+        "ay": 0.063,
+        "yaw": -3.142
+      }
+    }
+  },
+  {
+    "timestamp": 1764926379.366682,
+    "t": 14.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.928,
+      "y": 93.92
+    },
+    "true": {
+      "speed_kmh": 296.47,
+      "coolant_temp": 418.9,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.238
+    },
+    "sensors": {
+      "wheel_speed": 296.33,
+      "brake_pressure": 75.54,
+      "coolant_temp": 419.06,
+      "imu": {
+        "ax": 0.05,
+        "ay": 0.056,
+        "yaw": -3.259
+      }
+    }
+  },
+  {
+    "timestamp": 1764926379.4821382,
+    "t": 14.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.049,
+      "y": 94.048
+    },
+    "true": {
+      "speed_kmh": 290.14,
+      "coolant_temp": 421.38,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.309
+    },
+    "sensors": {
+      "wheel_speed": 290.14,
+      "brake_pressure": 75.94,
+      "coolant_temp": 421.5,
+      "imu": {
+        "ax": -0.028,
+        "ay": 0.008,
+        "yaw": -3.313
+      }
+    }
+  },
+  {
+    "timestamp": 1764926379.593179,
+    "t": 14.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.165,
+      "y": 94.17
+    },
+    "true": {
+      "speed_kmh": 284.08,
+      "coolant_temp": 423.81,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.379
+    },
+    "sensors": {
+      "wheel_speed": 283.98,
+      "brake_pressure": 74.2,
+      "coolant_temp": 423.99,
+      "imu": {
+        "ax": -0.061,
+        "ay": 0.021,
+        "yaw": -3.373
+      }
+    }
+  },
+  {
+    "timestamp": 1764926379.749129,
+    "t": 14.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.276,
+      "y": 94.288
+    },
+    "true": {
+      "speed_kmh": 278.27,
+      "coolant_temp": 426.2,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.45
+    },
+    "sensors": {
+      "wheel_speed": 278.49,
+      "brake_pressure": 74.79,
+      "coolant_temp": 425.83,
+      "imu": {
+        "ax": -0.014,
+        "ay": -0.003,
+        "yaw": -3.47
+      }
+    }
+  },
+  {
+    "timestamp": 1764926379.9135108,
+    "t": 15.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.382,
+      "y": 94.4
+    },
+    "true": {
+      "speed_kmh": 272.7,
+      "coolant_temp": 428.54,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.52
+    },
+    "sensors": {
+      "wheel_speed": 272.07,
+      "brake_pressure": 72.71,
+      "coolant_temp": 428.33,
+      "imu": {
+        "ax": -0.017,
+        "ay": 0.054,
+        "yaw": -3.499
+      }
+    }
+  },
+  {
+    "timestamp": 1764926380.035209,
+    "t": 15.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.484,
+      "y": 94.508
+    },
+    "true": {
+      "speed_kmh": 267.35,
+      "coolant_temp": 430.84,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.591
+    },
+    "sensors": {
+      "wheel_speed": 268.33,
+      "brake_pressure": 74.41,
+      "coolant_temp": 430.43,
+      "imu": {
+        "ax": -0.026,
+        "ay": -0.105,
+        "yaw": -3.575
+      }
+    }
+  },
+  {
+    "timestamp": 1764926380.162341,
+    "t": 15.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.582,
+      "y": 94.611
+    },
+    "true": {
+      "speed_kmh": 262.22,
+      "coolant_temp": 433.1,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.661
+    },
+    "sensors": {
+      "wheel_speed": 261.88,
+      "brake_pressure": 74.49,
+      "coolant_temp": 432.94,
+      "imu": {
+        "ax": 0.037,
+        "ay": 0.016,
+        "yaw": -3.661
+      }
+    }
+  },
+  {
+    "timestamp": 1764926380.275767,
+    "t": 15.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.677,
+      "y": 94.711
+    },
+    "true": {
+      "speed_kmh": 257.28,
+      "coolant_temp": 435.32,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.731
+    },
+    "sensors": {
+      "wheel_speed": 257.33,
+      "brake_pressure": 75.38,
+      "coolant_temp": 435.08,
+      "imu": {
+        "ax": 0.001,
+        "ay": 0.013,
+        "yaw": -3.713
+      }
+    }
+  },
+  {
+    "timestamp": 1764926380.388659,
+    "t": 15.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.768,
+      "y": 94.807
+    },
+    "true": {
+      "speed_kmh": 252.53,
+      "coolant_temp": 437.5,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.802
+    },
+    "sensors": {
+      "wheel_speed": 253.01,
+      "brake_pressure": 75.66,
+      "coolant_temp": 437.54,
+      "imu": {
+        "ax": 0.02,
+        "ay": 0.008,
+        "yaw": -3.815
+      }
+    }
+  },
+  {
+    "timestamp": 1764926380.511602,
+    "t": 15.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.855,
+      "y": 94.899
+    },
+    "true": {
+      "speed_kmh": 247.95,
+      "coolant_temp": 439.64,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.872
+    },
+    "sensors": {
+      "wheel_speed": 247.22,
+      "brake_pressure": 74.7,
+      "coolant_temp": 439.77,
+      "imu": {
+        "ax": -0.131,
+        "ay": 0.031,
+        "yaw": -3.87
+      }
+    }
+  },
+  {
+    "timestamp": 1764926380.6425111,
+    "t": 15.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.939,
+      "y": 94.988
+    },
+    "true": {
+      "speed_kmh": 243.54,
+      "coolant_temp": 441.75,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -3.942
+    },
+    "sensors": {
+      "wheel_speed": 242.94,
+      "brake_pressure": 74.17,
+      "coolant_temp": 441.79,
+      "imu": {
+        "ax": 0.01,
+        "ay": -0.032,
+        "yaw": -3.955
+      }
+    }
+  },
+  {
+    "timestamp": 1764926380.779469,
+    "t": 15.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 90.02,
+      "y": 95.074
+    },
+    "true": {
+      "speed_kmh": 239.3,
+      "coolant_temp": 443.82,
+      "brake_cmd": 0.75,
+      "throttle": 0.2,
+      "yaw_deg": -4.012
+    },
+    "sensors": {
+      "wheel_speed": 238.76,
+      "brake_pressure": 74.09,
+      "coolant_temp": 444.11,
+      "imu": {
+        "ax": 0.076,
+        "ay": 0.016,
+        "yaw": -4.012
+      }
+    }
+  },
+  {
+    "timestamp": 1764926380.889229,
+    "t": 15.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.946,
+      "y": 94.996
+    },
+    "true": {
+      "speed_kmh": 243.16,
+      "coolant_temp": 446.4,
+      "brake_cmd": 0.0,
+      "throttle": 0.79,
+      "yaw_deg": 0.029
+    },
+    "sensors": {
+      "wheel_speed": 243.92,
+      "brake_pressure": 0.0,
+      "coolant_temp": 446.4,
+      "imu": {
+        "ax": -0.039,
+        "ay": 0.03,
+        "yaw": 0.029
+      }
+    }
+  },
+  {
+    "timestamp": 1764926380.9988658,
+    "t": 15.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.885,
+      "y": 94.931
+    },
+    "true": {
+      "speed_kmh": 246.37,
+      "coolant_temp": 448.96,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": -0.018
+    },
+    "sensors": {
+      "wheel_speed": 247.25,
+      "brake_pressure": 0.8,
+      "coolant_temp": 448.75,
+      "imu": {
+        "ax": -0.004,
+        "ay": 0.037,
+        "yaw": -0.014
+      }
+    }
+  },
+  {
+    "timestamp": 1764926381.115015,
+    "t": 16.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.808,
+      "y": 94.849
+    },
+    "true": {
+      "speed_kmh": 250.43,
+      "coolant_temp": 451.62,
+      "brake_cmd": 0.0,
+      "throttle": 0.83,
+      "yaw_deg": 0.0
+    },
+    "sensors": {
+      "wheel_speed": 250.71,
+      "brake_pressure": 0.36,
+      "coolant_temp": 451.9,
+      "imu": {
+        "ax": 0.074,
+        "ay": -0.029,
+        "yaw": -0.001
+      }
+    }
+  },
+  {
+    "timestamp": 1764926381.234816,
+    "t": 16.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.72,
+      "y": 94.757
+    },
+    "true": {
+      "speed_kmh": 255.0,
+      "coolant_temp": 454.38,
+      "brake_cmd": 0.0,
+      "throttle": 0.89,
+      "yaw_deg": 0.032
+    },
+    "sensors": {
+      "wheel_speed": 254.92,
+      "brake_pressure": 0.0,
+      "coolant_temp": 454.11,
+      "imu": {
+        "ax": -0.034,
+        "ay": -0.05,
+        "yaw": 0.03
+      }
+    }
+  },
+  {
+    "timestamp": 1764926381.357831,
+    "t": 16.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.64,
+      "y": 94.672
+    },
+    "true": {
+      "speed_kmh": 259.22,
+      "coolant_temp": 457.15,
+      "brake_cmd": 0.0,
+      "throttle": 0.88,
+      "yaw_deg": 0.037
+    },
+    "sensors": {
+      "wheel_speed": 258.43,
+      "brake_pressure": 0.72,
+      "coolant_temp": 457.04,
+      "imu": {
+        "ax": 0.034,
+        "ay": -0.022,
+        "yaw": 0.032
+      }
+    }
+  },
+  {
+    "timestamp": 1764926381.4742029,
+    "t": 16.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.585,
+      "y": 94.614
+    },
+    "true": {
+      "speed_kmh": 262.1,
+      "coolant_temp": 459.86,
+      "brake_cmd": 0.0,
+      "throttle": 0.76,
+      "yaw_deg": -0.019
+    },
+    "sensors": {
+      "wheel_speed": 261.45,
+      "brake_pressure": 0.89,
+      "coolant_temp": 460.28,
+      "imu": {
+        "ax": 0.015,
+        "ay": -0.01,
+        "yaw": -0.005
+      }
+    }
+  },
+  {
+    "timestamp": 1764926381.5944068,
+    "t": 16.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.533,
+      "y": 94.56
+    },
+    "true": {
+      "speed_kmh": 264.78,
+      "coolant_temp": 462.58,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": 0.01
+    },
+    "sensors": {
+      "wheel_speed": 265.16,
+      "brake_pressure": 2.48,
+      "coolant_temp": 462.31,
+      "imu": {
+        "ax": -0.025,
+        "ay": -0.07,
+        "yaw": 0.013
+      }
+    }
+  },
+  {
+    "timestamp": 1764926381.705878,
+    "t": 16.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.463,
+      "y": 94.485
+    },
+    "true": {
+      "speed_kmh": 268.49,
+      "coolant_temp": 465.42,
+      "brake_cmd": 0.0,
+      "throttle": 0.86,
+      "yaw_deg": -0.019
+    },
+    "sensors": {
+      "wheel_speed": 268.24,
+      "brake_pressure": 0.0,
+      "coolant_temp": 465.3,
+      "imu": {
+        "ax": 0.031,
+        "ay": 0.018,
+        "yaw": -0.01
+      }
+    }
+  },
+  {
+    "timestamp": 1764926381.819867,
+    "t": 16.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.402,
+      "y": 94.421
+    },
+    "true": {
+      "speed_kmh": 271.67,
+      "coolant_temp": 468.25,
+      "brake_cmd": 0.0,
+      "throttle": 0.83,
+      "yaw_deg": -0.017
+    },
+    "sensors": {
+      "wheel_speed": 272.12,
+      "brake_pressure": 0.0,
+      "coolant_temp": 468.37,
+      "imu": {
+        "ax": 0.019,
+        "ay": -0.003,
+        "yaw": -0.017
+      }
+    }
+  },
+  {
+    "timestamp": 1764926381.9362948,
+    "t": 16.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.345,
+      "y": 94.36
+    },
+    "true": {
+      "speed_kmh": 274.67,
+      "coolant_temp": 471.11,
+      "brake_cmd": 0.0,
+      "throttle": 0.82,
+      "yaw_deg": -0.043
+    },
+    "sensors": {
+      "wheel_speed": 275.27,
+      "brake_pressure": 0.0,
+      "coolant_temp": 471.07,
+      "imu": {
+        "ax": 0.039,
+        "ay": 0.096,
+        "yaw": -0.035
+      }
+    }
+  },
+  {
+    "timestamp": 1764926382.0526478,
+    "t": 16.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.29,
+      "y": 94.302
+    },
+    "true": {
+      "speed_kmh": 277.53,
+      "coolant_temp": 473.98,
+      "brake_cmd": 0.0,
+      "throttle": 0.82,
+      "yaw_deg": -0.013
+    },
+    "sensors": {
+      "wheel_speed": 277.9,
+      "brake_pressure": 0.0,
+      "coolant_temp": 474.03,
+      "imu": {
+        "ax": -0.068,
+        "ay": -0.027,
+        "yaw": -0.005
+      }
+    }
+  },
+  {
+    "timestamp": 1764926382.171526,
+    "t": 16.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.231,
+      "y": 94.24
+    },
+    "true": {
+      "speed_kmh": 280.64,
+      "coolant_temp": 476.91,
+      "brake_cmd": 0.0,
+      "throttle": 0.85,
+      "yaw_deg": -0.036
+    },
+    "sensors": {
+      "wheel_speed": 281.16,
+      "brake_pressure": 0.0,
+      "coolant_temp": 476.82,
+      "imu": {
+        "ax": -0.089,
+        "ay": 0.097,
+        "yaw": -0.042
+      }
+    }
+  },
+  {
+    "timestamp": 1764926382.280222,
+    "t": 17.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.169,
+      "y": 94.175
+    },
+    "true": {
+      "speed_kmh": 283.87,
+      "coolant_temp": 479.88,
+      "brake_cmd": 0.0,
+      "throttle": 0.88,
+      "yaw_deg": 0.037
+    },
+    "sensors": {
+      "wheel_speed": 283.57,
+      "brake_pressure": 0.0,
+      "coolant_temp": 479.91,
+      "imu": {
+        "ax": -0.076,
+        "ay": -0.042,
+        "yaw": 0.019
+      }
+    }
+  },
+  {
+    "timestamp": 1764926382.407648,
+    "t": 17.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.127,
+      "y": 94.13
+    },
+    "true": {
+      "speed_kmh": 286.09,
+      "coolant_temp": 482.8,
+      "brake_cmd": 0.0,
+      "throttle": 0.79,
+      "yaw_deg": 0.006
+    },
+    "sensors": {
+      "wheel_speed": 287.16,
+      "brake_pressure": 0.17,
+      "coolant_temp": 482.64,
+      "imu": {
+        "ax": 0.034,
+        "ay": 0.032,
+        "yaw": 0.012
+      }
+    }
+  },
+  {
+    "timestamp": 1764926382.5203788,
+    "t": 17.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.083,
+      "y": 94.083
+    },
+    "true": {
+      "speed_kmh": 288.39,
+      "coolant_temp": 485.76,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": -0.01
+    },
+    "sensors": {
+      "wheel_speed": 288.27,
+      "brake_pressure": 1.57,
+      "coolant_temp": 485.65,
+      "imu": {
+        "ax": -0.021,
+        "ay": 0.042,
+        "yaw": -0.015
+      }
+    }
+  },
+  {
+    "timestamp": 1764926382.631661,
+    "t": 17.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.023,
+      "y": 94.021
+    },
+    "true": {
+      "speed_kmh": 291.5,
+      "coolant_temp": 488.81,
+      "brake_cmd": 0.0,
+      "throttle": 0.9,
+      "yaw_deg": 0.022
+    },
+    "sensors": {
+      "wheel_speed": 291.9,
+      "brake_pressure": 0.38,
+      "coolant_temp": 488.65,
+      "imu": {
+        "ax": 0.027,
+        "ay": -0.07,
+        "yaw": 0.03
+      }
+    }
+  },
+  {
+    "timestamp": 1764926382.741739,
+    "t": 17.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.974,
+      "y": 93.969
+    },
+    "true": {
+      "speed_kmh": 294.08,
+      "coolant_temp": 491.85,
+      "brake_cmd": 0.0,
+      "throttle": 0.86,
+      "yaw_deg": 0.022
+    },
+    "sensors": {
+      "wheel_speed": 294.56,
+      "brake_pressure": 1.62,
+      "coolant_temp": 491.62,
+      "imu": {
+        "ax": 0.074,
+        "ay": -0.04,
+        "yaw": 0.011
+      }
+    }
+  },
+  {
+    "timestamp": 1764926382.852063,
+    "t": 17.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.941,
+      "y": 93.934
+    },
+    "true": {
+      "speed_kmh": 295.79,
+      "coolant_temp": 494.84,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": 0.03
+    },
+    "sensors": {
+      "wheel_speed": 296.31,
+      "brake_pressure": 0.0,
+      "coolant_temp": 494.82,
+      "imu": {
+        "ax": -0.039,
+        "ay": -0.01,
+        "yaw": 0.026
+      }
+    }
+  },
+  {
+    "timestamp": 1764926382.9724522,
+    "t": 17.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.92,
+      "y": 93.912
+    },
+    "true": {
+      "speed_kmh": 296.89,
+      "coolant_temp": 497.8,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": -0.011
+    },
+    "sensors": {
+      "wheel_speed": 296.96,
+      "brake_pressure": 0.0,
+      "coolant_temp": 497.96,
+      "imu": {
+        "ax": 0.002,
+        "ay": -0.036,
+        "yaw": -0.016
+      }
+    }
+  },
+  {
+    "timestamp": 1764926383.09743,
+    "t": 17.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.875,
+      "y": 93.864
+    },
+    "true": {
+      "speed_kmh": 299.26,
+      "coolant_temp": 500.88,
+      "brake_cmd": 0.0,
+      "throttle": 0.86,
+      "yaw_deg": -0.034
+    },
+    "sensors": {
+      "wheel_speed": 298.89,
+      "brake_pressure": 1.42,
+      "coolant_temp": 500.93,
+      "imu": {
+        "ax": 0.064,
+        "ay": 0.01,
+        "yaw": -0.016
+      }
+    }
+  },
+  {
+    "timestamp": 1764926383.205719,
+    "t": 17.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.85,
+      "y": 93.838
+    },
+    "true": {
+      "speed_kmh": 300.55,
+      "coolant_temp": 503.9,
+      "brake_cmd": 0.0,
+      "throttle": 0.77,
+      "yaw_deg": 0.016
+    },
+    "sensors": {
+      "wheel_speed": 299.98,
+      "brake_pressure": 0.0,
+      "coolant_temp": 503.72,
+      "imu": {
+        "ax": 0.019,
+        "ay": 0.007,
+        "yaw": 0.018
+      }
+    }
+  },
+  {
+    "timestamp": 1764926383.322838,
+    "t": 17.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.824,
+      "y": 93.81
+    },
+    "true": {
+      "speed_kmh": 301.94,
+      "coolant_temp": 506.94,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": -0.035
+    },
+    "sensors": {
+      "wheel_speed": 301.73,
+      "brake_pressure": 0.0,
+      "coolant_temp": 506.81,
+      "imu": {
+        "ax": -0.092,
+        "ay": 0.145,
+        "yaw": -0.053
+      }
+    }
+  },
+  {
+    "timestamp": 1764926383.438729,
+    "t": 18.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.798,
+      "y": 93.783
+    },
+    "true": {
+      "speed_kmh": 303.29,
+      "coolant_temp": 509.99,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": -0.027
+    },
+    "sensors": {
+      "wheel_speed": 303.26,
+      "brake_pressure": 0.22,
+      "coolant_temp": 510.19,
+      "imu": {
+        "ax": -0.0,
+        "ay": 0.049,
+        "yaw": -0.027
+      }
+    }
+  },
+  {
+    "timestamp": 1764926383.55475,
+    "t": 18.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.77,
+      "y": 93.753
+    },
+    "true": {
+      "speed_kmh": 304.75,
+      "coolant_temp": 513.07,
+      "brake_cmd": 0.0,
+      "throttle": 0.8,
+      "yaw_deg": -0.003
+    },
+    "sensors": {
+      "wheel_speed": 304.73,
+      "brake_pressure": 0.0,
+      "coolant_temp": 512.93,
+      "imu": {
+        "ax": 0.022,
+        "ay": 0.02,
+        "yaw": -0.001
+      }
+    }
+  },
+  {
+    "timestamp": 1764926383.671391,
+    "t": 18.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.726,
+      "y": 93.707
+    },
+    "true": {
+      "speed_kmh": 307.06,
+      "coolant_temp": 516.24,
+      "brake_cmd": 0.0,
+      "throttle": 0.89,
+      "yaw_deg": 0.01
+    },
+    "sensors": {
+      "wheel_speed": 307.21,
+      "brake_pressure": 0.11,
+      "coolant_temp": 515.98,
+      "imu": {
+        "ax": 0.013,
+        "ay": -0.04,
+        "yaw": 0.01
+      }
+    }
+  },
+  {
+    "timestamp": 1764926383.77896,
+    "t": 18.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.695,
+      "y": 93.674
+    },
+    "true": {
+      "speed_kmh": 308.7,
+      "coolant_temp": 519.37,
+      "brake_cmd": 0.0,
+      "throttle": 0.83,
+      "yaw_deg": -0.016
+    },
+    "sensors": {
+      "wheel_speed": 307.85,
+      "brake_pressure": 0.0,
+      "coolant_temp": 519.5,
+      "imu": {
+        "ax": 0.015,
+        "ay": 0.014,
+        "yaw": -0.017
+      }
+    }
+  },
+  {
+    "timestamp": 1764926383.889621,
+    "t": 18.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.665,
+      "y": 93.642
+    },
+    "true": {
+      "speed_kmh": 310.27,
+      "coolant_temp": 522.52,
+      "brake_cmd": 0.0,
+      "throttle": 0.83,
+      "yaw_deg": 0.025
+    },
+    "sensors": {
+      "wheel_speed": 309.7,
+      "brake_pressure": 0.0,
+      "coolant_temp": 522.41,
+      "imu": {
+        "ax": 0.034,
+        "ay": 0.019,
+        "yaw": 0.026
+      }
+    }
+  },
+  {
+    "timestamp": 1764926384.0128052,
+    "t": 18.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.655,
+      "y": 93.632
+    },
+    "true": {
+      "speed_kmh": 310.79,
+      "coolant_temp": 525.6,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": 0.006
+    },
+    "sensors": {
+      "wheel_speed": 310.31,
+      "brake_pressure": 0.0,
+      "coolant_temp": 525.72,
+      "imu": {
+        "ax": 0.064,
+        "ay": -0.053,
+        "yaw": -0.013
+      }
+    }
+  },
+  {
+    "timestamp": 1764926384.122478,
+    "t": 18.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.645,
+      "y": 93.622
+    },
+    "true": {
+      "speed_kmh": 311.28,
+      "coolant_temp": 528.68,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": -0.007
+    },
+    "sensors": {
+      "wheel_speed": 310.58,
+      "brake_pressure": 0.56,
+      "coolant_temp": 528.42,
+      "imu": {
+        "ax": -0.01,
+        "ay": 0.099,
+        "yaw": 0.007
+      }
+    }
+  },
+  {
+    "timestamp": 1764926384.238972,
+    "t": 18.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.637,
+      "y": 93.613
+    },
+    "true": {
+      "speed_kmh": 311.7,
+      "coolant_temp": 531.76,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": 0.023
+    },
+    "sensors": {
+      "wheel_speed": 312.08,
+      "brake_pressure": 0.22,
+      "coolant_temp": 532.07,
+      "imu": {
+        "ax": 0.052,
+        "ay": 0.092,
+        "yaw": 0.032
+      }
+    }
+  },
+  {
+    "timestamp": 1764926384.359835,
+    "t": 18.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.631,
+      "y": 93.606
+    },
+    "true": {
+      "speed_kmh": 312.04,
+      "coolant_temp": 534.84,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": 0.011
+    },
+    "sensors": {
+      "wheel_speed": 311.84,
+      "brake_pressure": 0.34,
+      "coolant_temp": 534.41,
+      "imu": {
+        "ax": -0.083,
+        "ay": 0.152,
+        "yaw": -0.008
+      }
+    }
+  },
+  {
+    "timestamp": 1764926384.4785101,
+    "t": 18.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.602,
+      "y": 93.576
+    },
+    "true": {
+      "speed_kmh": 313.55,
+      "coolant_temp": 538.02,
+      "brake_cmd": 0.0,
+      "throttle": 0.84,
+      "yaw_deg": -0.023
+    },
+    "sensors": {
+      "wheel_speed": 313.7,
+      "brake_pressure": 0.0,
+      "coolant_temp": 538.06,
+      "imu": {
+        "ax": 0.074,
+        "ay": 0.024,
+        "yaw": -0.039
+      }
+    }
+  },
+  {
+    "timestamp": 1764926384.604724,
+    "t": 19.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.577,
+      "y": 93.549
+    },
+    "true": {
+      "speed_kmh": 314.87,
+      "coolant_temp": 541.2,
+      "brake_cmd": 0.0,
+      "throttle": 0.83,
+      "yaw_deg": -0.036
+    },
+    "sensors": {
+      "wheel_speed": 314.26,
+      "brake_pressure": 0.0,
+      "coolant_temp": 540.87,
+      "imu": {
+        "ax": 0.025,
+        "ay": 0.121,
+        "yaw": -0.047
+      }
+    }
+  },
+  {
+    "timestamp": 1764926384.717129,
+    "t": 19.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.548,
+      "y": 93.519
+    },
+    "true": {
+      "speed_kmh": 316.36,
+      "coolant_temp": 544.42,
+      "brake_cmd": 0.0,
+      "throttle": 0.85,
+      "yaw_deg": -0.031
+    },
+    "sensors": {
+      "wheel_speed": 316.21,
+      "brake_pressure": 0.6,
+      "coolant_temp": 544.48,
+      "imu": {
+        "ax": -0.009,
+        "ay": 0.004,
+        "yaw": -0.039
+      }
+    }
+  },
+  {
+    "timestamp": 1764926384.8280141,
+    "t": 19.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.514,
+      "y": 93.483
+    },
+    "true": {
+      "speed_kmh": 318.14,
+      "coolant_temp": 547.67,
+      "brake_cmd": 0.0,
+      "throttle": 0.89,
+      "yaw_deg": 0.021
+    },
+    "sensors": {
+      "wheel_speed": 317.91,
+      "brake_pressure": 0.0,
+      "coolant_temp": 547.82,
+      "imu": {
+        "ax": -0.057,
+        "ay": -0.037,
+        "yaw": 0.021
+      }
+    }
+  },
+  {
+    "timestamp": 1764926384.939029,
+    "t": 19.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.514,
+      "y": 93.483
+    },
+    "true": {
+      "speed_kmh": 318.18,
+      "coolant_temp": 550.8,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": -0.035
+    },
+    "sensors": {
+      "wheel_speed": 318.47,
+      "brake_pressure": 0.37,
+      "coolant_temp": 550.83,
+      "imu": {
+        "ax": 0.013,
+        "ay": -0.039,
+        "yaw": -0.052
+      }
+    }
+  },
+  {
+    "timestamp": 1764926385.050435,
+    "t": 19.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.5,
+      "y": 93.468
+    },
+    "true": {
+      "speed_kmh": 318.89,
+      "coolant_temp": 553.98,
+      "brake_cmd": 0.0,
+      "throttle": 0.79,
+      "yaw_deg": -0.029
+    },
+    "sensors": {
+      "wheel_speed": 318.59,
+      "brake_pressure": 0.0,
+      "coolant_temp": 553.77,
+      "imu": {
+        "ax": -0.028,
+        "ay": -0.024,
+        "yaw": -0.008
+      }
+    }
+  },
+  {
+    "timestamp": 1764926385.163384,
+    "t": 19.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.477,
+      "y": 93.444
+    },
+    "true": {
+      "speed_kmh": 320.11,
+      "coolant_temp": 557.22,
+      "brake_cmd": 0.0,
+      "throttle": 0.84,
+      "yaw_deg": -0.022
+    },
+    "sensors": {
+      "wheel_speed": 319.35,
+      "brake_pressure": 0.18,
+      "coolant_temp": 557.64,
+      "imu": {
+        "ax": 0.053,
+        "ay": 0.002,
+        "yaw": -0.033
+      }
+    }
+  },
+  {
+    "timestamp": 1764926385.272317,
+    "t": 19.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.444,
+      "y": 93.409
+    },
+    "true": {
+      "speed_kmh": 321.8,
+      "coolant_temp": 560.51,
+      "brake_cmd": 0.0,
+      "throttle": 0.9,
+      "yaw_deg": -0.037
+    },
+    "sensors": {
+      "wheel_speed": 322.36,
+      "brake_pressure": 0.0,
+      "coolant_temp": 560.8,
+      "imu": {
+        "ax": -0.043,
+        "ay": -0.038,
+        "yaw": -0.041
+      }
+    }
+  },
+  {
+    "timestamp": 1764926385.4232268,
+    "t": 19.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.447,
+      "y": 93.413
+    },
+    "true": {
+      "speed_kmh": 321.65,
+      "coolant_temp": 563.66,
+      "brake_cmd": 0.0,
+      "throttle": 0.72,
+      "yaw_deg": -0.035
+    },
+    "sensors": {
+      "wheel_speed": 321.89,
+      "brake_pressure": 1.26,
+      "coolant_temp": 563.27,
+      "imu": {
+        "ax": 0.02,
+        "ay": -0.048,
+        "yaw": -0.031
+      }
+    }
+  },
+  {
+    "timestamp": 1764926385.5578518,
+    "t": 19.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.443,
+      "y": 93.408
+    },
+    "true": {
+      "speed_kmh": 321.88,
+      "coolant_temp": 566.85,
+      "brake_cmd": 0.0,
+      "throttle": 0.76,
+      "yaw_deg": 0.001
+    },
+    "sensors": {
+      "wheel_speed": 321.9,
+      "brake_pressure": 0.88,
+      "coolant_temp": 566.72,
+      "imu": {
+        "ax": 0.042,
+        "ay": 0.045,
+        "yaw": -0.009
+      }
+    }
+  },
+  {
+    "timestamp": 1764926385.714375,
+    "t": 19.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.418,
+      "y": 93.381
+    },
+    "true": {
+      "speed_kmh": 323.2,
+      "coolant_temp": 570.13,
+      "brake_cmd": 0.0,
+      "throttle": 0.87,
+      "yaw_deg": -0.031
+    },
+    "sensors": {
+      "wheel_speed": 323.6,
+      "brake_pressure": 0.35,
+      "coolant_temp": 570.52,
+      "imu": {
+        "ax": -0.033,
+        "ay": 0.076,
+        "yaw": -0.01
+      }
+    }
+  },
+  {
+    "timestamp": 1764926385.854603,
+    "t": 20.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.41,
+      "y": 93.373
+    },
+    "true": {
+      "speed_kmh": 323.63,
+      "coolant_temp": 573.35,
+      "brake_cmd": 0.0,
+      "throttle": 0.79,
+      "yaw_deg": 0.031
+    },
+    "sensors": {
+      "wheel_speed": 323.73,
+      "brake_pressure": 0.68,
+      "coolant_temp": 573.33,
+      "imu": {
+        "ax": -0.032,
+        "ay": -0.039,
+        "yaw": 0.034
+      }
+    }
+  },
+  {
+    "timestamp": 1764926385.988972,
+    "t": 20.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.397,
+      "y": 93.359
+    },
+    "true": {
+      "speed_kmh": 324.28,
+      "coolant_temp": 576.59,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": 0.006
+    },
+    "sensors": {
+      "wheel_speed": 324.79,
+      "brake_pressure": 0.87,
+      "coolant_temp": 576.63,
+      "imu": {
+        "ax": 0.039,
+        "ay": 0.015,
+        "yaw": 0.018
+      }
+    }
+  },
+  {
+    "timestamp": 1764926386.1305778,
+    "t": 20.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.402,
+      "y": 93.364
+    },
+    "true": {
+      "speed_kmh": 324.05,
+      "coolant_temp": 579.76,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": -0.006
+    },
+    "sensors": {
+      "wheel_speed": 323.99,
+      "brake_pressure": 1.31,
+      "coolant_temp": 579.16,
+      "imu": {
+        "ax": 0.058,
+        "ay": 0.034,
+        "yaw": 0.003
+      }
+    }
+  },
+  {
+    "timestamp": 1764926386.2685912,
+    "t": 20.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.397,
+      "y": 93.359
+    },
+    "true": {
+      "speed_kmh": 324.29,
+      "coolant_temp": 582.98,
+      "brake_cmd": 0.0,
+      "throttle": 0.77,
+      "yaw_deg": 0.031
+    },
+    "sensors": {
+      "wheel_speed": 323.67,
+      "brake_pressure": 0.0,
+      "coolant_temp": 583.11,
+      "imu": {
+        "ax": 0.011,
+        "ay": -0.114,
+        "yaw": 0.035
+      }
+    }
+  },
+  {
+    "timestamp": 1764926386.4389749,
+    "t": 20.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.374,
+      "y": 93.335
+    },
+    "true": {
+      "speed_kmh": 325.51,
+      "coolant_temp": 586.28,
+      "brake_cmd": 0.0,
+      "throttle": 0.87,
+      "yaw_deg": -0.031
+    },
+    "sensors": {
+      "wheel_speed": 325.27,
+      "brake_pressure": 0.0,
+      "coolant_temp": 585.78,
+      "imu": {
+        "ax": 0.128,
+        "ay": -0.005,
+        "yaw": -0.027
+      }
+    }
+  },
+  {
+    "timestamp": 1764926386.5986052,
+    "t": 20.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.495,
+      "y": 93.463
+    },
+    "true": {
+      "speed_kmh": 319.15,
+      "coolant_temp": 589.07,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.008
+    },
+    "sensors": {
+      "wheel_speed": 318.84,
+      "brake_pressure": 62.53,
+      "coolant_temp": 589.06,
+      "imu": {
+        "ax": 0.078,
+        "ay": -0.069,
+        "yaw": 3.014
+      }
+    }
+  },
+  {
+    "timestamp": 1764926386.776086,
+    "t": 20.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.611,
+      "y": 93.585
+    },
+    "true": {
+      "speed_kmh": 313.08,
+      "coolant_temp": 591.82,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.066
+    },
+    "sensors": {
+      "wheel_speed": 313.11,
+      "brake_pressure": 64.44,
+      "coolant_temp": 591.82,
+      "imu": {
+        "ax": -0.026,
+        "ay": 0.078,
+        "yaw": 3.073
+      }
+    }
+  },
+  {
+    "timestamp": 1764926386.9275498,
+    "t": 20.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.721,
+      "y": 93.702
+    },
+    "true": {
+      "speed_kmh": 307.3,
+      "coolant_temp": 594.51,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.124
+    },
+    "sensors": {
+      "wheel_speed": 307.5,
+      "brake_pressure": 66.29,
+      "coolant_temp": 594.54,
+      "imu": {
+        "ax": -0.007,
+        "ay": -0.015,
+        "yaw": 3.113
+      }
+    }
+  },
+  {
+    "timestamp": 1764926387.116077,
+    "t": 20.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.827,
+      "y": 93.813
+    },
+    "true": {
+      "speed_kmh": 301.77,
+      "coolant_temp": 597.17,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.181
+    },
+    "sensors": {
+      "wheel_speed": 301.96,
+      "brake_pressure": 64.42,
+      "coolant_temp": 596.68,
+      "imu": {
+        "ax": -0.053,
+        "ay": 0.043,
+        "yaw": 3.185
+      }
+    }
+  },
+  {
+    "timestamp": 1764926387.272514,
+    "t": 20.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.928,
+      "y": 93.92
+    },
+    "true": {
+      "speed_kmh": 296.49,
+      "coolant_temp": 599.78,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.238
+    },
+    "sensors": {
+      "wheel_speed": 297.02,
+      "brake_pressure": 65.48,
+      "coolant_temp": 599.92,
+      "imu": {
+        "ax": 0.039,
+        "ay": 0.04,
+        "yaw": 3.234
+      }
+    }
+  },
+  {
+    "timestamp": 1764926387.4055429,
+    "t": 21.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.024,
+      "y": 94.022
+    },
+    "true": {
+      "speed_kmh": 291.45,
+      "coolant_temp": 602.35,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.294
+    },
+    "sensors": {
+      "wheel_speed": 291.58,
+      "brake_pressure": 64.92,
+      "coolant_temp": 602.1,
+      "imu": {
+        "ax": 0.013,
+        "ay": -0.01,
+        "yaw": 3.286
+      }
+    }
+  },
+  {
+    "timestamp": 1764926387.5180569,
+    "t": 21.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.117,
+      "y": 94.119
+    },
+    "true": {
+      "speed_kmh": 286.61,
+      "coolant_temp": 604.88,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.349
+    },
+    "sensors": {
+      "wheel_speed": 286.54,
+      "brake_pressure": 63.37,
+      "coolant_temp": 604.93,
+      "imu": {
+        "ax": -0.016,
+        "ay": -0.107,
+        "yaw": 3.334
+      }
+    }
+  },
+  {
+    "timestamp": 1764926387.662914,
+    "t": 21.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.205,
+      "y": 94.213
+    },
+    "true": {
+      "speed_kmh": 281.98,
+      "coolant_temp": 607.38,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.404
+    },
+    "sensors": {
+      "wheel_speed": 282.59,
+      "brake_pressure": 66.82,
+      "coolant_temp": 607.32,
+      "imu": {
+        "ax": -0.051,
+        "ay": -0.041,
+        "yaw": 3.402
+      }
+    }
+  },
+  {
+    "timestamp": 1764926387.778734,
+    "t": 21.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.29,
+      "y": 94.302
+    },
+    "true": {
+      "speed_kmh": 277.55,
+      "coolant_temp": 609.84,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.459
+    },
+    "sensors": {
+      "wheel_speed": 277.57,
+      "brake_pressure": 65.62,
+      "coolant_temp": 609.66,
+      "imu": {
+        "ax": -0.047,
+        "ay": 0.042,
+        "yaw": 3.463
+      }
+    }
+  },
+  {
+    "timestamp": 1764926387.919595,
+    "t": 21.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.371,
+      "y": 94.388
+    },
+    "true": {
+      "speed_kmh": 273.29,
+      "coolant_temp": 612.27,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.513
+    },
+    "sensors": {
+      "wheel_speed": 273.96,
+      "brake_pressure": 65.15,
+      "coolant_temp": 612.32,
+      "imu": {
+        "ax": -0.031,
+        "ay": 0.027,
+        "yaw": 3.524
+      }
+    }
+  },
+  {
+    "timestamp": 1764926388.077858,
+    "t": 21.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.449,
+      "y": 94.47
+    },
+    "true": {
+      "speed_kmh": 269.21,
+      "coolant_temp": 614.66,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.566
+    },
+    "sensors": {
+      "wheel_speed": 269.63,
+      "brake_pressure": 65.13,
+      "coolant_temp": 614.77,
+      "imu": {
+        "ax": -0.068,
+        "ay": 0.018,
+        "yaw": 3.568
+      }
+    }
+  },
+  {
+    "timestamp": 1764926388.228414,
+    "t": 21.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.524,
+      "y": 94.549
+    },
+    "true": {
+      "speed_kmh": 265.28,
+      "coolant_temp": 617.02,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.619
+    },
+    "sensors": {
+      "wheel_speed": 266.28,
+      "brake_pressure": 63.98,
+      "coolant_temp": 617.03,
+      "imu": {
+        "ax": 0.03,
+        "ay": -0.024,
+        "yaw": 3.61
+      }
+    }
+  },
+  {
+    "timestamp": 1764926388.404552,
+    "t": 21.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.596,
+      "y": 94.626
+    },
+    "true": {
+      "speed_kmh": 261.51,
+      "coolant_temp": 619.36,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.671
+    },
+    "sensors": {
+      "wheel_speed": 261.8,
+      "brake_pressure": 65.6,
+      "coolant_temp": 619.48,
+      "imu": {
+        "ax": -0.011,
+        "ay": -0.008,
+        "yaw": 3.679
+      }
+    }
+  },
+  {
+    "timestamp": 1764926388.5736861,
+    "t": 21.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.665,
+      "y": 94.699
+    },
+    "true": {
+      "speed_kmh": 257.89,
+      "coolant_temp": 621.66,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.723
+    },
+    "sensors": {
+      "wheel_speed": 258.21,
+      "brake_pressure": 63.84,
+      "coolant_temp": 621.87,
+      "imu": {
+        "ax": -0.053,
+        "ay": -0.026,
+        "yaw": 3.731
+      }
+    }
+  },
+  {
+    "timestamp": 1764926388.722314,
+    "t": 21.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.732,
+      "y": 94.769
+    },
+    "true": {
+      "speed_kmh": 254.4,
+      "coolant_temp": 623.93,
+      "brake_cmd": 0.65,
+      "throttle": 0.3,
+      "yaw_deg": 3.774
+    },
+    "sensors": {
+      "wheel_speed": 255.35,
+      "brake_pressure": 65.43,
+      "coolant_temp": 623.86,
+      "imu": {
+        "ax": -0.054,
+        "ay": 0.008,
+        "yaw": 3.764
+      }
+    }
+  },
+  {
+    "timestamp": 1764926388.888096,
+    "t": 22.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.653,
+      "y": 94.686
+    },
+    "true": {
+      "speed_kmh": 258.51,
+      "coolant_temp": 626.69,
+      "brake_cmd": 0.0,
+      "throttle": 0.86,
+      "yaw_deg": -0.028
+    },
+    "sensors": {
+      "wheel_speed": 258.91,
+      "brake_pressure": 0.0,
+      "coolant_temp": 626.4,
+      "imu": {
+        "ax": -0.006,
+        "ay": 0.018,
+        "yaw": -0.037
+      }
+    }
+  },
+  {
+    "timestamp": 1764926389.038841,
+    "t": 22.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.589,
+      "y": 94.618
+    },
+    "true": {
+      "speed_kmh": 261.89,
+      "coolant_temp": 629.43,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": -0.034
+    },
+    "sensors": {
+      "wheel_speed": 261.2,
+      "brake_pressure": 2.16,
+      "coolant_temp": 629.49,
+      "imu": {
+        "ax": -0.028,
+        "ay": -0.027,
+        "yaw": -0.038
+      }
+    }
+  },
+  {
+    "timestamp": 1764926389.166174,
+    "t": 22.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.511,
+      "y": 94.535
+    },
+    "true": {
+      "speed_kmh": 265.98,
+      "coolant_temp": 632.27,
+      "brake_cmd": 0.0,
+      "throttle": 0.89,
+      "yaw_deg": -0.029
+    },
+    "sensors": {
+      "wheel_speed": 265.14,
+      "brake_pressure": 0.0,
+      "coolant_temp": 632.02,
+      "imu": {
+        "ax": 0.015,
+        "ay": -0.028,
+        "yaw": -0.027
+      }
+    }
+  },
+  {
+    "timestamp": 1764926389.29597,
+    "t": 22.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.455,
+      "y": 94.477
+    },
+    "true": {
+      "speed_kmh": 268.9,
+      "coolant_temp": 635.06,
+      "brake_cmd": 0.0,
+      "throttle": 0.79,
+      "yaw_deg": 0.023
+    },
+    "sensors": {
+      "wheel_speed": 269.06,
+      "brake_pressure": 0.0,
+      "coolant_temp": 635.32,
+      "imu": {
+        "ax": -0.025,
+        "ay": 0.041,
+        "yaw": 0.04
+      }
+    }
+  },
+  {
+    "timestamp": 1764926389.416963,
+    "t": 22.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.408,
+      "y": 94.427
+    },
+    "true": {
+      "speed_kmh": 271.34,
+      "coolant_temp": 637.83,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": 0.037
+    },
+    "sensors": {
+      "wheel_speed": 271.01,
+      "brake_pressure": 0.0,
+      "coolant_temp": 637.65,
+      "imu": {
+        "ax": -0.076,
+        "ay": -0.109,
+        "yaw": 0.052
+      }
+    }
+  },
+  {
+    "timestamp": 1764926389.5387561,
+    "t": 22.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.368,
+      "y": 94.384
+    },
+    "true": {
+      "speed_kmh": 273.47,
+      "coolant_temp": 640.61,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": 0.034
+    },
+    "sensors": {
+      "wheel_speed": 273.35,
+      "brake_pressure": 0.0,
+      "coolant_temp": 640.61,
+      "imu": {
+        "ax": -0.013,
+        "ay": -0.017,
+        "yaw": 0.04
+      }
+    }
+  },
+  {
+    "timestamp": 1764926389.6601222,
+    "t": 22.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.327,
+      "y": 94.342
+    },
+    "true": {
+      "speed_kmh": 275.58,
+      "coolant_temp": 643.4,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": 0.039
+    },
+    "sensors": {
+      "wheel_speed": 276.14,
+      "brake_pressure": 0.0,
+      "coolant_temp": 643.26,
+      "imu": {
+        "ax": 0.005,
+        "ay": -0.039,
+        "yaw": 0.034
+      }
+    }
+  },
+  {
+    "timestamp": 1764926389.873695,
+    "t": 22.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.283,
+      "y": 94.295
+    },
+    "true": {
+      "speed_kmh": 277.89,
+      "coolant_temp": 646.24,
+      "brake_cmd": 0.0,
+      "throttle": 0.77,
+      "yaw_deg": -0.001
+    },
+    "sensors": {
+      "wheel_speed": 278.45,
+      "brake_pressure": 0.0,
+      "coolant_temp": 646.28,
+      "imu": {
+        "ax": -0.01,
+        "ay": 0.058,
+        "yaw": 0.005
+      }
+    }
+  },
+  {
+    "timestamp": 1764926390.0056372,
+    "t": 22.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.215,
+      "y": 94.223
+    },
+    "true": {
+      "speed_kmh": 281.46,
+      "coolant_temp": 649.21,
+      "brake_cmd": 0.0,
+      "throttle": 0.9,
+      "yaw_deg": 0.005
+    },
+    "sensors": {
+      "wheel_speed": 281.32,
+      "brake_pressure": 0.69,
+      "coolant_temp": 649.55,
+      "imu": {
+        "ax": 0.053,
+        "ay": 0.007,
+        "yaw": 0.007
+      }
+    }
+  },
+  {
+    "timestamp": 1764926390.134279,
+    "t": 22.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.156,
+      "y": 94.161
+    },
+    "true": {
+      "speed_kmh": 284.52,
+      "coolant_temp": 652.18,
+      "brake_cmd": 0.0,
+      "throttle": 0.87,
+      "yaw_deg": 0.031
+    },
+    "sensors": {
+      "wheel_speed": 285.33,
+      "brake_pressure": 0.0,
+      "coolant_temp": 652.12,
+      "imu": {
+        "ax": 0.03,
+        "ay": 0.004,
+        "yaw": 0.043
+      }
+    }
+  },
+  {
+    "timestamp": 1764926390.248547,
+    "t": 23.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.122,
+      "y": 94.125
+    },
+    "true": {
+      "speed_kmh": 286.35,
+      "coolant_temp": 655.08,
+      "brake_cmd": 0.0,
+      "throttle": 0.76,
+      "yaw_deg": -0.028
+    },
+    "sensors": {
+      "wheel_speed": 286.22,
+      "brake_pressure": 0.05,
+      "coolant_temp": 654.82,
+      "imu": {
+        "ax": -0.008,
+        "ay": 0.032,
+        "yaw": -0.008
+      }
+    }
+  },
+  {
+    "timestamp": 1764926390.3664372,
+    "t": 23.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.08,
+      "y": 94.081
+    },
+    "true": {
+      "speed_kmh": 288.52,
+      "coolant_temp": 658.02,
+      "brake_cmd": 0.0,
+      "throttle": 0.8,
+      "yaw_deg": -0.019
+    },
+    "sensors": {
+      "wheel_speed": 289.06,
+      "brake_pressure": 0.0,
+      "coolant_temp": 658.27,
+      "imu": {
+        "ax": 0.002,
+        "ay": -0.0,
+        "yaw": -0.016
+      }
+    }
+  },
+  {
+    "timestamp": 1764926390.58039,
+    "t": 23.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.056,
+      "y": 94.055
+    },
+    "true": {
+      "speed_kmh": 289.8,
+      "coolant_temp": 660.92,
+      "brake_cmd": 0.0,
+      "throttle": 0.72,
+      "yaw_deg": -0.021
+    },
+    "sensors": {
+      "wheel_speed": 289.85,
+      "brake_pressure": 1.02,
+      "coolant_temp": 660.45,
+      "imu": {
+        "ax": 0.054,
+        "ay": 0.081,
+        "yaw": -0.016
+      }
+    }
+  },
+  {
+    "timestamp": 1764926390.6952782,
+    "t": 23.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 89.006,
+      "y": 94.002
+    },
+    "true": {
+      "speed_kmh": 292.4,
+      "coolant_temp": 663.94,
+      "brake_cmd": 0.0,
+      "throttle": 0.85,
+      "yaw_deg": 0.024
+    },
+    "sensors": {
+      "wheel_speed": 292.47,
+      "brake_pressure": 0.0,
+      "coolant_temp": 663.7,
+      "imu": {
+        "ax": 0.05,
+        "ay": -0.052,
+        "yaw": 0.018
+      }
+    }
+  },
+  {
+    "timestamp": 1764926390.813062,
+    "t": 23.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.984,
+      "y": 93.979
+    },
+    "true": {
+      "speed_kmh": 293.57,
+      "coolant_temp": 666.87,
+      "brake_cmd": 0.0,
+      "throttle": 0.72,
+      "yaw_deg": -0.01
+    },
+    "sensors": {
+      "wheel_speed": 293.65,
+      "brake_pressure": 0.0,
+      "coolant_temp": 666.83,
+      "imu": {
+        "ax": -0.073,
+        "ay": -0.066,
+        "yaw": 0.001
+      }
+    }
+  },
+  {
+    "timestamp": 1764926390.938932,
+    "t": 23.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.961,
+      "y": 93.955
+    },
+    "true": {
+      "speed_kmh": 294.76,
+      "coolant_temp": 669.81,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": 0.002
+    },
+    "sensors": {
+      "wheel_speed": 294.78,
+      "brake_pressure": 0.0,
+      "coolant_temp": 669.74,
+      "imu": {
+        "ax": 0.005,
+        "ay": -0.036,
+        "yaw": -0.0
+      }
+    }
+  },
+  {
+    "timestamp": 1764926391.0673249,
+    "t": 23.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.935,
+      "y": 93.927
+    },
+    "true": {
+      "speed_kmh": 296.13,
+      "coolant_temp": 672.78,
+      "brake_cmd": 0.0,
+      "throttle": 0.76,
+      "yaw_deg": -0.036
+    },
+    "sensors": {
+      "wheel_speed": 295.48,
+      "brake_pressure": 1.56,
+      "coolant_temp": 672.71,
+      "imu": {
+        "ax": 0.018,
+        "ay": -0.015,
+        "yaw": -0.032
+      }
+    }
+  },
+  {
+    "timestamp": 1764926391.176681,
+    "t": 23.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.887,
+      "y": 93.877
+    },
+    "true": {
+      "speed_kmh": 298.61,
+      "coolant_temp": 675.87,
+      "brake_cmd": 0.0,
+      "throttle": 0.87,
+      "yaw_deg": 0.016
+    },
+    "sensors": {
+      "wheel_speed": 298.25,
+      "brake_pressure": 0.58,
+      "coolant_temp": 676.2,
+      "imu": {
+        "ax": -0.054,
+        "ay": 0.008,
+        "yaw": -0.003
+      }
+    }
+  },
+  {
+    "timestamp": 1764926391.303385,
+    "t": 23.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.867,
+      "y": 93.856
+    },
+    "true": {
+      "speed_kmh": 299.68,
+      "coolant_temp": 678.86,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": -0.036
+    },
+    "sensors": {
+      "wheel_speed": 300.21,
+      "brake_pressure": 0.03,
+      "coolant_temp": 679.13,
+      "imu": {
+        "ax": 0.099,
+        "ay": -0.009,
+        "yaw": -0.033
+      }
+    }
+  },
+  {
+    "timestamp": 1764926391.419623,
+    "t": 23.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.832,
+      "y": 93.819
+    },
+    "true": {
+      "speed_kmh": 301.49,
+      "coolant_temp": 681.92,
+      "brake_cmd": 0.0,
+      "throttle": 0.82,
+      "yaw_deg": -0.034
+    },
+    "sensors": {
+      "wheel_speed": 301.1,
+      "brake_pressure": 0.0,
+      "coolant_temp": 681.97,
+      "imu": {
+        "ax": -0.05,
+        "ay": -0.0,
+        "yaw": -0.034
+      }
+    }
+  },
+  {
+    "timestamp": 1764926391.5377972,
+    "t": 24.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.802,
+      "y": 93.787
+    },
+    "true": {
+      "speed_kmh": 303.09,
+      "coolant_temp": 684.99,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": -0.037
+    },
+    "sensors": {
+      "wheel_speed": 302.64,
+      "brake_pressure": 0.0,
+      "coolant_temp": 685.03,
+      "imu": {
+        "ax": -0.052,
+        "ay": 0.018,
+        "yaw": -0.036
+      }
+    }
+  },
+  {
+    "timestamp": 1764926391.6526358,
+    "t": 24.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.77,
+      "y": 93.754
+    },
+    "true": {
+      "speed_kmh": 304.73,
+      "coolant_temp": 688.08,
+      "brake_cmd": 0.0,
+      "throttle": 0.82,
+      "yaw_deg": -0.016
+    },
+    "sensors": {
+      "wheel_speed": 305.26,
+      "brake_pressure": 1.95,
+      "coolant_temp": 688.45,
+      "imu": {
+        "ax": -0.003,
+        "ay": 0.04,
+        "yaw": -0.002
+      }
+    }
+  },
+  {
+    "timestamp": 1764926391.7729359,
+    "t": 24.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.747,
+      "y": 93.729
+    },
+    "true": {
+      "speed_kmh": 305.98,
+      "coolant_temp": 691.16,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": 0.006
+    },
+    "sensors": {
+      "wheel_speed": 305.24,
+      "brake_pressure": 0.74,
+      "coolant_temp": 691.53,
+      "imu": {
+        "ax": 0.05,
+        "ay": 0.042,
+        "yaw": 0.01
+      }
+    }
+  },
+  {
+    "timestamp": 1764926391.8887439,
+    "t": 24.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.732,
+      "y": 93.713
+    },
+    "true": {
+      "speed_kmh": 306.75,
+      "coolant_temp": 694.21,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": -0.013
+    },
+    "sensors": {
+      "wheel_speed": 306.92,
+      "brake_pressure": 1.3,
+      "coolant_temp": 693.69,
+      "imu": {
+        "ax": -0.033,
+        "ay": -0.017,
+        "yaw": 0.001
+      }
+    }
+  },
+  {
+    "timestamp": 1764926392.0054588,
+    "t": 24.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.71,
+      "y": 93.69
+    },
+    "true": {
+      "speed_kmh": 307.92,
+      "coolant_temp": 697.3,
+      "brake_cmd": 0.0,
+      "throttle": 0.79,
+      "yaw_deg": -0.018
+    },
+    "sensors": {
+      "wheel_speed": 308.23,
+      "brake_pressure": 0.26,
+      "coolant_temp": 697.28,
+      "imu": {
+        "ax": -0.041,
+        "ay": 0.027,
+        "yaw": -0.023
+      }
+    }
+  },
+  {
+    "timestamp": 1764926392.119127,
+    "t": 24.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.683,
+      "y": 93.661
+    },
+    "true": {
+      "speed_kmh": 309.32,
+      "coolant_temp": 700.42,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": 0.014
+    },
+    "sensors": {
+      "wheel_speed": 310.14,
+      "brake_pressure": 0.0,
+      "coolant_temp": 700.84,
+      "imu": {
+        "ax": 0.032,
+        "ay": -0.039,
+        "yaw": 0.008
+      }
+    }
+  },
+  {
+    "timestamp": 1764926392.233139,
+    "t": 24.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.651,
+      "y": 93.628
+    },
+    "true": {
+      "speed_kmh": 310.99,
+      "coolant_temp": 703.59,
+      "brake_cmd": 0.0,
+      "throttle": 0.85,
+      "yaw_deg": 0.018
+    },
+    "sensors": {
+      "wheel_speed": 310.86,
+      "brake_pressure": 0.65,
+      "coolant_temp": 703.76,
+      "imu": {
+        "ax": 0.062,
+        "ay": 0.02,
+        "yaw": 0.005
+      }
+    }
+  },
+  {
+    "timestamp": 1764926392.37938,
+    "t": 24.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.626,
+      "y": 93.601
+    },
+    "true": {
+      "speed_kmh": 312.31,
+      "coolant_temp": 706.74,
+      "brake_cmd": 0.0,
+      "throttle": 0.82,
+      "yaw_deg": -0.011
+    },
+    "sensors": {
+      "wheel_speed": 312.39,
+      "brake_pressure": 0.0,
+      "coolant_temp": 707.11,
+      "imu": {
+        "ax": -0.043,
+        "ay": 0.044,
+        "yaw": -0.014
+      }
+    }
+  },
+  {
+    "timestamp": 1764926392.499524,
+    "t": 24.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.619,
+      "y": 93.594
+    },
+    "true": {
+      "speed_kmh": 312.65,
+      "coolant_temp": 709.83,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": -0.004
+    },
+    "sensors": {
+      "wheel_speed": 313.0,
+      "brake_pressure": 0.0,
+      "coolant_temp": 710.12,
+      "imu": {
+        "ax": -0.037,
+        "ay": -0.145,
+        "yaw": 0.022
+      }
+    }
+  },
+  {
+    "timestamp": 1764926392.613951,
+    "t": 24.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.611,
+      "y": 93.585
+    },
+    "true": {
+      "speed_kmh": 313.1,
+      "coolant_temp": 712.92,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": -0.026
+    },
+    "sensors": {
+      "wheel_speed": 312.51,
+      "brake_pressure": 1.4,
+      "coolant_temp": 712.36,
+      "imu": {
+        "ax": 0.011,
+        "ay": 0.079,
+        "yaw": -0.014
+      }
+    }
+  },
+  {
+    "timestamp": 1764926392.7295601,
+    "t": 25.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.606,
+      "y": 93.58
+    },
+    "true": {
+      "speed_kmh": 313.33,
+      "coolant_temp": 716.01,
+      "brake_cmd": 0.0,
+      "throttle": 0.72,
+      "yaw_deg": -0.02
+    },
+    "sensors": {
+      "wheel_speed": 313.27,
+      "brake_pressure": 0.89,
+      "coolant_temp": 715.85,
+      "imu": {
+        "ax": 0.044,
+        "ay": -0.075,
+        "yaw": -0.018
+      }
+    }
+  },
+  {
+    "timestamp": 1764926392.843424,
+    "t": 25.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.573,
+      "y": 93.545
+    },
+    "true": {
+      "speed_kmh": 315.06,
+      "coolant_temp": 719.23,
+      "brake_cmd": 0.0,
+      "throttle": 0.87,
+      "yaw_deg": 0.008
+    },
+    "sensors": {
+      "wheel_speed": 315.33,
+      "brake_pressure": 0.0,
+      "coolant_temp": 719.18,
+      "imu": {
+        "ax": -0.032,
+        "ay": 0.076,
+        "yaw": 0.001
+      }
+    }
+  },
+  {
+    "timestamp": 1764926392.964412,
+    "t": 25.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.559,
+      "y": 93.53
+    },
+    "true": {
+      "speed_kmh": 315.82,
+      "coolant_temp": 722.38,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": 0.02
+    },
+    "sensors": {
+      "wheel_speed": 315.3,
+      "brake_pressure": 0.0,
+      "coolant_temp": 722.53,
+      "imu": {
+        "ax": -0.061,
+        "ay": -0.073,
+        "yaw": 0.018
+      }
+    }
+  },
+  {
+    "timestamp": 1764926393.080977,
+    "t": 25.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.522,
+      "y": 93.491
+    },
+    "true": {
+      "speed_kmh": 317.74,
+      "coolant_temp": 725.64,
+      "brake_cmd": 0.0,
+      "throttle": 0.9,
+      "yaw_deg": 0.013
+    },
+    "sensors": {
+      "wheel_speed": 316.98,
+      "brake_pressure": 0.0,
+      "coolant_temp": 725.54,
+      "imu": {
+        "ax": -0.048,
+        "ay": 0.021,
+        "yaw": 0.011
+      }
+    }
+  },
+  {
+    "timestamp": 1764926393.194321,
+    "t": 25.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.514,
+      "y": 93.483
+    },
+    "true": {
+      "speed_kmh": 318.16,
+      "coolant_temp": 728.79,
+      "brake_cmd": 0.0,
+      "throttle": 0.76,
+      "yaw_deg": -0.02
+    },
+    "sensors": {
+      "wheel_speed": 317.96,
+      "brake_pressure": 0.35,
+      "coolant_temp": 728.88,
+      "imu": {
+        "ax": -0.037,
+        "ay": -0.036,
+        "yaw": -0.034
+      }
+    }
+  },
+  {
+    "timestamp": 1764926393.316658,
+    "t": 25.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.505,
+      "y": 93.474
+    },
+    "true": {
+      "speed_kmh": 318.61,
+      "coolant_temp": 731.96,
+      "brake_cmd": 0.0,
+      "throttle": 0.77,
+      "yaw_deg": -0.036
+    },
+    "sensors": {
+      "wheel_speed": 319.31,
+      "brake_pressure": 0.0,
+      "coolant_temp": 732.11,
+      "imu": {
+        "ax": -0.02,
+        "ay": -0.02,
+        "yaw": -0.018
+      }
+    }
+  },
+  {
+    "timestamp": 1764926393.449443,
+    "t": 25.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.482,
+      "y": 93.449
+    },
+    "true": {
+      "speed_kmh": 319.85,
+      "coolant_temp": 735.19,
+      "brake_cmd": 0.0,
+      "throttle": 0.85,
+      "yaw_deg": 0.024
+    },
+    "sensors": {
+      "wheel_speed": 320.66,
+      "brake_pressure": 0.0,
+      "coolant_temp": 735.19,
+      "imu": {
+        "ax": 0.005,
+        "ay": -0.027,
+        "yaw": 0.024
+      }
+    }
+  },
+  {
+    "timestamp": 1764926393.576936,
+    "t": 25.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.449,
+      "y": 93.414
+    },
+    "true": {
+      "speed_kmh": 321.57,
+      "coolant_temp": 738.48,
+      "brake_cmd": 0.0,
+      "throttle": 0.9,
+      "yaw_deg": -0.023
+    },
+    "sensors": {
+      "wheel_speed": 321.54,
+      "brake_pressure": 0.0,
+      "coolant_temp": 738.62,
+      "imu": {
+        "ax": -0.016,
+        "ay": -0.033,
+        "yaw": -0.02
+      }
+    }
+  },
+  {
+    "timestamp": 1764926393.7010539,
+    "t": 25.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.43,
+      "y": 93.395
+    },
+    "true": {
+      "speed_kmh": 322.54,
+      "coolant_temp": 741.73,
+      "brake_cmd": 0.0,
+      "throttle": 0.83,
+      "yaw_deg": 0.003
+    },
+    "sensors": {
+      "wheel_speed": 322.66,
+      "brake_pressure": 0.49,
+      "coolant_temp": 741.73,
+      "imu": {
+        "ax": -0.026,
+        "ay": 0.05,
+        "yaw": -0.006
+      }
+    }
+  },
+  {
+    "timestamp": 1764926393.812856,
+    "t": 25.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.427,
+      "y": 93.391
+    },
+    "true": {
+      "speed_kmh": 322.74,
+      "coolant_temp": 744.92,
+      "brake_cmd": 0.0,
+      "throttle": 0.76,
+      "yaw_deg": -0.008
+    },
+    "sensors": {
+      "wheel_speed": 322.79,
+      "brake_pressure": 0.0,
+      "coolant_temp": 745.05,
+      "imu": {
+        "ax": -0.045,
+        "ay": -0.004,
+        "yaw": -0.012
+      }
+    }
+  },
+  {
+    "timestamp": 1764926393.935732,
+    "t": 26.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.431,
+      "y": 93.395
+    },
+    "true": {
+      "speed_kmh": 322.52,
+      "coolant_temp": 748.08,
+      "brake_cmd": 0.0,
+      "throttle": 0.72,
+      "yaw_deg": 0.019
+    },
+    "sensors": {
+      "wheel_speed": 322.37,
+      "brake_pressure": 0.68,
+      "coolant_temp": 748.07,
+      "imu": {
+        "ax": 0.067,
+        "ay": 0.003,
+        "yaw": 0.033
+      }
+    }
+  },
+  {
+    "timestamp": 1764926394.0548868,
+    "t": 26.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.413,
+      "y": 93.376
+    },
+    "true": {
+      "speed_kmh": 323.45,
+      "coolant_temp": 751.33,
+      "brake_cmd": 0.0,
+      "throttle": 0.83,
+      "yaw_deg": -0.019
+    },
+    "sensors": {
+      "wheel_speed": 323.61,
+      "brake_pressure": 2.05,
+      "coolant_temp": 751.59,
+      "imu": {
+        "ax": -0.01,
+        "ay": 0.002,
+        "yaw": -0.023
+      }
+    }
+  },
+  {
+    "timestamp": 1764926394.1717849,
+    "t": 26.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.41,
+      "y": 93.373
+    },
+    "true": {
+      "speed_kmh": 323.59,
+      "coolant_temp": 754.53,
+      "brake_cmd": 0.0,
+      "throttle": 0.76,
+      "yaw_deg": -0.001
+    },
+    "sensors": {
+      "wheel_speed": 323.0,
+      "brake_pressure": 1.66,
+      "coolant_temp": 754.13,
+      "imu": {
+        "ax": 0.003,
+        "ay": 0.048,
+        "yaw": -0.006
+      }
+    }
+  },
+  {
+    "timestamp": 1764926394.29109,
+    "t": 26.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.404,
+      "y": 93.367
+    },
+    "true": {
+      "speed_kmh": 323.92,
+      "coolant_temp": 757.74,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": 0.018
+    },
+    "sensors": {
+      "wheel_speed": 323.87,
+      "brake_pressure": 1.83,
+      "coolant_temp": 757.82,
+      "imu": {
+        "ax": -0.037,
+        "ay": -0.067,
+        "yaw": 0.047
+      }
+    }
+  },
+  {
+    "timestamp": 1764926394.407008,
+    "t": 26.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.391,
+      "y": 93.353
+    },
+    "true": {
+      "speed_kmh": 324.59,
+      "coolant_temp": 760.99,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": 0.009
+    },
+    "sensors": {
+      "wheel_speed": 325.59,
+      "brake_pressure": 0.19,
+      "coolant_temp": 760.93,
+      "imu": {
+        "ax": -0.047,
+        "ay": -0.019,
+        "yaw": 0.012
+      }
+    }
+  },
+  {
+    "timestamp": 1764926394.527366,
+    "t": 26.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.38,
+      "y": 93.342
+    },
+    "true": {
+      "speed_kmh": 325.16,
+      "coolant_temp": 764.24,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": -0.012
+    },
+    "sensors": {
+      "wheel_speed": 325.49,
+      "brake_pressure": 0.57,
+      "coolant_temp": 764.29,
+      "imu": {
+        "ax": -0.019,
+        "ay": 0.002,
+        "yaw": -0.019
+      }
+    }
+  },
+  {
+    "timestamp": 1764926394.641071,
+    "t": 26.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.386,
+      "y": 93.347
+    },
+    "true": {
+      "speed_kmh": 324.89,
+      "coolant_temp": 767.42,
+      "brake_cmd": 0.0,
+      "throttle": 0.73,
+      "yaw_deg": -0.008
+    },
+    "sensors": {
+      "wheel_speed": 324.52,
+      "brake_pressure": 0.0,
+      "coolant_temp": 767.14,
+      "imu": {
+        "ax": 0.011,
+        "ay": 0.031,
+        "yaw": -0.009
+      }
+    }
+  },
+  {
+    "timestamp": 1764926394.7652428,
+    "t": 26.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.369,
+      "y": 93.329
+    },
+    "true": {
+      "speed_kmh": 325.77,
+      "coolant_temp": 770.7,
+      "brake_cmd": 0.0,
+      "throttle": 0.84,
+      "yaw_deg": 0.03
+    },
+    "sensors": {
+      "wheel_speed": 325.73,
+      "brake_pressure": 0.0,
+      "coolant_temp": 770.68,
+      "imu": {
+        "ax": -0.028,
+        "ay": -0.046,
+        "yaw": 0.055
+      }
+    }
+  },
+  {
+    "timestamp": 1764926394.9286232,
+    "t": 26.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.364,
+      "y": 93.325
+    },
+    "true": {
+      "speed_kmh": 326.0,
+      "coolant_temp": 773.93,
+      "brake_cmd": 0.0,
+      "throttle": 0.78,
+      "yaw_deg": 0.026
+    },
+    "sensors": {
+      "wheel_speed": 326.68,
+      "brake_pressure": 0.0,
+      "coolant_temp": 773.81,
+      "imu": {
+        "ax": -0.012,
+        "ay": -0.053,
+        "yaw": 0.022
+      }
+    }
+  },
+  {
+    "timestamp": 1764926395.045116,
+    "t": 26.9,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.356,
+      "y": 93.316
+    },
+    "true": {
+      "speed_kmh": 326.42,
+      "coolant_temp": 777.18,
+      "brake_cmd": 0.0,
+      "throttle": 0.8,
+      "yaw_deg": 0.019
+    },
+    "sensors": {
+      "wheel_speed": 326.17,
+      "brake_pressure": 0.77,
+      "coolant_temp": 777.42,
+      "imu": {
+        "ax": 0.017,
+        "ay": -0.046,
+        "yaw": 0.02
+      }
+    }
+  },
+  {
+    "timestamp": 1764926395.168799,
+    "t": 27.0,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.337,
+      "y": 93.295
+    },
+    "true": {
+      "speed_kmh": 327.45,
+      "coolant_temp": 780.49,
+      "brake_cmd": 0.0,
+      "throttle": 0.86,
+      "yaw_deg": 0.033
+    },
+    "sensors": {
+      "wheel_speed": 327.6,
+      "brake_pressure": 1.1,
+      "coolant_temp": 780.37,
+      "imu": {
+        "ax": 0.035,
+        "ay": -0.006,
+        "yaw": 0.007
+      }
+    }
+  },
+  {
+    "timestamp": 1764926395.28804,
+    "t": 27.1,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.329,
+      "y": 93.287
+    },
+    "true": {
+      "speed_kmh": 327.86,
+      "coolant_temp": 783.76,
+      "brake_cmd": 0.0,
+      "throttle": 0.81,
+      "yaw_deg": -0.009
+    },
+    "sensors": {
+      "wheel_speed": 328.61,
+      "brake_pressure": 0.0,
+      "coolant_temp": 783.55,
+      "imu": {
+        "ax": -0.013,
+        "ay": -0.045,
+        "yaw": -0.014
+      }
+    }
+  },
+  {
+    "timestamp": 1764926395.4125178,
+    "t": 27.2,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.331,
+      "y": 93.29
+    },
+    "true": {
+      "speed_kmh": 327.73,
+      "coolant_temp": 786.98,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": -0.031
+    },
+    "sensors": {
+      "wheel_speed": 328.04,
+      "brake_pressure": 0.1,
+      "coolant_temp": 786.87,
+      "imu": {
+        "ax": 0.09,
+        "ay": 0.087,
+        "yaw": -0.03
+      }
+    }
+  },
+  {
+    "timestamp": 1764926395.53185,
+    "t": 27.3,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.314,
+      "y": 93.271
+    },
+    "true": {
+      "speed_kmh": 328.64,
+      "coolant_temp": 790.3,
+      "brake_cmd": 0.0,
+      "throttle": 0.86,
+      "yaw_deg": 0.006
+    },
+    "sensors": {
+      "wheel_speed": 328.45,
+      "brake_pressure": 1.47,
+      "coolant_temp": 790.08,
+      "imu": {
+        "ax": 0.073,
+        "ay": 0.017,
+        "yaw": -0.0
+      }
+    }
+  },
+  {
+    "timestamp": 1764926395.65153,
+    "t": 27.4,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.3,
+      "y": 93.257
+    },
+    "true": {
+      "speed_kmh": 329.36,
+      "coolant_temp": 793.6,
+      "brake_cmd": 0.0,
+      "throttle": 0.84,
+      "yaw_deg": -0.036
+    },
+    "sensors": {
+      "wheel_speed": 329.23,
+      "brake_pressure": 0.0,
+      "coolant_temp": 793.55,
+      "imu": {
+        "ax": 0.028,
+        "ay": -0.079,
+        "yaw": -0.04
+      }
+    }
+  },
+  {
+    "timestamp": 1764926395.7710028,
+    "t": 27.5,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.307,
+      "y": 93.264
+    },
+    "true": {
+      "speed_kmh": 329.0,
+      "coolant_temp": 796.83,
+      "brake_cmd": 0.0,
+      "throttle": 0.74,
+      "yaw_deg": -0.006
+    },
+    "sensors": {
+      "wheel_speed": 328.67,
+      "brake_pressure": 3.16,
+      "coolant_temp": 797.13,
+      "imu": {
+        "ax": 0.114,
+        "ay": -0.024,
+        "yaw": -0.025
+      }
+    }
+  },
+  {
+    "timestamp": 1764926395.884278,
+    "t": 27.6,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.288,
+      "y": 93.245
+    },
+    "true": {
+      "speed_kmh": 329.97,
+      "coolant_temp": 800.16,
+      "brake_cmd": 0.0,
+      "throttle": 0.87,
+      "yaw_deg": -0.031
+    },
+    "sensors": {
+      "wheel_speed": 329.76,
+      "brake_pressure": 0.67,
+      "coolant_temp": 800.18,
+      "imu": {
+        "ax": 0.059,
+        "ay": -0.038,
+        "yaw": -0.027
+      }
+    }
+  },
+  {
+    "timestamp": 1764926395.999949,
+    "t": 27.7,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.276,
+      "y": 93.232
+    },
+    "true": {
+      "speed_kmh": 330.6,
+      "coolant_temp": 803.47,
+      "brake_cmd": 0.0,
+      "throttle": 0.84,
+      "yaw_deg": 0.011
+    },
+    "sensors": {
+      "wheel_speed": 330.38,
+      "brake_pressure": 0.26,
+      "coolant_temp": 803.17,
+      "imu": {
+        "ax": 0.01,
+        "ay": -0.014,
+        "yaw": 0.018
+      }
+    }
+  },
+  {
+    "timestamp": 1764926396.117654,
+    "t": 27.8,
+    "lap": 0,
+    "track_index": 480,
+    "gps": {
+      "x": 88.281,
+      "y": 93.237
+    },
+    "true": {
+      "speed_kmh": 330.34,
+      "coolant_temp": 806.72,
+      "brake_cmd": 0.0,
+      "throttle": 0.75,
+      "yaw_deg": -0.009
+    },
+    "sensors": {
+      "wheel_speed": 330.67,
+      "brake_pressure": 0.45,
+      "coolant_temp": 806.55,
+      "imu": {
+        "ax": 0.029,
+        "ay": 0.033,
+        "yaw": -0.007
+      }
+    }
+  }
+]

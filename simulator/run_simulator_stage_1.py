@@ -66,7 +66,8 @@ track = generate_custom_track(
     n_right=6
 )
 
-#track = generate_oval_track(n_points=400, a=120.0, b=60.0)gps = GPSMock(track)
+#track = generate_oval_track(n_points=400, a=120.0, b=60.0)
+gps = GPSMock(track)
 
 session = []
 session_name = f"session_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
