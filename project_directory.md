@@ -12,20 +12,31 @@
 <details><summary>📁 data/</summary>
     📄 .DS_Store<br>
     📄 driver_sim.json<br>
+    📄 driver_simulation.json<br>
   <details><summary>📁 logs/</summary>
       📄 race_session_20251202_093416.json<br>
       📄 race_session_20251202_102949.json<br>
       📄 race_session_20251202_155136.json<br>
+      📄 race_session_20251203_165259.json<br>
+      📄 race_session_20251203_165457.json<br>
+      📄 race_session_20251204_163310.json<br>
+      📄 race_session_20251204_170745.json<br>
       📄 session_20251202_081531.json<br>
       📄 session_20251202_081639.json<br>
       📄 session_20251202_092654.json<br>
       📄 session_20251202_101905.json<br>
       📄 session_20251202_155149.json<br>
       📄 session_20251202_155204.json<br>
+      📄 session_20251205_111457.json<br>
+      📄 session_20251205_111557.json<br>
+      📄 session_20251205_111920.json<br>
   </details>
     📄 realtime.json<br>
+    📄 stop_signal.txt<br>
   <details><summary>📁 tracks/</summary>
+      📄 custom_track.csv<br>
       📄 default_track.csv<br>
+      📄 track_20251205_111545.csv<br>
   </details>
 </details>
 <details><summary>📁 old_code/</summary>
@@ -36,6 +47,7 @@
   📄 requirements.txt<br>
 <details><summary>📁 simulator/</summary>
     📄 __init__.py<br>
+    📄 driver_manager.py<br>
     📄 driver_profiles.py<br>
   <details><summary>📁 new_sensors/</summary>
       📄 __init__.py<br>
@@ -56,10 +68,12 @@
         📄 vehicle_model.py<br>
     </details>
   </details>
+    📄 recommender.py<br>
     📄 run_race_simulator.py<br>
     📄 run_simulator.py<br>
     📄 run_simulator_stage_1.py<br>
     📄 run_simulator_stage_1_laps.py<br>
+    📄 run_simulator_with_recommender.py<br>
   <details><summary>📁 sensors/</summary>
       📄 brake_pressure.py<br>
       📄 coolant_temp.py<br>
@@ -76,6 +90,8 @@
       📄 4_Data_Visualization_Physics_1.py<br>
       📄 5_Lap_Visualization_Physics_1.py<br>
       📄 6_Fundamentals.py<br>
+      📄 7_Custom_Track_Designer.py<br>
+      📄 8_Track_Selector.py<br>
   </details>
 </details>
   📄 structure_code.py<br>

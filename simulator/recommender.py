@@ -92,54 +92,6 @@ def build_segment_database(sessions):
           f"from {len(sessions)} sessions")
     return db
 
-
-# def build_segment_database(sessions):
-#     """
-#     Build a per-track-index database: for each index collect feature-action records.
-#     Feature vector design (simple):
-#       - speed_kmh (true)
-#       - coolant_temp (true)
-#       - yaw (true)
-#       - lap_progress (track_index / max_index)
-#     Action:
-#       - throttle (true)
-#       - brake (true)
-#       - steering (if present in true or sensors; Stage1 driver_profile returns steering in-run)
-#     Returns:
-#       db: dict[track_index] = list of (feature_vec, action_vec, lap_time_reference)
-#     """
-#     db = defaultdict(list)
-#     for session in sessions:
-#         # estimate lap time per session by extracting times between lap increments
-#         # we'll compute session lap_time as last timestamp - first for simplicity
-#         try:
-#             lap_time = session[-1]["t"] - session[0]["t"]
-#         except Exception:
-#             lap_time = None
-
-#         # find max track_index to compute lap_progress
-#         if not session:
-#             continue
-#         max_idx = max([r.get("track_index", 0) for r in session]) or 1
-#         for r in session:
-#             idx = r.get("track_index", 0)
-#             lap_progress = idx / max_idx
-#             f = [
-#                 r["true"]["speed_kmh"],
-#                 r["true"]["coolant_temp"],
-#                 r["true"]["yaw_deg"],
-#                 lap_progress
-#             ]
-#             # prefer true actions if present; else fall back to sensors mapping (brake cmd)
-#             a = [
-#                 r["true"].get("throttle", 0.0),
-#                 r["true"].get("brake_cmd", 0.0),
-#                 # steering not stored in Stage1 "true" by default; if you add it, use it
-#                 r["true"].get("steering", 0.0)
-#             ]
-#             db[idx].append((f, a, lap_time))
-#     return db
-
 def best_action_per_segment_by_best_lap(db):
     """
     Simple policy: choose, for each segment, action tuple from the record that came from the fastest lap (smallest lap_time).
@@ -218,3 +170,166 @@ def recommend_action_segment(segment_idx, state_vector, policy_segment_db=None, 
         return policy_segment_db[segment_idx]
     # fallback conservative
     return [0.5, 0.0, 0.0]
+
+# -----------------------------------------------------------
+# DRIVER POLICY WRAPPERS (Compatibility Layer)
+# -----------------------------------------------------------
+
+def load_driver_policy(driver_id="driver_normal"):
+    """
+    Your simulator expects this function.
+    We will load a heuristic driver style or a learned policy saved in JSON.
+    """
+
+    # Path where ML models or best-lap policies would be saved
+    policy_path = os.path.join(
+        os.path.dirname(os.path.dirname(__file__)),
+        "data",
+        "driver_simulation.json"
+    )
+
+    # Try loading previously saved learned models
+    if os.path.exists(policy_path):
+        try:
+            with open(policy_path, "r") as f:
+                policy = json.load(f)
+            print(f"📘 Loaded ML driver policy from {policy_path}")
+            policy["type"] = "ml"
+            return policy
+        except Exception:
+            pass
+
+    # Otherwise fallback to heuristic drivers
+    print(f"📘 Using heuristic driver style: {driver_id}")
+
+    if driver_id == "driver_aggressive":
+        return {
+            "type": "heuristic",
+            "throttle_base": 0.90,
+            "brake_base": 0.05,
+            "steer_var": 0.40
+        }
+
+    if driver_id == "driver_smooth":
+        return {
+            "type": "heuristic",
+            "throttle_base": 0.70,
+            "brake_base": 0.03,
+            "steer_var": 0.20
+        }
+
+    # Default driver
+    return {
+        "type": "heuristic",
+        "throttle_base": 0.80,
+        "brake_base": 0.06,
+        "steer_var": 0.30
+    }
+
+
+# -----------------------------------------------------------
+# TRAIN MODELS WRAPPER
+# -----------------------------------------------------------
+def train_models(db):
+    """
+    Simulator expects train_models(db).
+    We map this to your existing RandomForest-based trainer.
+    """
+    if not SKLEARN_AVAILABLE:
+        print("⚠️ scikit-learn not installed — cannot train regression models.")
+        return None
+
+    print("📘 Training regressors per segment…")
+    return train_regressors_per_action(db)
+
+
+# -----------------------------------------------------------
+# ACTION SELECTION WRAPPER
+# -----------------------------------------------------------
+def choose_action_from_policy(policy, segment_idx=None, state_vector=None, models=None):
+    """
+    Simulator expects choose_action_from_policy(policy).
+
+    We determine if:
+    - the policy is ML-based
+    - the policy uses segment-based best actions
+    - the policy is heuristic
+    """
+
+    # ML-based throttle/brake models (not segment-specific in this simple wrapper)
+    if policy.get("type") == "ml" and models:
+        try:
+            # Use throttle model as example (you can extend)
+            th = models['throttle'][segment_idx].predict([state_vector])[0]
+            br = models['brake'][segment_idx].predict([state_vector])[0]
+            st = models['steer'][segment_idx].predict([state_vector])[0]
+            return float(th), float(br), float(st)
+        except Exception:
+            pass
+
+    # If multisegment best-lap policy exists
+    if isinstance(policy.get("policy"), dict) and segment_idx is not None:
+        if segment_idx in policy["policy"]:
+            return policy["policy"][segment_idx]
+
+    # Fallback heuristic behaviour
+    if policy["type"] == "heuristic":
+        import random
+        throttle = policy["throttle_base"] + random.uniform(-0.05, 0.05)
+        brake = policy["brake_base"] + random.uniform(-0.02, 0.02)
+        steering = random.uniform(-policy["steer_var"], policy["steer_var"])
+        return (
+            max(0.0, min(1.0, throttle)),
+            max(0.0, min(1.0, brake)),
+            max(-1.0, min(1.0, steering)),
+        )
+
+    return (0.5, 0.0, 0.0)
+
+
+# def build_segment_database(sessions):
+#     """
+#     Build a per-track-index database: for each index collect feature-action records.
+#     Feature vector design (simple):
+#       - speed_kmh (true)
+#       - coolant_temp (true)
+#       - yaw (true)
+#       - lap_progress (track_index / max_index)
+#     Action:
+#       - throttle (true)
+#       - brake (true)
+#       - steering (if present in true or sensors; Stage1 driver_profile returns steering in-run)
+#     Returns:
+#       db: dict[track_index] = list of (feature_vec, action_vec, lap_time_reference)
+#     """
+#     db = defaultdict(list)
+#     for session in sessions:
+#         # estimate lap time per session by extracting times between lap increments
+#         # we'll compute session lap_time as last timestamp - first for simplicity
+#         try:
+#             lap_time = session[-1]["t"] - session[0]["t"]
+#         except Exception:
+#             lap_time = None
+
+#         # find max track_index to compute lap_progress
+#         if not session:
+#             continue
+#         max_idx = max([r.get("track_index", 0) for r in session]) or 1
+#         for r in session:
+#             idx = r.get("track_index", 0)
+#             lap_progress = idx / max_idx
+#             f = [
+#                 r["true"]["speed_kmh"],
+#                 r["true"]["coolant_temp"],
+#                 r["true"]["yaw_deg"],
+#                 lap_progress
+#             ]
+#             # prefer true actions if present; else fall back to sensors mapping (brake cmd)
+#             a = [
+#                 r["true"].get("throttle", 0.0),
+#                 r["true"].get("brake_cmd", 0.0),
+#                 # steering not stored in Stage1 "true" by default; if you add it, use it
+#                 r["true"].get("steering", 0.0)
+#             ]
+#             db[idx].append((f, a, lap_time))
+#     return db
