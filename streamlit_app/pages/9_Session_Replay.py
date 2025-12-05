@@ -194,6 +194,111 @@
 
 #     st.session_state.is_playing = False
 
+# import sys, os, time, json
+# import streamlit as st
+# import matplotlib.pyplot as plt
+
+# ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+# sys.path.append(ROOT)
+
+# st.set_page_config(layout="wide")
+# st.title("🎥 Session Replay (Video Playback)")
+
+# # -------------------------------------------------------
+# # Load session
+# # -------------------------------------------------------
+# LOG_DIR = os.path.join(ROOT, "data", "logs")
+# sessions = sorted([f for f in os.listdir(LOG_DIR) if f.endswith(".json")])
+
+# session_file = st.selectbox("Choose recorded session", sessions)
+# session_path = os.path.join(LOG_DIR, session_file)
+
+# with open(session_path, "r") as f:
+#     data = json.load(f)
+
+# xs = [r["gps"]["x"] for r in data]
+# ys = [r["gps"]["y"] for r in data]
+# timestamps = [r["t"] for r in data]
+# max_time = max(timestamps)
+
+# # -------------------------------------------------------
+# # Init Streamlit State
+# # -------------------------------------------------------
+# if "current_t" not in st.session_state:
+#     st.session_state.current_t = 0.0
+
+# if "is_playing" not in st.session_state:
+#     st.session_state.is_playing = False
+
+
+# # -------------------------------------------------------
+# # Slider Callback
+# # -------------------------------------------------------
+# def slider_changed():
+#     """User manually changed slider -> pause playback."""
+#     st.session_state.is_playing = False
+#     st.session_state.current_t = st.session_state.timeline_value
+
+
+# # -------------------------------------------------------
+# # Control Bar
+# # -------------------------------------------------------
+# col1, col2, col3 = st.columns([2, 1, 1])
+
+# # ONE SLIDER — NOT UPDATED BY CODE
+# st.slider(
+#     "Timeline",
+#     min_value=0.0,
+#     max_value=max_time,
+#     value=st.session_state.current_t,
+#     step=0.1,
+#     key="timeline_value",
+#     on_change=slider_changed,
+# )
+
+# if col2.button("▶ Play"):
+#     st.session_state.is_playing = True
+
+# if col3.button("⏸ Pause"):
+#     st.session_state.is_playing = False
+
+# # -------------------------------------------------------
+# # Drawing Function
+# # -------------------------------------------------------
+# placeholder = st.empty()
+
+# def draw_frame(t_value):
+#     idx = min(range(len(timestamps)), key=lambda i: abs(timestamps[i] - t_value))
+
+#     fig, ax = plt.subplots(figsize=(6, 6))
+#     ax.plot(xs, ys, "-", color="lightgray")
+#     ax.scatter(xs[idx], ys[idx], color="red", s=100)
+
+#     ax.set_title(f"t = {timestamps[idx]:.2f} s")
+#     ax.set_aspect("equal")
+#     ax.grid(True)
+
+#     placeholder.pyplot(fig)
+#     plt.close(fig)
+
+
+# draw_frame(st.session_state.current_t)
+
+# # -------------------------------------------------------
+# # Playback Loop (Does NOT modify slider widget)
+# # -------------------------------------------------------
+# if st.session_state.is_playing:
+#     while st.session_state.current_t < max_time and st.session_state.is_playing:
+
+#         st.session_state.current_t += 0.1
+
+#         # REDRAW
+#         draw_frame(st.session_state.current_t)
+
+#         # Stop if Streamlit reruns (button interaction)
+#         time.sleep(0.05)
+#         st.experimental_rerun()
+
 import sys, os, time, json
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -202,7 +307,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 sys.path.append(ROOT)
 
 st.set_page_config(layout="wide")
-st.title("🎥 Session Replay (Video Playback)")
+st.title("🎥 Session Replay (Smooth Animation)")
 
 # -------------------------------------------------------
 # Load session
@@ -232,21 +337,19 @@ if "is_playing" not in st.session_state:
 
 
 # -------------------------------------------------------
-# Slider Callback
+# Slider callback
 # -------------------------------------------------------
 def slider_changed():
-    """User manually changed slider -> pause playback."""
     st.session_state.is_playing = False
     st.session_state.current_t = st.session_state.timeline_value
 
 
 # -------------------------------------------------------
-# Control Bar
+# Controls
 # -------------------------------------------------------
-col1, col2, col3 = st.columns([2, 1, 1])
+col1, col2, col3 = st.columns([3, 1, 1])
 
-# ONE SLIDER — NOT UPDATED BY CODE
-st.slider(
+col1.slider(
     "Timeline",
     min_value=0.0,
     max_value=max_time,
@@ -262,42 +365,49 @@ if col2.button("▶ Play"):
 if col3.button("⏸ Pause"):
     st.session_state.is_playing = False
 
+
 # -------------------------------------------------------
-# Drawing Function
+# Rendering
 # -------------------------------------------------------
-placeholder = st.empty()
+frame_zone = st.empty()   # Only this part updates!
+
 
 def draw_frame(t_value):
+    """Draw ONE frame at time t."""
     idx = min(range(len(timestamps)), key=lambda i: abs(timestamps[i] - t_value))
 
     fig, ax = plt.subplots(figsize=(6, 6))
     ax.plot(xs, ys, "-", color="lightgray")
     ax.scatter(xs[idx], ys[idx], color="red", s=100)
-
     ax.set_title(f"t = {timestamps[idx]:.2f} s")
     ax.set_aspect("equal")
     ax.grid(True)
 
-    placeholder.pyplot(fig)
+    frame_zone.pyplot(fig)
     plt.close(fig)
 
 
+# Initial frame draw
 draw_frame(st.session_state.current_t)
 
 # -------------------------------------------------------
-# Playback Loop (Does NOT modify slider widget)
+# Animation loop (NO rerun!)
 # -------------------------------------------------------
 if st.session_state.is_playing:
-    while st.session_state.current_t < max_time and st.session_state.is_playing:
+    for _ in range(30000):  # safety cap
+        if not st.session_state.is_playing:
+            break
 
         st.session_state.current_t += 0.1
+        if st.session_state.current_t > max_time:
+            st.session_state.current_t = max_time
+            st.session_state.is_playing = False
+            break
 
-        # REDRAW
+        # draw only image part
         draw_frame(st.session_state.current_t)
 
-        # Stop if Streamlit reruns (button interaction)
         time.sleep(0.05)
-        st.experimental_rerun()
 
 
 # # streamlit_app/pages/9_Session_Replay.py
