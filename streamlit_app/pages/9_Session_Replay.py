@@ -508,32 +508,29 @@ from simulator.track_loader import load_track_csv
 # Streamlit Setup
 # -----------------------------------
 st.set_page_config(layout="wide")
-st.title("🎬 Full Session Replay + Live Telemetry")
+st.title("🎬 Session Replay + Live Telemetry")
 
 LOG_DIR = os.path.join(ROOT, "data", "logs")
 TRACK_DIR = os.path.join(ROOT, "data", "tracks")
 
 # -----------------------------------
-# Load Log Files
+# Load Logs
 # -----------------------------------
 files = sorted([f for f in os.listdir(LOG_DIR) if f.endswith(".json")])
 if not files:
     st.error("❌ No session logs found.")
     st.stop()
 
-file_name = st.selectbox("Select Session Log:", files)
+file_name = st.selectbox("Select Session:", files)
 file_path = os.path.join(LOG_DIR, file_name)
 
-# -----------------------------------
-# Parse JSON
-# -----------------------------------
 with open(file_path, "r") as f:
     raw = json.load(f)
 
-# Filter rows missing GPS
-cleaned = [r for r in raw if "gps" in r and isinstance(r["gps"], dict)]
-data = cleaned
+# Remove corrupt GPS rows
+data = [r for r in raw if "gps" in r and isinstance(r["gps"], dict)]
 
+# Extract columns
 xs = np.array([r["gps"]["x"] for r in data])
 ys = np.array([r["gps"]["y"] for r in data])
 ts = np.array([r["t"] for r in data])
@@ -548,17 +545,16 @@ throttle = np.array([r["true"]["throttle"] for r in data])
 min_t, max_t = ts.min(), ts.max()
 
 # -----------------------------------
-# Track (optional)
+# Track Selection
 # -----------------------------------
 tracks = sorted([f for f in os.listdir(TRACK_DIR) if f.endswith(".csv")])
 track_x, track_y = [], []
 
-if tracks:
-    selected_track = st.selectbox("Track Overlay:", ["(none)"] + tracks)
-    if selected_track != "(none)":
-        track_pts = load_track_csv(os.path.join(TRACK_DIR, selected_track))
-        track_x = [p[0] for p in track_pts]
-        track_y = [p[1] for p in track_pts]
+selected_track = st.selectbox("Track Overlay:", ["(none)"] + tracks)
+if selected_track != "(none)":
+    track_pts = load_track_csv(os.path.join(TRACK_DIR, selected_track))
+    track_x = [p[0] for p in track_pts]
+    track_y = [p[1] for p in track_pts]
 
 # -----------------------------------
 # Playback Controls
@@ -572,7 +568,6 @@ if "playing" not in st.session_state:
 
 with colB:
     st.write("### 🎛 Playback Controls")
-
     speed_factor = st.slider("Speed", 0.1, 5.0, 1.0, 0.1)
 
     if st.button("▶ Play"):
@@ -580,75 +575,62 @@ with colB:
     if st.button("⏸ Pause"):
         st.session_state.playing = False
     if st.button("⏹ Restart"):
-        st.session_state.playing = False
         st.session_state.timeline_t = min_t
+        st.session_state.playing = False
 
 with colA:
-    t = st.slider(
-        "Time (s)",
-        min_value=float(min_t),
-        max_value=float(max_t),
-        value=float(st.session_state.timeline_t),
-        step=0.1,
-        key="timeline_slider"
-    )
+    t = st.slider("Timeline", float(min_t), float(max_t),
+                  float(st.session_state.timeline_t), 0.1)
     st.session_state.timeline_t = t
 
-
 # -----------------------------------
-# Helper: interpolate replay frame
+# Helpers
 # -----------------------------------
 def get_frame(time_t):
     idx = np.searchsorted(ts, time_t)
 
     if idx <= 0:
         idx = 0
-        x, y = xs[0], ys[0]
     elif idx >= len(ts):
         idx = len(ts) - 1
-        x, y = xs[-1], ys[-1]
-    else:
-        t0, t1 = ts[idx-1], ts[idx]
-        r = (time_t - t0) / (t1 - t0 + 1e-9)
-        x = xs[idx-1] + r * (xs[idx] - xs[idx-1])
-        y = ys[idx-1] + r * (ys[idx] - ys[idx-1])
 
+    # Linear interpolation
+    if idx == 0:
+        return idx, xs[0], ys[0]
+    t0, t1 = ts[idx-1], ts[idx]
+    r = (time_t - t0) / (t1 - t0 + 1e-9)
+    x = xs[idx-1] + r * (xs[idx] - xs[idx-1])
+    y = ys[idx-1] + r * (ys[idx] - ys[idx-1])
     return idx, x, y
 
+# -----------------------------------
+# Top Row Numeric Telemetry
+# -----------------------------------
+def show_numeric(idx):
+    c1, c2, c3, c4, c5, c6 = st.columns(6)
+    c1.metric("Speed (km/h)", f"{speed[idx]:.1f}")
+    c2.metric("Throttle", f"{throttle[idx]:.2f}")
+    c3.metric("Brake (bar)", f"{brake[idx]:.1f}")
+    c4.metric("Coolant (°C)", f"{coolant[idx]:.1f}")
+    c5.metric("Yaw (deg)", f"{yaw[idx]:.3f}")
+    c6.metric("Lap", int(laps[idx]))
 
 # -----------------------------------
-# 📡 Live Telemetry Panel
+# Telemetry Graphs
 # -----------------------------------
-def draw_telemetry(idx):
-    st.write("### 📡 Telemetry at this Timestamp")
-    st.metric("Speed (km/h)", f"{speed[idx]:.1f}")
-    st.metric("Throttle", f"{throttle[idx]:.2f}")
-    st.metric("Brake Pressure", f"{brake[idx]:.1f}")
-    st.metric("Coolant Temp (°C)", f"{coolant[idx]:.1f}")
-    st.metric("Yaw (deg)", f"{yaw[idx]:.3f}")
-    st.metric("Lap", int(laps[idx]))
+def plot_graphs(idx):
+    fig, axes = plt.subplots(4, 1, figsize=(6, 8), sharex=True)
 
-
-# -----------------------------------
-# Live Telemetry Graphs
-# -----------------------------------
-def plot_live_telemetry(idx):
-    fig, axes = plt.subplots(4, 1, figsize=(7, 8), sharex=True)
-
-    axes[0].plot(ts, speed, label="Speed")
-    axes[0].axvline(ts[idx], color="red")
+    axes[0].plot(ts, speed); axes[0].axvline(ts[idx], color="red")
     axes[0].set_ylabel("Speed")
 
-    axes[1].plot(ts, brake, color="green")
-    axes[1].axvline(ts[idx], color="red")
+    axes[1].plot(ts, brake, color="green"); axes[1].axvline(ts[idx], color="red")
     axes[1].set_ylabel("Brake")
 
-    axes[2].plot(ts, coolant, color="red")
-    axes[2].axvline(ts[idx], color="red")
+    axes[2].plot(ts, coolant, color="red"); axes[2].axvline(ts[idx], color="red")
     axes[2].set_ylabel("Coolant")
 
-    axes[3].plot(ts, yaw, color="black")
-    axes[3].axvline(ts[idx], color="red")
+    axes[3].plot(ts, yaw, color="purple"); axes[3].axvline(ts[idx], color="red")
     axes[3].set_ylabel("Yaw")
     axes[3].set_xlabel("Time (s)")
 
@@ -657,46 +639,74 @@ def plot_live_telemetry(idx):
 
     return fig
 
-
 # -----------------------------------
-# Draw Animated Car + Telemetry
+# Track Visualization
 # -----------------------------------
-track_placeholder = st.empty()
-telemetry_panel = st.empty()
-telemetry_graphs = st.empty()
+def plot_track(idx, x, y):
+    fig, ax = plt.subplots(figsize=(7, 7))
 
-def render(time_t):
-    idx, x, y = get_frame(time_t)
-
-    # Track view
-    fig, ax = plt.subplots(figsize=(8, 8))
     if len(track_x) > 0:
         ax.plot(track_x, track_y, color="lightgray")
 
-    ax.plot(xs, ys, alpha=0.4, color="blue")
+    ax.plot(xs, ys, alpha=0.35, color="blue")
     ax.scatter([x], [y], color="red", s=80)
+
     ax.set_aspect("equal")
     ax.grid(True)
-    ax.set_title(f"Time: {time_t:.2f}s | Lap {int(laps[idx])}")
+    ax.set_title(f"Time: {st.session_state.timeline_t:.2f}s | Lap {int(laps[idx])}")
 
-    track_placeholder.pyplot(fig)
+    return fig
 
-    # Telemetry
-    with telemetry_panel.container():
-        draw_telemetry(idx)
+# -----------------------------------
+# Containers for side-by-side display
+# -----------------------------------
+# numeric_panel = st.container()
+numeric_placeholder = st.empty()
+left_col, right_col = st.columns([2, 1])
 
-    telemetry_graphs.pyplot(plot_live_telemetry(idx))
+with left_col:
+    track_area = st.empty()
+with right_col:
+    graph_area = st.empty()
+
+# -----------------------------------
+# Rendering
+# -----------------------------------
+# def render():
+#     idx, x, y = get_frame(st.session_state.timeline_t)
+
+#     # top numbers
+#     with numeric_panel:
+#         show_numeric(idx)
+
+#     # left: track view
+#     track_area.pyplot(plot_track(idx, x, y))
+
+#     # right: telemetry graphs
+#     graph_area.pyplot(plot_graphs(idx))
+
+
+def render():
+    idx, x, y = get_frame(st.session_state.timeline_t)
+
+    # --- FIX: Proper clearing of numeric metrics ---
+    numeric_placeholder.empty()
+    with numeric_placeholder.container():
+        show_numeric(idx)
+
+    # Track + graphs
+    track_area.pyplot(plot_track(idx, x, y))
+    graph_area.pyplot(plot_graphs(idx))
 
 
 # -----------------------------------
-# PLAYBACK LOOP
+# Playback Loop
 # -----------------------------------
 if st.session_state.playing:
     while True:
-        render(st.session_state.timeline_t)
+        render()
 
         st.session_state.timeline_t += 0.1 * speed_factor
-
         if st.session_state.timeline_t >= max_t:
             st.session_state.timeline_t = max_t
             st.session_state.playing = False
@@ -704,7 +714,7 @@ if st.session_state.playing:
 
         time.sleep(0.05)
 else:
-    render(st.session_state.timeline_t)
+    render()
 
 
 # import os
