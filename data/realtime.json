@@ -1,27 +1,27 @@
 {
-  "timestamp": 1764946304.241398,
-  "t": 89.6,
+  "timestamp": 1765019116.0427551,
+  "t": 75.0,
   "lap": 4,
-  "track_index": 2097,
+  "track_index": 1735,
   "gps": {
-    "x": 3.974,
-    "y": -1.412
+    "x": 2.024,
+    "y": -2.513
   },
   "true": {
-    "speed_kmh": 296.8,
-    "coolant_temp": 2605.16,
-    "brake_cmd": 0.75,
-    "throttle": 0.2,
-    "yaw_deg": -3.234
+    "speed_kmh": 316.61,
+    "coolant_temp": 2168.27,
+    "brake_cmd": 0.0,
+    "throttle": 0.75,
+    "yaw_deg": -0.028
   },
   "sensors": {
-    "wheel_speed": 297.8,
-    "brake_pressure": 75.34,
-    "coolant_temp": 2605.07,
+    "wheel_speed": 316.31,
+    "brake_pressure": 0.0,
+    "coolant_temp": 2168.24,
     "imu": {
-      "ax": -0.093,
-      "ay": 0.006,
-      "yaw": -3.221
+      "ax": 0.051,
+      "ay": -0.015,
+      "yaw": -0.028
     }
   }
 }
