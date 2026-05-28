@@ -1,6 +1,5 @@
 # simulator/live_recommendation.py
 
-import os
 import numpy as np
 from typing import Dict, Any, List
 
@@ -63,7 +62,7 @@ def recommend_for_packet(
     speed_margin: float = 8.0,
     throttle_margin: float = 0.2,
     brake_margin: float = 0.2,
-) -> Dict[str, Any]]:
+) -> Dict[str, Any]:
     """
     Produce live coaching feedback for a telemetry packet.
     Used by Streamlit's real-time viewer.
@@ -82,6 +81,7 @@ def recommend_for_packet(
 
     messages: List[str] = []
 
+    # "true" is the canonical source of simulator state in each packet.
     true = packet.get("true", {})
     idx = packet.get("track_index", None)
 

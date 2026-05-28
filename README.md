@@ -1,760 +1,217 @@
-# 🚗 FSAE Telemetry Simulator & Streamlit Dashboard
+# FSAE Simulator Dashboard - Code Audit, Fixes, and IP Landscape
 
-A complete Formula SAE–style telemetry system consisting of:
+Previous `README.md` has been moved to `notes.md`.
 
-* **Real-time data simulator** (10 Hz)
-* **Race simulation generator** (multi-lap, fast generation)
-* **Streamlit telemetry dashboard** (real-time, replay, track map)
-* **Sensor models** for coolant, brake pressure, wheel speed, and IMU
-* **Lap-based visualization tools** for performance analysis
+## 1. Bugs, Errors, and Broken Logic Identified
 
-This project is fully standalone and can be used for FSAE simulation, driver training analytics, experiment logging, or educational demos.
+### A. `simulator/live_recommendation.py`
+1. Syntax error in function signature:
+- `) -> Dict[str, Any]]:` had an extra `]`.
+- Impact: module import fails with `SyntaxError`, breaking recommendation features.
 
----
+2. Unused import:
+- `import os` was unused.
+- Impact: readability/maintenance noise.
 
-## 📁 Project Structure (Stage 2)
+### B. `simulator/run_simulator.py`
+1. Fragile imports:
+- Used `from sensors...` instead of package-safe `from simulator.sensors...`.
+- Impact: fails depending on current working directory / launch method.
 
-```
-fsae-telemetry-physics/
-│
-├── README.md
-├── requirements.txt
-│
-├── data/
-│   ├── realtime.json
-│   ├── logs/
-│   └── tracks/
-│       ├── default_track.csv
-│       ├── track_map.png
-│       └── track_metadata.json
-│
-├── configs/
-│   ├── simulation.yaml            # timestep, duration, randomness
-│   ├── sensors.yaml               # noise, dropout, frequency
-│   ├── car_simple.yaml            # Option A physics parameters
-│   ├── car_intermediate.yaml      # Option B parameters
-│   └── car_advanced.yaml          # Option C full dynamics
-│
-├── simulator/
-│   ├── run_simulator.py           # selects physics engine A/B/C
-│   ├── driver_profiles.py         # throttle/brake/steer functions
-│   ├── track_loader.py            # loads CSV or synthetic tracks
-│   │
-│   ├── physics/
-│   │   ├── core/                  # shared mathematical functions
-│   │   │   ├── units.py
-│   │   │   └── integrators.py     # RK4, Euler integrators (for upgrades)
-│   │   │
-│   │   ├── simple/                # Option A simplified physics
-│   │   │   ├── vehicle_model.py
-│   │   │   ├── dynamics.py
-│   │   │   ├── thermal.py
-│   │   │   └── steering_yaw.py
-│   │   │
-│   │   ├── intermediate/          # Option B more detailed
-│   │   │   ├── vehicle_model.py
-│   │   │   ├── dynamics_longitudinal.py
-│   │   │   ├── dynamics_lateral.py
-│   │   │   ├── thermal_full.py
-│   │   │   └── aero_map.py
-│   │   │
-│   │   └── advanced/              # Option C racing simulator style
-│   │       ├── vehicle_model.py
-│   │       ├── pacejka_tire.py
-│   │       ├── combined_slip.py
-│   │       ├── suspension_model.py
-│   │       ├── powertrain_model.py
-│   │       └── cooling_aero_model.py
-│   │
-│   └── new_sensors/
-│       ├── imu_sensor.py
-│       ├── wheel_speed_sensor.py
-│       ├── brake_pressure_sensor.py
-│       ├── coolant_temp_sensor.py
-│       ├── motor_temp_sensor.py
-│       └── noise_models.py
-│
-├── streamlit_app/
-│   ├── app.py
-│   ├── pages/
-│   │   ├── 1_Realtime_Telemetry.py
-│   │   ├── 2_Data_Visualization.py
-│   │   ├── 3_Lap_Overview.py
-│   │   ├── 4_Track_Map.py
-│   │   └── 5_Session_Comparison.py
-│   └── components/
-│       ├── matplotlib_utils.py
-│       ├── summary_cards.py
-│       └── telemetry_plots.py
-│
-├── analysis/
-│   ├── notebooks/
-│   │   ├── physics_model_validation.ipynb
-│   │   ├── sensor_noise_analysis.ipynb
-│   │   └── track_simulation_demo.ipynb
-│   └── scripts/
-│       ├── export_to_csv.py
-│       └── session_cleaner.py
-│
-└── utils/
-    ├── json_writer.py
-    ├── logger.py
-    ├── config_loader.py
-    ├── lap_timer.py
-    └── math_utils.py
+2. Fragile relative file output:
+- Wrote realtime output to `../data/realtime.json`.
+- Impact: incorrect output path when launched from project root.
 
-```
+3. Redundant commented legacy block:
+- Large dead code block at file end.
+- Impact: lowers readability and increases confusion.
 
-## 📁 Project Structure
+### C. `simulator/run_race_simulator.py`
+1. Same fragile import pattern as above.
+2. Relative `data/logs` path not rooted at repository path.
 
-```
-fsae-telemetry-streamlit/
-│
-├── README.md
-├── requirements.txt
-│
-├── simulator/
-│   ├── __init__.py
-│   ├── run_simulator.py             # real-time simulator (10 Hz)
-│   ├── run_race_simulator.py        # fast multi-lap race simulator
-│   └── sensors/
-│       ├── coolant_temp.py
-│       ├── brake_pressure.py
-│       ├── wheel_speed.py
-│       └── imu.py
-│
-├── data/
-│   ├── realtime.json                # real-time bridge between simulator and dashboard
-│   └── logs/
-│       ├── session_001.json
-│       ├── session_002.json
-│       └── race_session_YYYYMMDD.json
-│
-├── streamlit_app/
-│   ├── app.py                       # main dashboard entry point
-│   ├── pages/
-│   │   ├── 1_Realtime_Telemetry.py  # live updates from realtime.json
-│   │   ├── 2_Track_Map.py           # visual track map (optional)
-│   │   └── 3_Replay_Data.py         # load and visualize recorded logs
-│   └── components/
-│       ├── gauges.py                # speed, temp, brake UI widgets
-│       ├── charts.py                # matplotlib/plotly visualization modules
-│       └── status_card.py           # UI component for sensor status
-│
-└── utils/
-    ├── config.py                    # shared constants and settings
-    └── data_loader.py               # JSON/streaming data parser
-```
+## 2. Issues Fixed
 
----
+## Files changed
+- `simulator/live_recommendation.py`
+- `simulator/run_simulator.py`
+- `simulator/run_race_simulator.py`
+- `notes.md` (previous README content)
+- `README.md` (this new file)
 
-## 🔧 Installation
+### `simulator/live_recommendation.py`
+- Fixed return annotation to valid Python:
+  - `) -> Dict[str, Any]:`
+- Removed unused `os` import.
 
-### **1. Clone the repository**
+### `simulator/run_simulator.py`
+- Replaced grouped imports with explicit, readable imports.
+- Added `ROOT` resolution from `__file__` and safe `sys.path` append.
+- Switched to package imports from `simulator.sensors.*`.
+- Re-rooted paths to `ROOT/data/...` for deterministic behavior.
+- Removed redundant commented legacy code block.
 
+### `simulator/run_race_simulator.py`
+- Applied same package import and root-path fixes.
+
+## 3. Cleanup Performed (Redundancy + Readability)
+
+1. Normalized import style in simulator entry scripts.
+2. Removed dead/commented-out duplicate logic.
+3. Standardized path resolution through `ROOT` for scripts that may run from different CWDs.
+
+## 4. Inline Comments Added for Complex Logic
+
+1. `simulator/live_recommendation.py`:
+- Added comment clarifying why `packet["true"]` is treated as the canonical state source.
+
+2. `simulator/run_simulator.py` / `simulator/run_race_simulator.py`:
+- Structure and naming improved so additional comments were not necessary beyond existing clear labels.
+
+## 5. Verification and Summary
+
+### Validation run
 ```bash
-git clone https://github.com/<your-username>/fsae-telemetry-streamlit.git
-cd fsae-telemetry-streamlit
+python3 -m compileall -q simulator streamlit_app utils
 ```
+Result: pass (no syntax errors).
 
-### **2. Install dependencies**
-
-Recommend using a virtual environment.
-
-```bash
-pip install -r requirements.txt
-```
+### Why these changes
+- Restore runtime correctness (syntax/import/path issues).
+- Make scripts robust when run from different locations.
+- Reduce maintenance friction by removing stale duplicate code.
 
 ---
 
-## 🏎️ Running the Simulators
+## Extended Patent Landscape (Telemetry, Driver Coaching, Digital Twin, PINN)
 
-### **A) Real-Time Simulator (10 Hz continuous)**
+Important: this is a technical landscape overview, not legal advice and not a freedom-to-operate opinion.
 
-Writes values to:
+## A. Vehicle telemetry and remote monitoring
+1. WO2003073394A2 - Vehicle telemetry system and method  
+https://patents.google.com/patent/WO2003073394A2/en
 
-```
-data/realtime.json
-data/logs/session_*.json
-```
+2. WO2004106883A1 - Vehicle tag used for transmitting vehicle telemetry data  
+https://patents.google.com/patent/WO2004106883A1/en
 
-Run:
+3. WO2006110786A3 - Real-time on-board automotive telemetry analysis/reporting  
+https://patents.google.com/patent/WO2006110786A3/en
 
-```bash
-python simulator/run_simulator.py
-```
+4. US7593999B2 - Automotive telemetry protocol  
+https://patents.google.com/patent/US7593999B2
 
-Press **CTRL+C** to stop and save the session.
+5. US20080197992A1 - Method/system for remotely monitoring vehicle operations  
+https://patents.google.com/patent/US20080197992A1/en
+
+6. WO2000052485A1 - Telemetry system for EMI susceptibility testing of vehicles  
+https://patents.google.com/patent/WO2000052485A1/en
+
+## B. Driver coaching and feedback systems
+1. US9645970B2 - Driver coaching system  
+https://patents.google.com/patent/US9645970B2/en
+
+2. US20230267399A1 - Feedback for vehicle driver self-coaching  
+https://patents.google.com/patent/US20230267399A1/en
+
+3. WO2007140232A8 - Haptic coaching method for improving fuel economy  
+https://patents.google.com/patent/WO2007140232A8/en
+
+## C. Motorsports / race-related monitoring context
+1. US6020851A - Auto race monitoring system  
+https://patents.google.com/patent/US6020851A/en
+
+## D. Vehicle digital twin and cloud twin architectures
+1. US11954651B2 - Sensor-based digital twin system for vehicular analysis  
+https://patents.google.com/patent/US11954651B2/en
+
+2. US20190287079A1 - Sensor-based digital twin system for vehicular analysis (publication)  
+https://patents.google.com/patent/US20190287079A1/en
+
+3. US9881430B1 - Digital twin system for a cooling system  
+https://patents.google.com/patent/US9881430B1/en
+
+4. US20230367688A1 - Cloud-based mobility digital twin for human/vehicle/traffic  
+https://patents.google.com/patent/US20230367688A1/en
+
+5. US12154391B2 - ITS with digital twin interface for passenger vehicle  
+https://patents.google.com/patent/US12154391B2/en
+
+6. US12340634B2 - Dual vehicle digital twins for model-based learning/remote ops  
+https://patents.google.com/patent/US12340634B2/en
+
+7. US20220055620A1 - In-vehicle safety analysis using digital twin  
+https://patents.google.com/patent/US20220055620A1/en
+
+8. EP4159621A3 - Digital twin for an autonomous vehicle  
+https://patents.google.com/patent/EP4159621A3/en
+
+## E. Physics-informed neural network (PINN) and related physics-informed ML patents
+1. US20220414429A1 - Physics-informed attention-based neural network  
+https://patents.google.com/patent/US20220414429A1/en
+
+2. WO2024238788A1 - Training PINN with RANS turbulent-flow formulation  
+https://patents.google.com/patent/WO2024238788A1/en
+
+3. US20250165680A1 - 3D displacement using pre-trained PINNs  
+https://patents.google.com/patent/US20250165680A1/en
+
+4. US20230409877A1 - Learning-based nonlinear compensation with PINN  
+https://patents.google.com/patent/US20230409877A1/en
+
+5. WO2025101591A1 - Physics-informed ML for discrete nonlinear PDEs  
+https://patents.google.com/patent/WO2025101591A1/en
+
+6. EP1418541A3 - Physics-based neural network trend detector (earlier related concept)  
+https://patents.google.com/patent/EP1418541A3/en
 
 ---
 
-### **B) Multi-Lap Race Generator (fast, non-real-time)**
+## How PINN Relates to This Project
 
-Generates 10-lap simulation instantly (with tqdm progress).
+Current project approach:
+- rule-based/simple-physics simulator
+- noisy sensor emulation
+- heuristic/recommender logic from historical telemetry segments
 
-Run:
+Where PINN can fit:
+1. **Physics-consistent state estimation**
+- Replace/augment hand-tuned update equations with a PINN constrained by vehicle dynamics equations.
+- Benefit: smoother and physically plausible estimates under sparse/noisy sensor input.
 
-```bash
-python simulator/run_race_simulator.py
-```
+2. **Surrogate dynamics model for fast simulation**
+- Train PINN to emulate high-fidelity dynamics while preserving conservation/kinematics constraints.
+- Benefit: faster-than-CFD/rigid-body full models while maintaining physical structure.
 
-Outputs to:
+3. **Fault-tolerant sensor fusion**
+- Use PINN residuals to detect implausible telemetry packets (dropouts/spikes).
+- Benefit: improved robustness for live recommendations.
 
-```
-data/logs/race_session_YYYYMMDD_HHMMSS.json
-```
+4. **Trajectory and control recommendation**
+- Use PINN-informed predictions for braking/throttle envelopes by track segment.
+- Benefit: recommendations grounded in both data and physics constraints.
 
----
-
-## 📊 Running the Streamlit Dashboard
-
-Launch the telemetry interface:
-
-```bash
-streamlit run streamlit_app/app.py
-```
-
-This opens a dashboard with:
-
-### **1. Real-Time Telemetry**
-
-Pulls the latest frame from `data/realtime.json`.
-
-### **2. Track Map View**
-
-(If implemented) Displays IMU/Yaw + wheel speed on a track map.
-
-### **3. Session Replay & Lap Analysis**
-
-Loads log files from `data/logs/*.json` and renders:
-
-* Time-series coolant, speed, brake pressure, IMU
-* Lap-by-lap comparison
-* Overlay plots (speed comparison between laps)
-* Mini-multiples lap grid
-* Correlation heatmaps
+### Suggested PINN roadmap for this repo
+1. Add formal state vector and governing equations (`v`, `yaw`, `temp`, track progress).
+2. Log supervised + residual training data from simulation and replay logs.
+3. Train baseline MLP and PINN side-by-side for next-state prediction.
+4. Compare physically constrained residuals and lap-time prediction error.
+5. Deploy PINN only behind feature flag in recommender path.
 
 ---
 
-## 🛠️ Sensor Models Included
+## Fixed Version Snapshot
 
-| Sensor         | Description                                          | File                |
-| -------------- | ---------------------------------------------------- | ------------------- |
-| Coolant Temp   | Thermal dynamics, load oscillation, cooling behavior | `coolant_temp.py`   |
-| Wheel Speed    | Sinusoidal + noise speedCurve                        | `wheel_speed.py`    |
-| Brake Pressure | Random braking events with decay                     | `brake_pressure.py` |
-| IMU            | Lateral acceleration, yaw oscillation                | `imu.py`            |
-
-All sensors expose a simple API:
+Key corrected pattern now used in simulator scripts:
 
 ```python
-value = sensor.step()
+ROOT = os.path.dirname(os.path.dirname(__file__))
+if ROOT not in sys.path:
+    sys.path.append(ROOT)
+
+from simulator.sensors.coolant_temp import CoolantTempSimulator
+
+log_path = os.path.join(ROOT, "data", "logs")
+realtime_path = os.path.join(ROOT, "data", "realtime.json")
 ```
 
----
-
-## 📈 Data Format
-
-Each simulator output frame contains:
-
-```json
-{
-  "lap": 1,
-  "lap_progress": 0.42,
-  "coolant_temp": 68.55,
-  "wheel_speed": 74.3,
-  "brake_pressure": 22.41,
-  "imu": {
-    "ax": 0.01,
-    "ay": -0.12,
-    "yaw": 1.27
-  }
-}
-```
-
-Real-time simulator also includes UNIX timestamp:
-
-```json
-"timestamp": 1733124234.022
-```
-
----
-
-## 🚀 Roadmap / Future Features
-
-* Real GPS-based track maps (CSV or GPX import)
-* Driver inputs (throttle, steering, gear)
-* G-G acceleration plot
-* Lap time prediction via ML
-* Interactive replay scrubber
-* CAN-Bus ingestion module
-* MQTT / WebSocket live telemetry
-
----
-
-## 🤝 Contributions
-
-Pull requests are welcome!
-If you’d like help adding new visualizations, sensors, or ML models, feel free to ask.
-
----
-
-## 📜 License
-
-MIT License — free to use, modify, and share.
-
-
-There are 4 different stages, which is
-1. General Simulation
-2. Simplified Physics (Easier, fast, still realistic)
-
-Speed = engine - brake - drag
-
-Yaw = steering sensitivity
-
-Coolant = heat from speed + throttle
-
-GPS along simple oval track
-
-Perfect starter + good for visualization
-
-3. Intermediate Physics (More detailed)
-
-Longitudinal & lateral acceleration
-
-Tire cornering stiffness
-
-Weight transfer (braking & cornering)
-
-Yaw integrates over time
-
-Engine power curve
-
-Brake fade
-
-Cooling airflow model
-
-Still real-time friendly (100 Hz OK)
-
-4. Advanced Physics (Almost racing sim level)
-
-Pacejka tire model
-
-Combined slip forces
-
-Suspension kinematics
-
-Torque curves & shift logic
-
-Brake torque distribution
-
-Aero map
-
-Differential model
-
-Not needed for telemetry dashboard unless FSAE team uses it for simulation research
-
-🏁 You now have a full motorsport-grade visualization module
-
-This is aligned with real F1/FSAE data engineering practices:
-
-Lap segmentation
-
-Lap progress normalization
-
-Multi-lap overlays
-
-Mini-map style small multiples
-
-Per-lap sensor stack
-
-🚀 Want to go even further?
-
-I can add:
-
-🔥 Optimal Lap Comparison (find fastest lap + overlay)
-🔥 Sector Times (S1/S2/S3 auto-segmentation)
-🔥 Braking zone detection (peak brake-pressure triggers)
-🔥 G-G Diagram (longitudinal vs lateral accelerations)
-🔥 Dashboard Export (PDF/PNG/CSV per lap)
-
-Just tell me what you want next.
-
-🎉 What this final version gives you
-✔ No more errors
-
-Thanks to IMU-safe flattening.
-
-✔ Correct lap progress
-
-Based on track_index.
-
-✔ Multi-channel lap analysis
-
-Speed, coolant, brake, yaw.
-
-✔ Multi-lap overlay
-
-Compare any laps.
-
-✔ Small multiples (“sparklines”)
-
-Classic motorsport visualization.
-
-✔ GPS colored by lap
-
-Very useful for consistency checks.
-
-✔ Clean, maintainable, future-proof code
-
-This is now production-grade FSAE telemetry visualization.
-
-🚀 Want to upgrade next?
-
-I can add:
-
-🔥 Delta-Time comparison (F1 style)
-
-Compare any lap vs fastest lap.
-
-📍 Corner detection
-
-Based on yaw or curvature.
-
-🟦 Sector times
-
-S1 / S2 / S3 automatically generated.
-
-🧊 Cooling-performance analysis
-
-Temp vs throttle vs speed correlation.
-
-🛠 Sensor dropout visualization
-
-Just tell me:
-👉 “Add delta-time comparison”
-or
-👉 “Add sector timing”
-or
-👉 “Add corner detection”
-
-# ✔ Example Usage
-
-Run sim with aggressive driver:
-
-```bash
-python simulator/run_simulator_with_recommender.py --driver-id driver_aggressive --target-laps 5
-```
-
-Run with recommendations:
-
-```bash
-python simulator/run_simulator_with_recommender.py --use-policy --target-laps 5
-```
-
-Train regressors too:
-
-```bash
-python simulator/run_simulator_with_recommender.py --use-policy --train-models --target-laps 5
-```
-
----
-
-# 🧠 What’s next?
-
-I can help you extend this into a **Driver Behavior Analytics** dashboard:
-
-### 🚦 Driver Modeling Features
-
-* consistent throttle/brake signature analysis
-* steering smoothness score
-* braking efficiency index
-* jerk (rate of change of acceleration)
-* corner-entry & exit speed comparison
-* best-line estimation from GPS clusters
-
-### 🧠 Recommendation Engine 2.0
-
-* ML → regression & clustering per driver style
-* RL → Q-learning / PPO for lap-time optimization
-* Ghost racing line generation
-
-If you want these features, tell me:
-
-👉 *“Let’s add driver analytics”*
-or
-👉 *“Let’s build RL-based racing optimization”*
-
-I can generate the entire pipeline for you.
-
-🎁 BONUS FEATURE
-
-If you want, I can also automatically generate:
-
-✔ Track difficulty scoring
-
-Based on:
-
-average corner radius
-
-number of transitions
-
-length of straights
-
-speed profiles
-
-✔ Best racing line estimation
-
-Using spline smoothing and curvature minimization.
-
-✔ Lap-time estimation based on your physics model
-
-Using:
-
-simulated throttle/brake
-
-simulated grip limit
-
-simple lateral acceleration model
-
-✔ "Suggest optimal driver strategy for this track"
-🚀 What next?
-
-Which would you like me to build next?
-
-1️⃣ Racing line optimizer
-2️⃣ Lap-time predictor
-3️⃣ Track difficulty map (color-coded)
-4️⃣ Best braking zones detection
-5️⃣ Driver coaching system (“Brake later at T3”, etc)
-
-Great — you’re asking exactly the right question for building an **intelligent FSAE driving assistant**.
-
-Right now your simulator already has:
-
-* Continuous physics state
-* Driver actions (throttle, brake, steering)
-* Recorded trajectories
-* Sensor noise
-* Multiple driver profiles
-
-This is **perfect** for applying **Reinforcement Learning (RL)** to *learn driver behaviour* and *recommend actions* to future drivers with similar styles.
-
----
-
-# 🚀 Goal
-
-### **Learn control policies from driver behaviour → classify driver style → recommend actions for new drivers.**
-
-We can break this into **3 parts**:
-
----
-
-# **PART A — Learn a Policy From Driver Logs (Imitation / Offline RL)**
-
-Your logs already contain:
-
-* **state** = speed, yaw, coolant, track_index, position
-* **action** = throttle, brake, steering
-
-This is exactly the dataset needed for:
-
-### ✔ Behavioral Cloning (Supervised Imitation Learning)
-
-Learn:
-
-```
-action = π(state)
-```
-
-or
-
-### ✔ Offline Reinforcement Learning
-
-Improve beyond the demonstration, but still use only logged data.
-
----
-
-# **A1. Behavioral Cloning (BC) is the easiest starting point**
-
-**Why BC?**
-
-* Works with your existing JSON logs
-* No need for trial-and-error training
-* Model learns to imitate a driver’s style
-* Fast to train (minutes)
-
-**Model input:**
-
-```
-[speed, yaw, track_index_norm, curvature, …]
-```
-
-**Model output:**
-
-```
-[throttle, brake, steering]
-```
-
-### Simple PyTorch model example:
-
-```python
-class BCPolicy(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.net = nn.Sequential(
-            nn.Linear(10, 128),
-            nn.ReLU(),
-            nn.Linear(128, 64),
-            nn.ReLU(),
-            nn.Linear(64, 3),
-            nn.Tanh()    # steering [-1,1], throttle/brake normalized
-        )
-
-    def forward(self, x):
-        return self.net(x)
-```
-
----
-
-# **A2. The resulting BC policy can be used as a recommender**
-
-During simulation:
-
-```python
-action = policy(state)
-```
-
-This already beats your heuristics and random forest.
-
----
-
-# **PART B — Learn Driver Styles (Clustering / Embeddings)**
-
-To generalize to “similar drivers” you need a **Driver Embedding Model**.
-
-### Extract features per driver:
-
-```
-avg throttle variance
-brake aggressiveness
-steering smoothness
-corner entry speed patterns
-overtake behavior (future)
-```
-
-### Cluster drivers (k-means, HDBSCAN)
-
-Produces driver types:
-
-| Cluster | Style                    |
-| ------- | ------------------------ |
-| 0       | Smooth, low brake        |
-| 1       | Aggressive, late braking |
-| 2       | High-speed understeer    |
-| 3       | Conservative throttle    |
-
-Now when a **new driver** starts driving:
-
-* Extract their features from first 10 seconds
-* Classify them → find cluster
-* Load policy for that cluster
-
----
-
-# **PART C — Build Multi-Driver Reinforcement Learning**
-
-After BC is working, you can upgrade to RL.
-
-### ⭐ Option 1 — **Offline RL (CQL, IQL, BCQ)**
-
-Uses only logs. No need for a real-time RL environment.
-
-### ⭐ Option 2 — **On-policy RL (PPO, SAC)**
-
-Use your simulator as the environment:
-
-```
-state → policy → action → next state → reward → learn
-```
-
-Reward design example:
-
-```
-+ speed
-+ progress along track
-- excessive yaw (oversteer)
-- brake spikes
-- coolant > threshold
-```
-
-### Result
-
-You get a **general optimal driver**, not tied to human behaviour.
-
----
-
-# **PART D — Putting It All Together (Production Architecture)**
-
-### 1. **Data Collection**
-
-From your JSON logs → convert to training dataset:
-
-```
-state(t), action(t), state(t+1), reward(t)
-```
-
-### 2. **Train Behavioural Cloning Policies**
-
-* 1 policy per driver
-* 1 general policy from all drivers
-
-### 3. **Driver Embedding System**
-
-Cluster drivers → assign new ones to style groups.
-
-### 4. **Online Recommendation System**
-
-During driving:
-
-```
-state → choose driver cluster → policy(cluster) → recommend action
-```
-
-### 5. **Adaptive Learning (optional)**
-
-As new users drive:
-
-```
-update model weights online → improve personalization
-```
-
----
-
-# 🎁 **If you want, I can build:**
-
-### ✔ A full BC model training pipeline for your dataset
-
-### ✔ A driver-style clustering system
-
-### ✔ A reinforcement learning (PPO/SAC) training loop for your simulator
-
-### ✔ Integration so your current simulator uses the learned RL policy
-
-### ✔ Streamlit UI to visualize RL training progress and policy performance
-
----
-
-# 🔥 Next Step
-
-Choose what you want to implement **first**:
-
-### **A. Behavioral Cloning Model (imitation learning) — easiest & fastest**
-
-### **B. Driver Style Clustering (identify similar drivers)**
-
-### **C. Offline RL (CQL/IQL) — powerful, no live training needed**
-
-### **D. Full RL training in simulator (PPO/SAC) — most advanced**
-
-Which one should I build for you?
+This removes CWD-dependent behavior and stabilizes imports/outputs.
