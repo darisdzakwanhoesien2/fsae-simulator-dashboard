@@ -669,22 +669,6 @@ with left_col:
 with right_col:
     graph_area = st.empty()
 
-# -----------------------------------
-# Rendering
-# -----------------------------------
-# def render():
-#     idx, x, y = get_frame(st.session_state.timeline_t)
-
-#     # top numbers
-#     with numeric_panel:
-#         show_numeric(idx)
-
-#     # left: track view
-#     track_area.pyplot(plot_track(idx, x, y))
-
-#     # right: telemetry graphs
-#     graph_area.pyplot(plot_graphs(idx))
-
 
 def render():
     idx, x, y = get_frame(st.session_state.timeline_t)
@@ -716,6 +700,24 @@ if st.session_state.playing:
 else:
     render()
 
+
+
+
+# -----------------------------------
+# Rendering
+# -----------------------------------
+# def render():
+#     idx, x, y = get_frame(st.session_state.timeline_t)
+
+#     # top numbers
+#     with numeric_panel:
+#         show_numeric(idx)
+
+#     # left: track view
+#     track_area.pyplot(plot_track(idx, x, y))
+
+#     # right: telemetry graphs
+#     graph_area.pyplot(plot_graphs(idx))
 
 # import os
 # import sys

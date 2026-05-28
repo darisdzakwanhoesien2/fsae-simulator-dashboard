@@ -256,25 +256,27 @@ try:
         imu = imu_sensor.read(true_ax=0.0, true_ay=0.0, true_yaw=yaw_deg)
 
         packet = {
-            "timestamp": time.time(),
-            "t": round(t, 3),
-            "lap": laps,
-            "track_index": idx,
-            "gps": {"x": round(x, 3), "y": round(y, 3)},
-            "true": {
-                "speed_kmh": round(speed_kmh, 2),
-                "coolant_temp": round(coolant, 2),
-                "brake_cmd": round(brake_cmd, 3),
-                "throttle": round(throttle, 3),
-                "yaw_deg": round(yaw_deg, 3),
-            },
-            "sensors": {
-                "wheel_speed": ws,
-                "brake_pressure": bp,
-                "coolant_temp": ct,
-                "imu": imu,
-            },
-        }
+        "timestamp": time.time(),
+        "t": t,
+        "lap": laps,
+        "track_index": idx,
+        "driver_id": args.driver_id,     # << NEW
+        "gps": {"x": x, "y": y},
+        "true": {
+            "speed_kmh": speed_kmh,
+            "coolant_temp": coolant,
+            "brake_cmd": brake_cmd,
+            "throttle": throttle,
+            "yaw_deg": yaw_deg,
+        },
+        "sensors": {
+            "wheel_speed": ws,
+            "brake_pressure": bp,
+            "coolant_temp": ct,
+            "imu": imu,
+        },
+    }
+
 
         # Realtime + log
         write_realtime_json(os.path.join(DATA_DIR, "realtime.json"), packet)
