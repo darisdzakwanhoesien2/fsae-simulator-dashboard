@@ -11,7 +11,8 @@ st.title("📊 FSAE Telemetry — Lap Visualization (Physics Stage 1)")
 # -----------------------------------
 # 1. Load session files
 # -----------------------------------
-LOG_DIR = os.path.join("data", "logs")
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+LOG_DIR = os.path.join(ROOT, "data", "logs")
 
 if not os.path.exists(LOG_DIR):
     st.error("❌ Logs folder not found. Ensure /data/logs exists.")
@@ -45,36 +46,36 @@ if len(raw) == 0:
 # 3. Flatten rows safely
 # -----------------------------------
 flattened = []
-t0 = raw[0]["timestamp"]
+t0 = raw[0].get("timestamp")
 
 for row in raw:
-    sensors = row["sensors"]
+    sensors = row.get("sensors") or {}
     imu = sensors.get("imu")  # <-- may be None
 
     flattened.append({
         # --- Time ---
-        "timestamp": row["timestamp"],
-        "time": row["timestamp"] - t0,
+        "timestamp": row.get("timestamp"),
+        "time": (row.get("timestamp") - t0) if (row.get("timestamp") is not None and t0 is not None) else None,
 
         # --- Lap fields ---
         "lap": row.get("lap"),
         "track_index": row.get("track_index"),
 
         # --- GPS ---
-        "gps_x": row["gps"]["x"],
-        "gps_y": row["gps"]["y"],
+        "gps_x": (row.get("gps") or {}).get("x"),
+        "gps_y": (row.get("gps") or {}).get("y"),
 
         # --- TRUE physics values ---
-        "true_speed": row["true"]["speed_kmh"],
-        "true_coolant": row["true"]["coolant_temp"],
-        "true_brake_cmd": row["true"]["brake_cmd"],
-        "true_throttle": row["true"]["throttle"],
-        "true_yaw": row["true"]["yaw_deg"],
+        "true_speed": (row.get("true") or {}).get("speed_kmh"),
+        "true_coolant": (row.get("true") or {}).get("coolant_temp"),
+        "true_brake_cmd": (row.get("true") or {}).get("brake_cmd"),
+        "true_throttle": (row.get("true") or {}).get("throttle"),
+        "true_yaw": (row.get("true") or {}).get("yaw_deg"),
 
         # --- SENSOR values ---
-        "wheel_speed": sensors["wheel_speed"],
-        "brake_pressure": sensors["brake_pressure"],
-        "coolant_temp": sensors["coolant_temp"],
+        "wheel_speed": sensors.get("wheel_speed", row.get("wheel_speed")),
+        "brake_pressure": sensors.get("brake_pressure", row.get("brake_pressure")),
+        "coolant_temp": sensors.get("coolant_temp", row.get("coolant_temp")),
 
         # --- IMU (safe fallback during dropout) ---
         "imu_ax": imu["ax"] if imu else None,
@@ -92,7 +93,9 @@ if "track_index" not in df.columns:
     st.stop()
 
 max_index = df["track_index"].max()
-df["lap_progress"] = df["track_index"] / max_index
+# Lap progress is derived from `track_index`. The track closes a loop, so the
+# maximum index observed in this session is used as an approximate normalizer.
+df["lap_progress"] = df["track_index"] / max_index if max_index else 0.0
 
 # -----------------------------------
 # 5. Data Preview

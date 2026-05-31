@@ -11,7 +11,8 @@ st.title("📊 FSAE Telemetry — Data Visualization (Matplotlib)")
 # -----------------------------------
 # 1. Load session files
 # -----------------------------------
-LOG_DIR = os.path.join("data", "logs")
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+LOG_DIR = os.path.join(ROOT, "data", "logs")
 
 if not os.path.exists(LOG_DIR):
     st.error("❌ Logs folder not found. Make sure /data/logs exists.")
@@ -45,16 +46,37 @@ if len(raw) == 0:
 # Flatten nested IMU fields
 flattened = []
 for row in raw:
-    flattened.append({
-        "timestamp": row["timestamp"],
-        "time": row["timestamp"] - raw[0]["timestamp"],
-        "coolant_temp": row["coolant_temp"],
-        "wheel_speed": row["wheel_speed"],
-        "brake_pressure": row["brake_pressure"],
-        "imu_ax": row["imu"]["ax"],
-        "imu_ay": row["imu"]["ay"],
-        "imu_yaw": row["imu"]["yaw"]
-    })
+    # Support both legacy Stage-0 logs and newer Stage-1 nested schema.
+    sensors = row.get("sensors") or {}
+    true = row.get("true") or {}
+
+    imu = sensors.get("imu")
+    if imu is None:
+        imu = row.get("imu") or {}
+
+    wheel_speed = sensors.get("wheel_speed", row.get("wheel_speed"))
+    brake_pressure = sensors.get("brake_pressure", row.get("brake_pressure"))
+    coolant_temp = sensors.get("coolant_temp", row.get("coolant_temp"))
+
+    timestamp = row.get("timestamp")
+    t0 = raw[0].get("timestamp")
+    rel_time = (timestamp - t0) if (timestamp is not None and t0 is not None) else None
+
+    flattened.append(
+        {
+            "timestamp": timestamp,
+            "time": rel_time,
+            "coolant_temp": coolant_temp,
+            "wheel_speed": wheel_speed,
+            "brake_pressure": brake_pressure,
+            "imu_ax": imu.get("ax") if isinstance(imu, dict) else None,
+            "imu_ay": imu.get("ay") if isinstance(imu, dict) else None,
+            "imu_yaw": imu.get("yaw") if isinstance(imu, dict) else None,
+            "lap": row.get("lap"),
+            "lap_progress": row.get("lap_progress"),
+            "true_speed": true.get("speed_kmh"),
+        }
+    )
 
 df = pd.DataFrame(flattened)
 

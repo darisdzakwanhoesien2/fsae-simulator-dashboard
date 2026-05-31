@@ -1,4 +1,4 @@
-# simulator/run_simulator.py
+# simulator/run_simulator_stage_1.py
 # Add project root to Python path
 import sys, os
 ROOT = os.path.dirname(os.path.dirname(__file__))

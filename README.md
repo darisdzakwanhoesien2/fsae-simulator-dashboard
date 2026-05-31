@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FSAE Simulator Dashboard - Code Audit, Fixes, and IP Landscape
 
 Previous `README.md` has been moved to `notes.md`.
@@ -80,9 +81,28 @@ Result: pass (no syntax errors).
 - Restore runtime correctness (syntax/import/path issues).
 - Make scripts robust when run from different locations.
 - Reduce maintenance friction by removing stale duplicate code.
+=======
+# FSAE Telemetry Simulator + Streamlit Dashboard
 
----
+This repo contains a small telemetry simulation pipeline and a Streamlit dashboard for viewing the generated data.
 
+- Simulator outputs JSON packets to `data/realtime.json` and session logs in `data/logs/`
+- Streamlit app reads those packets for live viewing + analysis pages
+
+## Quick start
+
+### 1) Install
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+>>>>>>> c07c010 (restructuring)
+
+> Note: The Streamlit UI requires `streamlit` (and some pages use `pandas` / `matplotlib`). They aren’t currently listed in `requirements.txt`.
+
+<<<<<<< HEAD
 ## Extended Patent Landscape (Telemetry, Driver Coaching, Digital Twin, PINN)
 
 Important: this is a technical landscape overview, not legal advice and not a freedom-to-operate opinion.
@@ -215,3 +235,41 @@ realtime_path = os.path.join(ROOT, "data", "realtime.json")
 ```
 
 This removes CWD-dependent behavior and stabilizes imports/outputs.
+=======
+### 2) Run simulator (recommended)
+
+Stage-1 physics simulator:
+
+```bash
+python simulator/run_simulator_stage_1.py
+```
+
+Legacy minimal simulator (kept for reference):
+
+```bash
+python simulator/run_simulator_legacy.py
+```
+
+### 3) Run dashboard
+
+```bash
+streamlit run streamlit_app/app.py
+```
+
+## What I changed (bugs + cleanup)
+
+The previous `README.md` was moved to `notes.md`, and this `README.md` was rebuilt to reflect the current repo layout and entry points.
+
+Code fixes / cleanup included:
+
+- Standardized real-time JSON writing to always use `data/realtime.json` (repo-root relative), avoiding path bugs when running scripts from different working directories.
+- Removed redundant/legacy simulator implementation and clarified which simulator scripts are current.
+- Added inline comments in a few “easy to get wrong” sections (path handling and file writes) and reduced duplicated logic.
+
+## Repo map
+
+- `simulator/` – physics + sensors + scripts to generate data
+- `streamlit_app/` – Streamlit UI (multiple pages under `streamlit_app/pages/`)
+- `utils/` – helpers for config loading and safe JSON writes
+- `notes.md` – the original long-form project notes that used to be the README
+>>>>>>> c07c010 (restructuring)

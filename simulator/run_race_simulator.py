@@ -1,6 +1,7 @@
 import datetime
 import json
 import os
+<<<<<<< HEAD
 import sys
 from tqdm import tqdm
 
@@ -8,6 +9,11 @@ ROOT = os.path.dirname(os.path.dirname(__file__))
 if ROOT not in sys.path:
     sys.path.append(ROOT)
 
+=======
+import time
+from tqdm import tqdm
+
+>>>>>>> c07c010 (restructuring)
 from simulator.sensors.coolant_temp import CoolantTempSimulator
 from simulator.sensors.wheel_speed import WheelSpeedSimulator
 from simulator.sensors.brake_pressure import BrakePressureSimulator
@@ -49,6 +55,7 @@ with tqdm(total=total_samples, unit="samples", dynamic_ncols=True) as pbar:
         for i in range(SAMPLES_PER_LAP):
 
             data = {
+                "timestamp": time.time(),
                 "lap": lap,
                 "lap_progress": i / SAMPLES_PER_LAP,
                 "coolant_temp": coolant.step(),

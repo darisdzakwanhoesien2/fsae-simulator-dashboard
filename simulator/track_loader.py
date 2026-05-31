@@ -96,9 +96,9 @@ def generate_turn_sequence(n_left, n_right):
 def generate_custom_track(
     n_left,
     n_right,
-    seg_length,
-    radius_range,
-    points_per_turn,
+    seg_length=20.0,
+    radius_range=(30.0, 60.0),
+    points_per_turn=40,
     max_extent=150,
 ):
     pts = []
