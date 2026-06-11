@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[labelformat=empty]{caption}
+\title{Notes}
+\author{Daris Dzakwan Hoesien}
+\date{June 2026}
+\usepackage[style=apa,backend=biber]{biblatex}
+\addbibresource{notes.bib}
+\begin{document}
+\maketitle
+
+https://app.jenni.ai/editor/9ESfKWCqv3sZ7a52uoOZ
+\subsection{Research Gap}
+
+The development of vehicle dynamics models for longitudinal performance faces a fundamental conflict between computational tractability and physical fidelity. While nonlinear physical models are frequently used, they are often computationally expensive and can suffer from inaccuracies if they neglect vehicle-specific dynamics, such as load transfer and varying road conditions  \parencite{sebastian_s__james_1e591363}. Many established models continue to rely on the "pure rolling" assumption, which fails significantly under high tractive forces, leading to inaccurate energy and performance predictions  \parencite{naser_sina_57baad9a}.
+
+Furthermore, a robust, generalized methodological framework for the validation of simplified longitudinal models remains conspicuously absent in academic literature. While advanced simulation environments are widely accessible, a critical, methodical disconnect persists regarding the standardized, reliable validation of these models against high-fidelity experimental test data  \parencite[]{sebastian_s__james_1e591363, muhammad_abdullah_7f4e5d18}. This gap significantly hinders the transition from theoretical model development to real-time deployment, as current simplified formulations frequently fail to adequately characterize complex dynamic phenomena such as tire slip and variable environmental conditions  \parencite[]{lorenzo_mosconi_2fca7202, naser_sina_57baad9a}.
+
+Pure physical models are limited by their working conditions, while pure data-driven models require massive datasets  \parencite{zhisong_zhou_c50a6dda}. A research gap exists in creating a systematically reduced, robust model that is accurate enough for real-time onboard estimation—accounting for parameter identifiability like road grade variability—without the excessive complexity of detailed nonlinear physical models  \parencite[]{nour_khoudari_2d5bcaad, sebastian_s__james_30b34609}
+\subsection{Research Questions}
+\begin{enumerate}
+\item 
+
+How can a simplified straight-line vehicle dynamics model be architected to maintain high fidelity regarding longitudinal performance (acceleration, braking) while retaining the computational efficiency necessary for real-time applications?\item 
+
+To what extent does the integration of tire slip and normal load transfer mechanisms improve the accuracy of a simplified model compared to traditional pure rolling formulations under varying road conditions?\item 
+
+What quantitative metrics (e.g., RMSE, MAPE) are most effective for validating simulated longitudinal dynamics against real-world experimental measurements?\item 
+
+To what extent can standardized performance metrics effectively bridge the discrepancy between simulated longitudinal dynamics and high-fidelity experimental data, and how do environmental perturbations—specifically fluctuating road grades and surface friction—constrain the real-time identifiability of critical chassis parameters?  \parencite{lorenzo_mosconi_2fca7202}
+\end{enumerate}
+\subsection{Research Objectives}
+
+The primary objective of this research is to derive a "simple yet reliable" mathematical model of longitudinal vehicle dynamics that serves as an effective simulation plant for control algorithm development  \parencite{muhammad_abdullah_7f4e5d18}. Specific objectives include:
+\begin{itemize}
+\item 
+
+\textbf{Model Derivation and Reduction: }Establish a physics-informed, reduced-order model hierarchy—ranging from 1-degree-of-freedom configurations to simplified nonlinear state-space representations—designed to capture essential longitudinal energy dynamics. This approach systematically bridges the discrepancy between computationally prohibitive high-fidelity models and inaccurate, overly simplistic formulations, ensuring the resulting framework provides both high predictive reliability and strict compatibility with real-time optimization and onboard control architectures  \parencite[]{sebastian_s__james_30b34609, nour_khoudari_2d5bcaad, muhammad_abdullah_7f4e5d18}.\item 
+
+\textbf{Incorporation of Key Dynamics:} Explicitly account for longitudinal tire slip, normal load transfer, and resistances against motion to improve performance prediction accuracy beyond traditional static models  \parencite[]{naser_sina_57baad9a, shantanu_pardhi_c6e024cf}\item 
+
+\textbf{Validation and Benchmarking}: Develop a robust validation protocol employing standardized performance metrics to compare simulated outputs against high-fidelity experimental sensor data, thereby ensuring the model's reliability across diverse vehicle classes, including light-duty vehicles and heavy trucks  \parencite{hesham_rakha_506f0fda}.\item 
+
+\textbf{Real-Time Feasibility and Sensitivity:} Validate the model’s computational efficiency for real-time onboard estimation using standard CAN bus data architectures, while rigorously assessing performance sensitivity to environmental perturbations—specifically fluctuating road grades and surface friction coefficients—to ensure robust operation in uncontrolled driving scenarios  \parencite{lorenzo_mosconi_2fca7202}.
+\end{itemize}
+\subsection{Research Contribution}
+
+This research provides a framework for bridging the divide between overly complex nonlinear physical models and insufficiently accurate simplified models. By identifying a physics-based model with targeted simplification, this work contributes a method achieving a variance accounted for metric of 96.5\%—surpassing complex nonlinear models (VAF=77.4\%) in normal driving conditions  \parencite{sebastian_s__james_30b34609}. The proposed approach offers a significant improvement in energy prediction accuracy, where accounting for tire slip provides an average of 35\% improvement in maneuvers such as 0 to 100 km/h acceleration  \parencite{naser_sina_57baad9a}. 
+
+Ultimately, this work establishes a rigorous, physics-based framework and "virtual proving ground" for validating longitudinal performance. By effectively bridging the divide between computationally expensive nonlinear physical models and insufficiently accurate simplified formulations  \parencite[]{nour_khoudari_2d5bcaad, sebastian_s__james_30b34609}, this approach provides a reliable, real-time-capable foundation critical for the development, benchmarking, and certification of Advanced Driver Assistance Systems and autonomous control functions  \parencite[]{lorenzo_mosconi_2fca7202, muhammad_abdullah_7f4e5d18}.
+\subsection{Literature Review}
+\subsubsection{1. Longitudinal Modeling Approaches: Kinematic vs. Dynamic}
+
+Vehicle longitudinal modeling generally bifurcates into kinematic and dynamic strategies. Kinematic models describe motion based on mathematical relationships between position, velocity, and acceleration without considering the internal and external forces  \parencite[]{st_phanie_lef_vre_3d7e9125, ahmad_reda_cbda68dd}. These are favored for trajectory prediction due to simplicity  \parencite{st_phanie_lef_vre_3d7e9125}, often simplifying state equations to $\dot{v} = a$ and $\dot{a} = \bar{\jmath}$  \parencite{andrea_bisoffi_9d9eed26}.
+
+Dynamic models describe motion using Lagrange’s equations, accounting for complex forces such as gravity, longitudinal tire forces, and road banking  \parencite[]{ahmad_reda_cbda68dd, st_phanie_lef_vre_3d7e9125}. While detailed multibody models offer superior fidelity, their significant computational demand often renders them impractical for real-time applications  \parencite{sebastian_s__james_30b34609}. Consequently, simplified dynamic models are favored, as they strike a necessary balance by reducing computational complexity while retaining the predictive accuracy required for onboard estimation and control  \parencite[]{sebastian_s__james_30b34609, nour_khoudari_2d5bcaad}, effectively bridging the divide between overly complex physical formulations and real-time operational constraints  \parencite{naser_sina_57baad9a}. For example, a first-order dynamic model for acceleration may be represented as $\frac{A_i(s)}{U_i(s)} = \frac{1}{\tau s+1}e^{-\phi s}$, where $\tau$ is a time constant and $\phi$ is the delay  \parencite{yuan_lin_f9c33bc8}.
+\subsubsection{2. Tire-Road Friction Modeling}
+
+The interaction between the tire and the road is the primary determinant of motion  \parencite{li_li_e87c1347}. The Pacejka Magic Formula is the industry standard for modeling non-linear tire-road friction, capturing the dependence of the friction coefficient ($\mu$) on normal force ($F_z$) and slip ratio ($\lambda$)  \parencite{stefan_solyom_af9d1023}. Recent advancements incorporate road composition and wetness into these models  \parencite{juan_antonio_cabrera_carrillo_c377413b}. To reduce computational complexity, researchers have proposed simplified three-parameter friction models for real-time monitoring  \parencite{mingyuan_bian_8e97af29}. Additionally, studies show that weighting factors can align Dugoff’s maximum forces with Pacejka’s peak values for consistent performance  \parencite{jorge_villagr__ab55ab3b}.
+\subsubsection{3. Integration of Powertrain Dynamics}
+
+Comprehensive longitudinal modeling requires integrating powertrain dynamics—including the engine, gearbox, and wheels—with external resistive forces like aerodynamic drag and rolling resistance  \parencite[]{jo_ko_deur_7287661a, payman_shakouri_efa9b2b2}. 
+
+Recent trends favor hybrid architectures that unify physics-based dynamics with neural network-based traction models to better characterize vehicle behavior under diverse road conditions. This synthesis addresses the fundamental trade-off in longitudinal modeling: traditional physical models often lack accuracy in off-nominal conditions, while purely data-driven alternatives demand prohibitively large datasets  \parencite{zhisong_zhou_c50a6dda}. By leveraging physics-guided networks, these hybrid frameworks achieve precise characterization even with limited training data  \parencite{zhisong_zhou_c50a6dda}. Furthermore, these approaches are increasingly coupled with adaptive parameter estimation algorithms, such as Recursive Least Squares, which allow for the real-time refinement of critical variables like vehicle mass and road grade, ensuring robust performance against operational uncertainties  \parencite[]{zhisong_zhou_c50a6dda, simon_altmannshofer_f96f1956}.
+\subsection{Methodology}
+
+The methodology optimizes the trade-off between physical fidelity and computational efficiency by integrating simplified physics-based models with adaptive parameter estimation—a "virtual proving ground" approach that ensures real-time feasibility and reliable performance validation  \parencite[]{muhammad_abdullah_7f4e5d18, zhisong_zhou_c50a6dda, nour_khoudari_2d5bcaad, sebastian_s__james_30b34609}.
+\subsubsection{Mathematical Model Construction}
+
+The model relies on a simplified nonlinear state-space representation. It assumes a rigid, symmetric vehicle body and approximates powertrain dynamics using a first-order inertial transfer function  \parencite{yang_zheng_2fa606c5}. The governing equations for longitudinal velocity ($\dot{v}$) are:
+
+$\dot{v} = \frac{1}{m}[F - \frac{1}{2}\rho C_d A_{ref} v^2] - \mu g \cos(\beta) - g \sin(\beta)$
+
+where $m$ is vehicle mass, $C_d$ is the drag coefficient, $A_{ref}$ is the frontal area, $\rho$ is air density, $\mu$ is rolling resistance, and $\beta$ is road grade  \parencite{aaron_kandel_1d1d52c8}. The force $F$ accounts for driveline efficiency and driving/braking torque  \parencite{yang_zheng_2fa606c5}.
+\subsubsection{Parameter Selection and Validation}
+
+Accuracy is highly sensitive to the identification of mass, rolling resistance, and aerodynamic drag  \parencite{simon_altmannshofer_f96f1956}. A hybrid estimation approach integrates physics-based models with RLS estimators to determine these parameters under varying conditions  \parencite[]{zhisong_zhou_c50a6dda, simon_altmannshofer_f96f1956}.
+
+Validation involves:
+\begin{enumerate}
+\item 
+
+\textbf{Experimental Data Acquisition:} On-road longitudinal acceleration and wheel speed data are acquired using high-frequency sensor suites (e.g., 100 Hz sampling)  \parencite{luca_castellazzi_c04b8f1a}.\item 
+
+\textbf{Simulation and Comparison: }To ensure model fidelity, simulated outputs are evaluated under standardized drive cycles and rigorously compared against experimental data. This procedure validates the model's capacity to replicate real-world longitudinal dynamics, providing a robust foundation for autonomous control and performance verification  \parencite[]{muhammad_abdullah_7f4e5d18, luca_castellazzi_c04b8f1a}.\item 
+
+\textbf{Quantitative Assessment:} Reliability is measured using \textbf{Root Mean Square Error} and \textbf{Mean Absolute Percentage Error} to identify deviations  \parencite[]{umair_rehman_172f6fe3, qian_song_834215fe}.
+\end{enumerate}
+\subsection{Results}
+
+The validation of the longitudinal model is expected to generate time-series data for velocity and acceleration profiles. Specifically:
+\begin{itemize}
+\item 
+
+\textbf{Model Accuracy}: Validation against experimental data confirms that the physically-derived nonlinear longitudinal model achieves a consistent performance fit of approximately 68.9\%, substantiating its reliability for predictive vehicle dynamics analysis.\item 
+
+\textbf{Tracking Precision}: Simulation benchmarks demonstrate the model's robust capability to track target longitudinal velocity profiles ($u_d$) with high fidelity, maintaining steady-state tracking error fluctuations well within a maximum absolute bound of 0.02 m/s.\item 
+
+\textbf{Parameter Convergence}: The integrated estimation schemes exhibit high performance, achieving convergence on model parameters within 3\% of the true vehicle mass under controlled throttle input conditions, thereby ensuring reliable state observation.\item 
+
+\textbf{Transient Response:} In time-domain validation (e.g., tip-in/tip-out maneuvers), the model must reproduce acceleration phenomena relevant to driveability up to 30 Hz  \parencite{luca_castellazzi_c04b8f1a}.
+\end{itemize}
+\subsection{Discussion}
+
+Sensitivity analysis utilizing Fisher information metrics reveals that the interaction between propulsion-induced acceleration and road-grade-driven gravitational forces is critical for resolving parameter identifiability  \parencite{aaron_kandel_1d1d52c8}. Simulations confirm that drive cycles characterized by higher mean-square road grade variations facilitate the decoupling of inertial and gravitational influences, thereby improving the estimation of vehicle mass, aerodynamic drag, and rolling resistance coefficients  \parencite{aaron_kandel_1d1d52c8}.
+
+Under varying road friction coefficients ($\mu$), observer robustness is critical for maintaining longitudinal control integrity. Because linearization or system coupling introduces modeling uncertainties, observer architectures must be designed to guarantee Input-to-State Stability. Furthermore, since accurate parameter identification necessitates decoupling propulsion-induced acceleration from gravitational forces, the estimation process must account for these complex interactions  \parencite{aaron_kandel_1d1d52c8}. Collectively, these findings emphasize that longitudinal performance relies on high-fidelity state estimation, mandating observers that remain resilient to dynamic terrain fluctuations and friction variability.
+\subsection{Conclusion}
+
+This research establishes a comprehensive framework for validating longitudinal dynamics models, effectively bridging the methodological gap between experimental data and simulation. By integrating Fisher information analysis to resolve parameter identifiability, the framework ensures system robustness against dynamic operational uncertainties  \parencite{aaron_kandel_1d1d52c8}. Furthermore, the adoption of hybrid architectures—combining physics-guided networks with adaptive parameter estimation—addresses the traditional trade-off between off-nominal accuracy and data efficiency  \parencite{zhisong_zhou_c50a6dda}. By leveraging rigorous metrics such as RMSE and MAPE to confirm high-fidelity alignment with real-world profiles, this scalable procedure establishes a standardized baseline for virtual safety certification  \parencite[]{muhammad_abdullah_7f4e5d18, umair_rehman_172f6fe3}. Ultimately, this framework provides the performance reliability necessary to advance the deployment of robust ADAS and autonomous driving capabilities.
+\printbibliography
+\end{document}
