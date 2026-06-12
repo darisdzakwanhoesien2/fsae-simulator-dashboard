@@ -1,3 +1,5 @@
+gemini --resume 1ec88865-c24f-496a-8b6e-a4505419dd82
+
 # FSAE Simulator Dashboard - MATLAB Models Documentation
 
 This document provides an overview of the MATLAB models used for simulating vehicle performance in various FSAE events.
@@ -85,3 +87,38 @@ sequenceDiagram
     G->>FS: Update documentation.md with sequence diagram
     FS-->>G: File Updated
 ```
+Section 3: Documentation and Research Workflow: Added a new section containing a Mermaid sequenceDiagram.
+   - Diagram Content: It visualizes the three phases of our interaction:
+       1. Phase 1: Documenting the MATLAB models.
+       2. Phase 2: Extracting foundational physics and math knowledge from the
+          lesson repository.
+       3. Phase 3: Creating the visual documentation (the diagram itself).
+
+You can view the diagram by opening documentation.md in any Markdown viewer that supports Mermaid.
+Summary of Foundational Knowledge
+  The extracted knowledge is categorized into three main pillars:
+
+   1. Mathematics:
+       * Unit Consistency: Strict adherence to SI units (N, kg, m/s, m/s²).
+       * Trigonometry: Resolving gravitational components on road grades using
+         sin(β) and cos(β).
+       * Calculus: Using differential equations ($dv/dt$) to model acceleration
+         and state-space for reduced-order models.
+       * Statistics: Evaluating model performance using metrics like RMSE and
+         MAPE.
+
+   2. Physics:
+       * Mechanics: Governing equations based on Newton's Second Law (∑ F = m ·
+         a).
+       * Force Balance: Analyzing Traction, Braking, Aerodynamic Drag (∝ v²),
+         Rolling Resistance, and Grade Force.
+       * Tire Interaction: Understanding Slip Ratio, the Pacejka Magic Formula,
+         and longitudinal/lateral load transfer.
+       * Powertrain: Torque-to-force conversion and dynamic behavior (delay and
+         inertia).
+
+   3. Systems Engineering:
+       * Fidelity vs. Cost: Balancing physical accuracy with real-time
+         computational requirements.
+       * Uncertainty: Managing measurement noise, changing friction, and
+         parameter variations.
