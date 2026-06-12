@@ -24,11 +24,12 @@ Earlier versions used a static friction limit to determine the maximum accelerat
 ### Second Phase: Motor Maps & Simple Weight Transfer
 Introduced torque-RPM maps for the EMRAX motor and basic longitudinal weight transfer to the rear axle, acknowledging that acceleration shifts load backward.
 
-### Final Improved Version: Dynamic Wheel Interaction
-The current model is a significant step forward in fidelity:
-- **Pacejka Magic Formula:** Replaced static friction with a nonlinear tire force model based on slip ratio ($\kappa$).
-- **Rotational Dynamics:** Added wheel inertia ($J_{wheel}$) and angular acceleration ($\alpha_w$), allowing for the simulation of wheel spin and transient slip effects.
-- **Numerical Integration:** Uses a $0.001s$ time step to solve the coupled linear and rotational differential equations.
+### Final High-Fidelity Version: Component Modeling (Phase 1)
+The latest implementation realizes the "High-Fidelity Component Modeling" roadmap:
+- **Load-Sensitive Pacejka Coefficients:** The $B, C, D,$ and $E$ factors are no longer constants. They now scale dynamically with vertical load ($F_z$), capturing the non-linear "tire sensitivity" reported in literature (Miranda et al., 2021).
+- **Attitude-Sensitive Aerodynamics (Aero Maps):** Static $C_l$ and $C_d$ coefficients have been replaced with state-dependent functions. These simulate how vehicle pitch (squat/dive) affects downforce and drag, capturing porpoising and attitude-driven performance gains (Zhang et al., 2022).
+- **Combined-Slip Foundation:** The models now include the framework for combined dynamics, using longitudinal demand to reduce lateral capacity (friction ellipse logic) in the skidpad simulation.
+- **Dynamic Pitch/Roll Estimation:** Suspensions stiffness ($K_{pitch}, K_{roll}$) is used to estimate the vehicle's attitude in real-time during the simulation.
 
 ## 3. Impact of Improvements
 
