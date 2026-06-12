@@ -24,12 +24,12 @@ Earlier versions used a static friction limit to determine the maximum accelerat
 ### Second Phase: Motor Maps & Simple Weight Transfer
 Introduced torque-RPM maps for the EMRAX motor and basic longitudinal weight transfer to the rear axle, acknowledging that acceleration shifts load backward.
 
-### Phase 2: Integration into Quasi-Steady State LTS
-The simulation has evolved from single-event models to a full-track integration:
-- **G-G-V Envelope Generation:** Integrated the Phase 1 tire and aero models into a 3D acceleration capability map. The longitudinal acceleration ($a_x$) now respects the "friction ellipse," reducing traction/braking potential as lateral demand ($a_y$) increases (Bianco et al., 2018).
-- **Apex Optimization:** The simulator automatically calculates the physical limit ($V_{max}$) for any given track curvature ($r$) by iterating through the high-fidelity force balance.
-- **Path-Following Simulation:** Implemented a **Forward-Backward Integration** scheme. The "Forward Pass" integrates acceleration from the start/apex points, while the "Backward Pass" integrates braking limits from the next entry point, ensuring optimal transition and lap time (Costa & Bortolussi, 2016).
-- **Consolidated Architecture:** Created `LapTimeSimulator.m` as the top-level orchestrator for full-lap performance analysis.
+### Phase 3: Transient Dynamics and Power Management
+The latest update introduces time-dependent constraints and high-fidelity chassis response:
+- **EMRAX Thermal Model:** Implemented a lumped-parameter thermal network ($dT/dt$) for the motor. It tracks heat buildup based on copper losses ($I^2R$) and dissipates heat to ambient (Liu et al., 2020).
+- **Thermal Derating:** Integrated logic that automatically scales down motor torque as temperature approaches critical limits ($100^\circ C - 130^\circ C$). This allows for the simulation of endurance events where performance is limited by cooling capacity rather than peak power.
+- **Transient Chassis Pitch:** Replaced the "instantaneous" weight transfer with a second-order differential equation model ($I, C, K$). This captures the **settling time** of the suspension, allowing for more realistic load fluctuations during rapid transitions (Siegler et al., 2000).
+- **Transient Load Transfer:** Vertical loads ($F_z$) now account for suspension damping forces, providing a more accurate input to the Pacejka tire model during the first fractions of a second of an event.
 
 ## 3. Impact of Improvements
 

@@ -45,9 +45,11 @@ end
 % --- PHASE 2.3: VELOCITY PROFILING (Forward-Backward Integration) ---
 v_fw = zeros(size(s_steps));
 v_bw = zeros(size(s_steps));
+T_fw = zeros(size(s_steps)); % Motor Temperature log (Phase 3 Prep)
 
-% Forward Pass (Acceleration)
-v_fw(1) = 0.1; % Start speed
+% Forward Pass (Acceleration + Thermal Tracking)
+v_fw(1) = 0.1; 
+T_fw(1) = 25; % Starting Temp
 for i = 1:length(s_steps)-1
     ds = s_steps(i+1) - s_steps(i);
     ay = v_fw(i)^2 / r_steps(i);
@@ -56,6 +58,11 @@ for i = 1:length(s_steps)-1
     % v^2 = u^2 + 2*a*s
     v_next = sqrt(v_fw(i)^2 + 2 * ax_max * ds);
     v_fw(i+1) = min(v_next, v_max_apex(i+1));
+    
+    % Simplified Thermal Integration
+    dt_step = ds / (v_fw(i) + 1e-6);
+    P_loss = 250^2 * 0.015; % Representative heat loss (I^2*R)
+    T_fw(i+1) = T_fw(i) + (P_loss / 2500) * dt_step; 
 end
 
 % Backward Pass (Braking)
