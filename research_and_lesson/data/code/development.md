@@ -24,12 +24,12 @@ Earlier versions used a static friction limit to determine the maximum accelerat
 ### Second Phase: Motor Maps & Simple Weight Transfer
 Introduced torque-RPM maps for the EMRAX motor and basic longitudinal weight transfer to the rear axle, acknowledging that acceleration shifts load backward.
 
-### Final High-Fidelity Version: Component Modeling (Phase 1)
-The latest implementation realizes the "High-Fidelity Component Modeling" roadmap:
-- **Load-Sensitive Pacejka Coefficients:** The $B, C, D,$ and $E$ factors are no longer constants. They now scale dynamically with vertical load ($F_z$), capturing the non-linear "tire sensitivity" reported in literature (Miranda et al., 2021).
-- **Attitude-Sensitive Aerodynamics (Aero Maps):** Static $C_l$ and $C_d$ coefficients have been replaced with state-dependent functions. These simulate how vehicle pitch (squat/dive) affects downforce and drag, capturing porpoising and attitude-driven performance gains (Zhang et al., 2022).
-- **Combined-Slip Foundation:** The models now include the framework for combined dynamics, using longitudinal demand to reduce lateral capacity (friction ellipse logic) in the skidpad simulation.
-- **Dynamic Pitch/Roll Estimation:** Suspensions stiffness ($K_{pitch}, K_{roll}$) is used to estimate the vehicle's attitude in real-time during the simulation.
+### Phase 2: Integration into Quasi-Steady State LTS
+The simulation has evolved from single-event models to a full-track integration:
+- **G-G-V Envelope Generation:** Integrated the Phase 1 tire and aero models into a 3D acceleration capability map. The longitudinal acceleration ($a_x$) now respects the "friction ellipse," reducing traction/braking potential as lateral demand ($a_y$) increases (Bianco et al., 2018).
+- **Apex Optimization:** The simulator automatically calculates the physical limit ($V_{max}$) for any given track curvature ($r$) by iterating through the high-fidelity force balance.
+- **Path-Following Simulation:** Implemented a **Forward-Backward Integration** scheme. The "Forward Pass" integrates acceleration from the start/apex points, while the "Backward Pass" integrates braking limits from the next entry point, ensuring optimal transition and lap time (Costa & Bortolussi, 2016).
+- **Consolidated Architecture:** Created `LapTimeSimulator.m` as the top-level orchestrator for full-lap performance analysis.
 
 ## 3. Impact of Improvements
 
