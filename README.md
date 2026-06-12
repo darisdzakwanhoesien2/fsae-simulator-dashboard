@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+gemini --resume 1ec88865-c24f-496a-8b6e-a4505419dd82
 # FSAE Simulator Dashboard - Code Audit, Fixes, and IP Landscape
 
 Previous `README.md` has been moved to `notes.md`.
