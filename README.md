@@ -1,3 +1,6 @@
+gemini --resume 41f792fe-c62d-48f7-8f7e-5bab5fa4d65e
+Knowledge Mapping: https://www.cambridgeinternational.org/Images/744626-2028-2030-syllabus.pdf
+
 gemini --resume 1ec88865-c24f-496a-8b6e-a4505419dd82
 # FSAE Simulator Dashboard - Code Audit, Fixes, and IP Landscape
 
