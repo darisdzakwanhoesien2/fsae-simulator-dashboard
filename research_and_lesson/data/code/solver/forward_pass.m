@@ -10,7 +10,9 @@ function [v_fw, T_fw, theta_fw] = forward_pass(track, v_max_apex, veh, tire, aer
     T_fw(1) = motor.T_ambient;
     theta_fw(1) = 0;
     
-    for i = 1:length(track.s)-1
+    N = length(track.s);
+    for i = 1:N-1
+        update_progress(i, N-1, 'Forward Pass');
         ds = track.ds(i);
         v_curr = v_fw(i);
         theta_curr = theta_fw(i);

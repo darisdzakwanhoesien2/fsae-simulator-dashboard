@@ -7,9 +7,10 @@ function energy = energy_solver(track, result, veh, powertrain)
     energy.E_used = zeros(N, 1);
     
     % Re-calculate acceleration for force estimation
-    v = result.v_final;
+    v = result.v_final(:); % Force column
+    s = track.s(:);        % Force column
     dv2 = [diff(v.^2); 0];
-    ds = [diff(track.s), track.ds(end)];
+    ds = [diff(s); track.ds(end)];
     ax = dv2 ./ (2 * ds);
     
     current_energy = 0;

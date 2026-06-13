@@ -2,7 +2,9 @@ function v_max_apex = lateral_speed_limit(track, veh, tire, aero, opts)
     % LATERAL_SPEED_LIMIT Calculates max cornering speed at each point.
     
     v_max_apex = zeros(size(track.s));
-    for i = 1:length(track.s)
+    N = length(track.s);
+    for i = 1:N
+        update_progress(i, N, 'Lateral Limits');
         if isinf(track.r(i))
             v_max_apex(i) = opts.v_top_limit;
         else

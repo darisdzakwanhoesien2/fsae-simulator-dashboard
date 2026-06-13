@@ -24,11 +24,12 @@ function plot_gg_diagram(track, result, veh, tire, aero, motor)
     end
     
     % Actual vehicle trace
-    v = result.v_final;
+    v = result.v_final(:);
+    s = track.s(:);
     dv2 = [diff(v.^2); 0];
-    ds = [diff(track.s), track.ds(end)];
+    ds = [diff(s); track.ds(end)];
     ax = dv2 ./ (2 * ds);
-    ay = v.^2 ./ track.r;
+    ay = v.^2 ./ track.r(:);
     
     % Normalize to Gs
     ax_g = ax / veh.g;

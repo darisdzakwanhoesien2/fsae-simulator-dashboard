@@ -4,7 +4,9 @@ function v_bw = backward_pass(track, v_max_apex, veh, tire, aero, motor, opts)
     v_bw = zeros(size(track.s));
     v_bw(end) = v_max_apex(end);
     
-    for i = length(track.s):-1:2
+    N = length(track.s);
+    for i = N:-1:2
+        update_progress(N-i+1, N-1, 'Backward Pass');
         ds = track.ds(i-1);
         ay = v_bw(i)^2 / track.r(i);
         

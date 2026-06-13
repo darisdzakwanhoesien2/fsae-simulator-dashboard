@@ -31,6 +31,13 @@ The latest update introduces time-dependent constraints and high-fidelity chassi
 - **Transient Chassis Pitch:** Replaced the "instantaneous" weight transfer with a second-order differential equation model ($I, C, K$). This captures the **settling time** of the suspension, allowing for more realistic load fluctuations during rapid transitions (Siegler et al., 2000).
 - **Transient Load Transfer:** Vertical loads ($F_z$) now account for suspension damping forces, providing a more accurate input to the Pacejka tire model during the first fractions of a second of an event.
 
+### Phase 4: Modular Framework & Optimization
+The latest transformation evolved the scripts into a professional engineering framework:
+- **Modular Decoupling**: Separated configuration (data), physics (models), and solvers (logic) into a structured directory hierarchy. This allows for rapid component swaps and easier collaboration.
+- **Unified Pipeline**: Developed a standard `forward-backward` integration solver in `main.m` that combines transient physics with quasi-steady lap timing.
+- **Engineering Tools**: Added automated setup optimization tools, including gear ratio sweeps and engineering sensitivity studies.
+- **Robustness & UX**: Standardized internal data orientation (column vectors) to resolve concatenation errors and added real-time progress bars for user feedback.
+
 ## 3. Impact of Improvements
 
 | Feature | Impact on Accuracy | Impact on Simulation Speed |
@@ -38,7 +45,8 @@ The latest update introduces time-dependent constraints and high-fidelity chassi
 | **Aero Downforce** | High (Critical for high-speed aero cars) | Low |
 | **Load Sensitivity** | Medium (Refines peak grip estimation) | Low |
 | **Pacejka Model** | Very High (Captures realistic tire limits) | Medium |
-| **Rotational Dynamics** | High (Captures wheel spin and traction loss) | Medium |
+| **Transient Pitch** | High (Captures settling and weight transfer) | Medium |
+| **Modular Framework** | N/A (Impacts Maintainability) | High (Optimization) |
 
 ---
-*Date of Update: June 12, 2026*
+*Date of Update: June 13, 2026*
