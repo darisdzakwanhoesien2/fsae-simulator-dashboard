@@ -1,5 +1,8 @@
 gemini --resume 1ec88865-c24f-496a-8b6e-a4505419dd82
 
+1. https://drive.mathworks.com/files/FSAE_2026
+2. https://matlab.mathworks.com/
+
 # FSAE Simulator Dashboard - MATLAB Models Documentation
 
 This document provides an overview of the MATLAB models used for simulating vehicle performance in various FSAE events.
