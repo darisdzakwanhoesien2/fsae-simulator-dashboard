@@ -7,3 +7,5 @@ matplotlib
 fastf1
 requests
 scipy
+scikit-learn
+xgboost
