@@ -37,6 +37,9 @@ from simulator.physics.simple.dynamics import update_speed
 from simulator.physics.simple.thermal import update_coolant_temp
 from simulator.physics.simple.steering_yaw import compute_yaw_rate
 from simulator.physics.simple.gps_simulator import GPSMock
+from simulator.physics.simple.tire_model import TireModel
+from simulator.physics.simple.fuel_model import FuelModel
+from simulator.physics.simple.aero import AeroModel
 
 
 # -------------------------------------------------------------
@@ -147,6 +150,24 @@ v_ms = 0.0
 coolant = car_cfg.get("initial_coolant_temp", 60.0)
 yaw_deg = 0.0
 
+# Tire / Fuel / Aero models
+tire = TireModel(
+    compound=car_cfg.get("tire_compound", "medium"),
+    initial_wear=car_cfg.get("tire_initial_wear", 0.0),
+)
+fuel = FuelModel(
+    initial_fuel_kg=car_cfg.get("fuel_initial_kg", 80.0),
+    max_fuel_kg=car_cfg.get("fuel_capacity_kg", 100.0),
+    consumption_rate=car_cfg.get("fuel_consumption_rate", 0.5),
+)
+aero = AeroModel(
+    downforce_coeff=car_cfg.get("downforce_coeff", 1.2),
+    aero_balance=car_cfg.get("aero_balance", 0.5),
+    drag_coeff=car_cfg.get("drag_coeff"),
+    frontal_area=car_cfg.get("frontal_area"),
+    air_density=car_cfg.get("air_density"),
+)
+
 
 # -------------------------------------------------------------
 # Prepare logging
@@ -232,6 +253,14 @@ try:
         coolant = update_coolant_temp(coolant, throttle, speed_kmh, dt)
         yaw_deg = compute_yaw_rate(steering, speed_kmh)
 
+        # Tire / Fuel / Aero
+        mass_kg = car_cfg.get("mass", 210.0)
+        total_mass = mass_kg + fuel.fuel_load_kg
+        grip_mult = aero.effective_grip_multiplier(v_ms, total_mass)
+        lateral_accel = 0.0  # placeholder; improve with actual lateral g
+        tire.step(speed_kmh, throttle, brake_cmd, lateral_accel, dt)
+        fuel.step(throttle, dt)
+
         # GPS movement
         dist = v_ms * dt
         (x, y), idx, laps = gps.advance(dist)
@@ -260,7 +289,7 @@ try:
         "t": t,
         "lap": laps,
         "track_index": idx,
-        "driver_id": args.driver_id,     # << NEW
+        "driver_id": args.driver_id,
         "gps": {"x": x, "y": y},
         "true": {
             "speed_kmh": speed_kmh,
@@ -275,6 +304,12 @@ try:
             "coolant_temp": ct,
             "imu": imu,
         },
+        "vehicle_state": {
+            "mass_kg": round(total_mass, 1),
+            "aero_grip_multiplier": round(grip_mult, 3),
+        },
+        "tire_state": tire.get_state(),
+        "fuel_state": fuel.get_state(),
     }
 
 
